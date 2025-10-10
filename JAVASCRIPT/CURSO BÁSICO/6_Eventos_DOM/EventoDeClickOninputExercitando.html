@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Exemplo com oninput</title>
+    <style>
+      body {
+        font-family: Arial;
+        padding: 20px;
+        transition: background-color 0.3s;
+      }
+
+      .campo {
+        margin-bottom: 15px;
+      }
+
+      label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      input {
+        padding: 5px;
+        width: 200px;
+      }
+
+      #mensagem {
+        margin-top: 20px;
+        font-size: 18px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Exemplo prático com oninput</h1>
+
+    <!-- Nome -->
+    <div class="campo">
+      <label>Seu nome:</label>
+      <input type="text" id="nome" placeholder="Digite seu nome" />
+    </div>
+
+    <!-- Idade -->
+    <div class="campo">
+      <label>Sua idade:</label>
+      <input type="number" id="idade" placeholder="Digite sua idade" />
+    </div>
+
+    <!-- Cor -->
+    <div class="campo">
+      <label>Escolha uma cor de fundo:</label>
+      <input type="color" id="cor" />
+    </div>
+
+    <!-- Volume -->
+    <div class="campo">
+      <label>Nível de volume:</label>
+      <input type="range" id="volume" min="0" max="100" value="50" />
+      <span id="valorVolume">50</span>
+    </div>
+
+    <p id="mensagem"></p>
+
+    <script>
+      const nome = document.getElementById("nome");
+      const idade = document.getElementById("idade");
+      const cor = document.getElementById("cor");
+      const volume = document.getElementById("volume");
+      const msg = document.getElementById("mensagem");
+      const valorVolume = document.getElementById("valorVolume");
+
+      // Atualiza o nome em tempo real
+      nome.addEventListener("input", () => {
+        msg.textContent = nome.value ? `Olá, ${nome.value}!` : "";
+      });
+
+      // Validação de idade em tempo real
+      idade.addEventListener("input", () => {
+        if (idade.value && idade.value < 18) {
+          msg.textContent = "Você é menor de idade.";
+        } else if (idade.value >= 18) {
+          msg.textContent = "Você é maior de idade.";
+        } else {
+          msg.textContent = "";
+        }
+      });
+
+      // Muda a cor de fundo ao escolher uma cor
+      cor.addEventListener("input", () => {
+        document.body.style.backgroundColor = cor.value;
+      });
+
+      // Mostra o valor do volume enquanto move o controle
+      volume.addEventListener("input", () => {
+        valorVolume.textContent = volume.value;
+      });
+    </script>
+  </body>
+</html>

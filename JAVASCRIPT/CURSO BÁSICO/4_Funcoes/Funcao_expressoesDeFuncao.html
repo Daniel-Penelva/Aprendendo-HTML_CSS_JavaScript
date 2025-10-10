@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Testando JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h1>Expressões de Função</h1>
+	<p> Respostas no console </p>
+
+    <script>
+        
+    // O que é uma expressão de função?
+	// Uma expressão de função é quando você cria uma função e a atribui a uma variável.
+    // Diferente de uma declaração de função tradicional (function nome() {}), 
+	// aqui a função não precisa ter nome (pode ser anônima) e só existe após a linha em que foi definida.
+	
+	
+	// Exemplo 1 - Sintaxe básica
+	// const saudacao → variável que armazena a função
+	// function() → função anônima
+	
+	const saudacao = function() {
+	  console.log("Olá, mundo!");
+	};
+	
+	saudacao();   // chamando a função
+	
+	// =============================================================================================================
+	
+	// Exemplo 2
+	
+	const soma = function(a, b) {
+	  return a + b;
+	};
+
+	console.log(soma(5, 3)); // Saída: 8
+	
+	
+	// =============================================================================================================
+	
+	// Exemplo 3
+	const numeros = [1, 2, 3, 4, 5];
+
+	const quadrados = numeros.map(function(num) {
+	  return num * num;
+	});
+
+	console.log(quadrados); // Saída: [1, 4, 9, 16, 25]
+
+    </script>
+</body>
+</html>

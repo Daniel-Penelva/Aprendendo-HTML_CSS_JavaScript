@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Validação Formulário</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f6f8;
+        padding: 30px;
+      }
+
+      h2 {
+        text-align: center;
+        color: #333;
+      }
+
+      form {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 350px;
+        margin: auto;
+      }
+
+      label {
+        display: block;
+        margin-top: 10px;
+        color: #444;
+      }
+
+      input {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 14px;
+        transition: 0.2s;
+      }
+
+      input:focus {
+        border-color: #007bff;
+        outline: none;
+      }
+
+      .erro {
+        border-color: red;
+        background-color: #ffe6e6;
+      }
+
+      .mensagem {
+        font-size: 14px;
+        margin-top: 3px;
+        color: red;
+        height: 16px;
+      }
+
+      button {
+        margin-top: 20px;
+        width: 100%;
+        padding: 10px;
+        border: none;
+        background-color: #007bff;
+        color: white;
+        font-size: 16px;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      #sucesso {
+        text-align: center;
+        color: green;
+        font-weight: bold;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Formulário de Cadastro</h2>
+
+    <form id="formulario">
+      <label>Nome:</label>
+      <input type="text" id="nome" placeholder="Digite seu nome" />
+      <p id="erroNome" class="mensagem"></p>
+
+      <label>Email:</label>
+      <input type="email" id="email" placeholder="Digite seu email" />
+      <p id="erroEmail" class="mensagem"></p>
+
+      <label>Idade:</label>
+      <input type="number" id="idade" placeholder="Digite sua idade" />
+      <p id="erroIdade" class="mensagem"></p>
+
+      <button type="submit">Cadastrar</button>
+    </form>
+
+    <p id="sucesso"></p>
+
+    <script>
+      const form = document.getElementById("formulario");
+      const nome = document.getElementById("nome");
+      const email = document.getElementById("email");
+      const idade = document.getElementById("idade");
+
+      const erroNome = document.getElementById("erroNome");
+      const erroEmail = document.getElementById("erroEmail");
+      const erroIdade = document.getElementById("erroIdade");
+      const sucesso = document.getElementById("sucesso");
+
+      // 🔹 Validação em tempo real
+      nome.addEventListener("input", () => {
+        if (nome.value.trim().length < 3) {
+          erroNome.textContent = "O nome deve ter pelo menos 3 caracteres.";
+          nome.classList.add("erro");
+        } else {
+          erroNome.textContent = "";
+          nome.classList.remove("erro");
+        }
+      });
+
+      email.addEventListener("input", () => {
+        if (!email.value.includes("@") || !email.value.includes(".")) {
+          erroEmail.textContent = "Digite um email válido.";
+          email.classList.add("erro");
+        } else {
+          erroEmail.textContent = "";
+          email.classList.remove("erro");
+        }
+      });
+
+      idade.addEventListener("input", () => {
+        const valor = parseInt(idade.value);
+        if (isNaN(valor) || valor < 18) {
+          erroIdade.textContent = "Idade mínima é 18 anos.";
+          idade.classList.add("erro");
+        } else {
+          erroIdade.textContent = "";
+          idade.classList.remove("erro");
+        }
+      });
+
+      // 🔹 Validação final ao enviar o formulário
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        sucesso.textContent = ""; // limpa mensagem anterior
+
+        if (
+          nome.classList.contains("erro") ||
+          email.classList.contains("erro") ||
+          idade.classList.contains("erro") ||
+          nome.value.trim() === "" ||
+          email.value.trim() === "" ||
+          idade.value.trim() === ""
+        ) {
+          alert("Por favor, corrija os campos inválidos antes de enviar.");
+          return;
+        }
+
+        sucesso.textContent = `Cadastro realizado com sucesso! Bem-vindo, ${nome.value}.`;
+        form.reset();
+      });
+    </script>
+  </body>
+</html>

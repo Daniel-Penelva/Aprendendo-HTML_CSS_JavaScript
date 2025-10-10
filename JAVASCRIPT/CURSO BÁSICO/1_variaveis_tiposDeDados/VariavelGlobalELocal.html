@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Testando JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+	<body>
+	
+	<h1> Váriavel Global e Local </h1>
+        <script type="text/JavaScript">
+		
+		<!-- Anotação - Aula 1: A função Alert gera uma caixa de texto. -->
+		function func01(){
+		
+		  var x = 10;  //Variavel local
+		  y = 20;      //Variavel Global
+		  
+		  alert("Valor de x da funcao01: " + x);
+		  alert("Valor de y da funcao01: " + y);
+		 };
+		  
+		func01();
+		  
+		function func02(){
+		  
+		  y++;
+		  
+		  alert("Valor de y da funcao02: " + y); //Acessível
+		  alert("Valor de x da funcao02: " + x); //Não Acessível
+		  
+		};
+		
+		func02();
+		  
+		</script>
+		
+    </body>
+
+</html>

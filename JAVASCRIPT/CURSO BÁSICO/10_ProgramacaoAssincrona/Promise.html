@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Promise (.then(), .catch())</h1>
+
+    <script>
+      /*
+          O que é uma Promise?
+          Uma Promise (promessa) representa um valor que ainda não está disponível, mas estará no futuro.
+          Ela é usada para lidar com operações assíncronas, como:
+              . buscar dados de uma API,
+              . ler um arquivo,
+              . esperar um tempo (setTimeout), etc.
+          */
+
+      // Exemplo 1 - Estrutura básica de uma Promise
+      const promessa = new Promise((resolve, reject) => {
+        // Simula uma operação demorada
+        setTimeout(() => {
+          const sucesso = true;
+
+          if (sucesso) {
+            resolve("Operação concluída com sucesso!");
+          } else {
+            reject("Erro: algo deu errado!");
+          }
+        }, 2000);
+      });
+
+      /*
+          resolve() → é chamada quando a operação dá certo
+          reject() → é chamada quando a operação dá errado
+          setTimeout() simula uma tarefa que demora 2 segundos.
+      */
+
+      // ===================================================================================
+
+      // Exemplo 2 - Consumindo uma Promise com .then() e .catch()
+
+      promessa
+        .then((resultado) => {
+          console.log(resultado); // "Operação concluída com sucesso!"
+        })
+        .catch((erro) => {
+          console.error(erro); // "Erro: algo deu errado!"
+        });
+
+      // .then() → executa se a promessa for resolvida com sucesso.
+      // .catch() → executa se a promessa for rejeitada (erro).
+
+      // ===================================================================================
+
+      // Exemplo 3 - Simulando requisição a uma API com Promise
+
+      function buscarUsuario() {
+        return new Promise((resolve, reject) => {
+          console.log("Buscando usuário...");
+          setTimeout(() => {
+            const encontrado = true;
+            if (encontrado) {
+              resolve({ nome: "Daniel", idade: 30 });
+            } else {
+              reject("Usuário não encontrado!");
+            }
+          }, 1500);
+        });
+      }
+
+      buscarUsuario()
+        .then((usuario) => {
+          console.log("Usuário encontrado:", usuario);
+        })
+        .catch((erro) => {
+          console.error(erro);
+        });
+
+      /*
+            Fluxo de execução:
+                1. Chama buscarUsuario(), que retorna uma Promise.
+                2. Espera 1.5 segundos (simulando busca na API).
+                3. Se encontrar o usuário, chama resolve() e executa o .then().
+                4. Se não encontrar, chama reject() e executa o .catch().
+        */
+
+      // ===================================================================================
+
+      // Exemplo 4 - Encadeando Promises
+      // Você pode encadear vários .then() para executar etapas em sequência.
+
+      buscarUsuario()
+        .then((usuario) => {
+          console.log("Usuário:", usuario.nome);
+          return "Buscando pedidos...";
+        })
+        .then((mensagem) => {
+          console.log(mensagem);
+        })
+        .catch((erro) => {
+          console.error("Erro:", erro);
+        });
+        
+        /*
+            Fluxo de execução:
+                1. Chama buscarUsuario().
+                2. Se sucesso, executa o primeiro .then(), que retorna uma nova mensagem.
+                3. O próximo .then() recebe essa mensagem e a imprime.
+                4. Se houver erro em qualquer etapa, o .catch() captura.
+        */
+
+    </script>
+  </body>
+</html>

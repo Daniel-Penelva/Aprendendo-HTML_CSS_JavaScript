@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<head>
+  <title>Formulário</title>
+  <script>
+    function olaMundo() {
+      alert("Olá Mundo!");
+    }
+
+    function idUsuario() {
+      var id = document.querySelector("#custId");
+      var texto = id.value;
+      alert(texto);
+    }
+  </script>
+</head>
+<html>
+  <body>
+    <h1>Exemplo Formulário</h1>
+
+    <form
+      action="/action_page.php"
+      target="_blank"
+      method="post"
+      autocomplete="on"
+      novalidate
+      oninput="x.value=parseInt(a.value)+parseInt(b.value)"
+    >
+      <fieldset>
+        <legend>Cadastro:</legend>
+        <label for="fname">Nome:</label><br />
+        <input type="text" id="fname" name="fname" value="John" /><br />
+        <label for="lname">Sobrenome:</label><br />
+        <input type="text" id="lname" name="lname" value="Doe" /><br /><br />
+
+        <p>
+          Em seguida, tente definir o preenchimento automático como
+          "desativado".
+        </p>
+        <label for="fname">Idade:</label>
+        <input type="text" id="fidade" name="fidade" /><br /><br />
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" /><br /><br />
+
+        <p>Radio Buttons - Escolha sua linguagem favorita:</p>
+        <input type="radio" id="html" name="fav_language" value="HTML" />
+        <label for="html">HTML</label><br />
+        <input type="radio" id="css" name="fav_language" value="CSS" />
+        <label for="css">CSS</label><br />
+        <input
+          type="radio"
+          id="javascript"
+          name="fav_language"
+          value="JavaScript"
+        />
+        <label for="javascript">JavaScript</label><br /><br />
+
+        <p>Define a checkbox - Escolha a sua opção</p>
+        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" />
+        <label for="vehicle1"> Eu tenho bicicleta</label><br />
+        <input type="checkbox" id="vehicle2" name="vehicle2" value="Car" />
+        <label for="vehicle2"> Eu tenho carro</label><br />
+        <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat" />
+        <label for="vehicle3"> Eu tenho barco</label><br /><br />
+
+        <p>O elemento do botão</p>
+        <button type="button" onclick="olaMundo();">Clique em mim!</button>
+        <br /><br />
+        <button type="button" onclick="alert('OLÁ HTML COM JS!')">
+          Clique em mim!
+        </button>
+
+        <p>O select Element - O elemento select define uma lista suspensa:</p>
+        <label for="cars">Escolha o carro:</label>
+        <select id="cars" name="cars">
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="fiat">Fiat</option>
+          <option value="audi">Audi</option>
+        </select>
+        <br /><br />
+
+        <p>Você pode pré-selecionar uma opção com o atributo selecionado:</p>
+        <label for="cars">Choose a car:</label>
+        <select id="cars" name="cars">
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="fiat" selected>Fiat</option>
+          <option value="audi">Audi</option>
+        </select>
+
+        <p>
+          Use o atributo size para especificar o número de valores visíveis.
+        </p>
+        <label for="cars">Escolha o carro:</label>
+        <select id="cars" name="cars" size="3">
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="fiat">Fiat</option>
+          <option value="audi">Audi</option></select
+        ><br /><br />
+
+        <p>
+          Use o atributo múltiplo para permitir que o usuário selecione mais de
+          um valor.
+        </p>
+        <p>
+          Mantenha pressionado o botão Ctrl (Windows) / Command (Mac) para
+          selecionar várias opções.
+        </p>
+        <label for="cars">Escolha o carro:</label>
+        <select id="cars" name="cars" size="4" multiple>
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="fiat">Fiat</option>
+          <option value="audi">Audi</option></select
+        ><br /><br />
+
+        <p>O elemento textarea define um campo de entrada de várias linhas.</p>
+        <textarea name="message" rows="10" cols="30">
+O gato estava brincando no jardim.</textarea
+        ><br /><br />
+
+        <p>Use CSS para alterar o tamanho da textarea:</p>
+        <textarea name="message" style="width: 200px; height: 600px">
+O gato estava brincando no jardim.</textarea
+        ><br /><br />
+
+        <p>
+          O elemento datalist especifica uma lista de opções predefinidas para
+          um elemento de entrada.
+        </p>
+        <input list="browsers" name="browser" />
+        <datalist id="browsers">
+          <option value="Internet Explorer"></option>
+          <option value="Firefox"></option>
+          <option value="Chrome"></option>
+          <option value="Opera"></option>
+          <option value="Safari"></option>
+        </datalist>
+        <br /><br />
+
+        <p>O elemento de saída representa o resultado de um cálculo:</p>
+
+        <br />
+        0
+        <input type="range" id="a" name="a" value="50" />
+        100 +
+        <input type="number" id="b" name="b" value="50" />
+        =
+        <output name="x" for="a b"></output>
+        <br /><br />
+
+        <label for="pwd">Senha:</label><br />
+        <input type="password" id="pwd" name="pwd" /><br /><br />
+
+        <p>
+          O <strong>input type="color"</strong> é usado para campos de entrada
+          que devem conter uma cor.
+        </p>
+        <label for="favcolor">Selecione sua cor favorita:</label>
+        <input type="color" id="favcolor" name="favcolor" value="#ff0000" />
+        <br /><br />
+
+        <p>
+          O <strong>input type="date"</strong> é usado para campos de entrada
+          que devem conter uma data.
+        </p>
+        <label for="birthday">Aniversário:</label>
+        <input type="date" id="birthday" name="birthday" />
+        <br /><br />
+
+        <p>Use os atributos min e max para adicionar restrições às datas:</p>
+        <label for="datemin">Insira uma data após 2000-01-01:</label>
+        <input
+          type="date"
+          id="datemin"
+          name="datemin"
+          min="2000-01-02"
+        /><br /><br />
+
+        <label for="datemax">Insira uma data antes de 1980-01-01:</label>
+        <input type="date" id="datemax" name="datemax" max="1979-12-31" />
+        <br /><br />
+
+        <label for="birthdaytime">Aniversário (data e hora):</label>
+        <input type="datetime-local" id="birthdaytime" name="birthdaytime" />
+        <br /><br />
+
+        <p>
+          Mostrar um campo de seleção de arquivo que permite que um arquivo seja
+          escolhido para upload:
+        </p>
+        <label for="myfile">Selecionar arquivo:</label>
+        <input type="file" id="myfile" name="myfile" /><br /><br />
+
+        <p>Um campo oculto (procure no código-fonte)</p>
+        <label for="fname">Click para saber o Id do usuario:</label>
+        <input type="hidden" id="custId" name="custId" value="3487" />
+        <input type="submit" value="id usuario" onclick="idUsuario();" />
+        <br /><br />
+
+        <p>
+          O <strong>tipo de entrada="mês"</strong> permite que o usuário
+          selecione um mês e um ano.
+        </p>
+        <label for="bdaymonth">Aniversário (mês e ano):</label>
+        <input type="month" id="bdaymonth" name="bdaymonth" />
+        <br /><br />
+
+        <p>
+          Você pode usar os atributos min e max para adicionar restrições
+          numéricas no campo de entrada:
+        </p>
+        <label for="quantity">Quantidade (entre 1 e 5):</label>
+        <input type="number" id="quantity" name="quantity" min="1" max="5" />
+        <br /><br />
+
+        <p>
+          RESTRIÇÃO DE ENTRADAS - Dependendo do suporte do navegador: etapas
+          fixas serão aplicadas no campo de entrada.
+        </p>
+        <label for="quantity">Quantity:</label>
+        <input
+          type="number"
+          id="quantity"
+          name="quantity"
+          min="0"
+          max="100"
+          step="10"
+          value="30"
+        />
+        <br /><br />
+
+        <p>
+          INTERVALO TIPO DE ENTRADA - Dependendo do suporte do navegador: etapas
+          fixas serão aplicadas no campo de entrada.
+        </p>
+        <p>
+          Dependendo do suporte do navegador: o tipo de entrada "intervalo" pode
+          ser exibido como um controle deslizante.
+        </p>
+        <label for="vol">Volume (entre 0 e 50):</label>
+        <input type="range" id="vol" name="vol" min="0" max="50" />
+        <br /><br />
+
+        <label for="gsearch">Pesquisa Google:</label>
+        <input type="search" id="gsearch" name="gsearch" />
+        <br /><br />
+
+        <p>
+          O <strong>input type="tel"</strong> é usado para campos de entrada que
+          devem conter um número de telefone:
+        </p>
+
+        <label for="phone">Enter a phone number:</label><br /><br />
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          placeholder="123-45-678"
+          pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+          required
+        /><br /><br />
+        <small>Format: 123-45-678</small><br /><br />
+        <p>Exemplo telefone 2</p>
+        <label for="phone">Enter a phone number:</label><br /><br />
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          placeholder="99343-4578"
+          pattern="[0-9]{5}-[0-9]{4}"
+          required
+        /><br /><br />
+        <small>Format: 99343-4578</small><br /><br />
+
+        <p>
+          Se o navegador for compatível, um seletor de horário será exibido ao
+          inserir o campo de entrada.
+        </p>
+        <label for="appt">Selecionar o tempo:</label>
+        <input type="time" id="appt" name="appt" />
+        <br /><br />
+
+        <p>
+          O <strong>input type="url"</strong> é usado para campos de entrada que
+          devem conter um endereço URL:
+        </p>
+        <label for="homepage">Add sua homepage:</label>
+        <input type="url" id="homepage" name="homepage" />
+        <br /><br />
+
+        <p>
+          O <strong>tipo de entrada="semana"</strong> permite que o usuário
+          selecione uma semana e um ano.
+        </p>
+        <label for="week">Selecionar a semana:</label>
+        <input type="week" id="week" name="week" />
+        <br /><br />
+
+        <p>
+          O atributo readonly especifica que um campo de entrada deve ser
+          somente leitura (não pode ser alterado):
+        </p>
+        <label for="fname">Nome:</label><br />
+        <input
+          type="text"
+          id="fname"
+          name="fname"
+          value="John"
+          readonly
+        /><br />
+
+        <p>
+          O atributo desativado especifica que um campo de entrada deve ser
+          desativado (inutilizável e não clicável):
+        </p>
+        <label for="fname">Nome:</label><br />
+        <input
+          type="text"
+          id="fname"
+          name="fname"
+          value="John"
+          disabled
+        /><br />
+
+        <p>
+          O atributo size especifica a largura (em caracteres) de um campo de
+          entrada:
+        </p>
+        <label for="fname">Nome:</label><br />
+        <input type="text" id="fname" name="fname" size="20" /><br />
+
+        <p>
+          O atributo maxlength especifica o número máximo de caracteres
+          permitidos em um campo de entrada:
+        </p>
+        <label for="pin">PIN:</label><br />
+        <input
+          type="text"
+          id="pin"
+          name="pin"
+          maxlength="4"
+          size="4"
+        /><br /><br />
+
+        <p>
+          O atributo padrão especifica uma expressão regular com a qual o valor
+          do elemento de entrada é verificado.
+        </p>
+        <label for="country_code">Country code:</label>
+        <input
+          type="text"
+          id="country_code"
+          name="country_code"
+          pattern="[A-Za-z]{3}"
+          title="Three letter country code"
+        /><br /><br />
+
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          placeholder="Digite o telefone"
+          pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+        /><br /><br />
+
+        <p>
+          O atributo obrigatório especifica que um campo de entrada deve ser
+          preenchido antes de enviar o formulário.
+        </p>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required />
+        <br /><br />
+
+        <p>
+          O atributo step especifica os intervalos de números válidos para um
+          elemento de entrada.
+        </p>
+        <label for="points">Points:</label>
+        <input type="number" id="points" name="points" step="3" />
+        <br /><br />
+
+        <p>
+          O atributo autofocus especifica que o campo de entrada deve obter o
+          foco automaticamente quando a página for carregada.
+        </p>
+        <label for="fname">Nome:</label><br />
+        <input type="text" id="fname" name="fname" autofocus /><br />
+
+        <br /><br />
+        <p>
+          O <strong>input type="reset"</strong> define um botão de redefinição
+          que redefine todos os valores do formulário para seus valores padrão:
+        </p>
+        <input type="reset" />
+
+        <input type="submit" value="Submit" />
+      </fieldset>
+    </form>
+
+    <h1>Explicações:</h1>
+    <p>
+      Se você clicar no botão "Enviar", os dados do formulário serão enviados
+      para uma página chamado "/action_page.php".
+    </p>
+
+    <h2>HTML Formulário</h2>
+    <p>
+      Um formulário HTML é usado para coletar a entrada do usuário. A entrada do
+      usuário geralmente é enviada a um servidor para processamento.
+    </p>
+
+    <p>
+      O elemento HTML form é usado para criar um formulário HTML para entrada do
+      usuário:
+    </p>
+    <p>
+      O form elemento é um contêiner para diferentes tipos de elementos de
+      entrada, como: campos de texto, caixas de seleção, botões de opção, botões
+      de envio, etc.
+    </p>
+
+    <p>
+      O elemento HTML input é o elemento de formulário mais usado. Um input
+      elemento pode ser exibido de várias maneiras, dependendo do type atributo.
+    </p>
+
+    <h2>input text</h2>
+    <p>
+      O (input type="text") define um campo de entrada de linha única para
+      entrada de texto.
+    </p>
+
+    <h2>Atributo value</h2>
+    <p>
+      O value atributo de entrada especifica um valor inicial para um campo de
+      entrada.
+    </p>
+
+    <h2>Os elementos fieldset e legend</h2>
+    <p>
+      O fieldset elemento é usado para agrupar dados relacionados em um
+      formulário.
+    </p>
+    <p>O legend elemento define uma legenda para o fieldset elemento.</p>
+
+    <h2>label</h2>
+    <p>
+      A label tag define um rótulo para muitos elementos de formulário. O label
+      elemento é útil para usuários de leitores de tela, porque o leitor de tela
+      lerá o rótulo em voz alta quando o usuário focar no elemento de entrada.
+    </p>
+
+    <p>
+      O label elemento também ajuda os usuários que têm dificuldade em clicar em
+      regiões muito pequenas (como botões de opção ou caixas de seleção) -
+      porque quando o usuário clica no texto dentro do label elemento, ele
+      alterna o botão de opção/caixa de seleção. O for atributo da label tag
+      deve ser igual ao id atributo do input elemento para uni-los.
+    </p>
+
+    <h2>input radio</h2>
+    <p>
+      O (input type="radio") define um botão de opção. Os botões de opção
+      permitem que um usuário selecione UMA dentre um número limitado de opções.
+    </p>
+
+    <h2>input checkbox</h2>
+    <p>
+      Define uma caixa de seleção. As caixas de seleção permitem que um usuário
+      selecione ZERO ou MAIS opções de um número limitado de opções.
+    </p>
+
+    <h2>input submit</h2>
+    <p>
+      Define um botão para enviar os dados do formulário para um manipulador de
+      formulário.
+    </p>
+    <p>
+      O manipulador de formulário geralmente é um arquivo no servidor com um
+      script para processar dados de entrada.
+    </p>
+    <p>
+      O manipulador de formulário é especificado no action atributo do
+      formulário.
+    </p>
+
+    <h2>Atributo name do input</h2>
+    <p>
+      Observe que cada campo de entrada deve ter um nameatributo a ser
+      submetido.
+    </p>
+    <p>
+      Se o nameatributo for omitido, o valor do campo de entrada não será
+      enviado.
+    </p>
+
+    <h2>Atributo action do input</h2>
+    <p>
+      O action atributo define a ação a ser executada quando o formulário é
+      enviado.
+    </p>
+    <p>
+      Normalmente, os dados do formulário são enviados para um arquivo no
+      servidor quando o usuário clica no botão enviar.
+    </p>
+    <p>
+      No exemplo abaixo, os dados do formulário são enviados para um arquivo
+      chamado "action_page.php". Este arquivo contém um script do lado do
+      servidor que manipula os dados do formulário.
+    </p>
+
+    <h2>Atributo target (alvo) do input</h2>
+    <p>
+      O target atributo especifica onde exibir a resposta recebida após o envio
+      do formulário. O targetatributo pode ter um dos seguintes valores.
+    </p>
+
+    <p>Valores do atributo target:</p>
+    <p>_blank = A resposta é exibida em uma nova janela ou guia</p>
+    <p>_self = A resposta é exibida na janela atual</p>
+    <p>_parent = A resposta é exibida no quadro pai</p>
+    <p>_top = A resposta é exibida em todo o corpo da janela</p>
+    <p>framename = A resposta é exibida em um iframe nomeado</p>
+
+    <h2>Atributo method (método) do input</h2>
+    <p>
+      O method atributo especifica o método HTTP a ser usado ao enviar os dados
+      do formulário.
+    </p>
+    <p>
+      Os dados do formulário podem ser enviados como variáveis ​​de URL (com
+      method="get") ou como pós-transação HTTP (com method="post").
+    </p>
+    <p>O método HTTP padrão ao enviar dados de formulário é GET.</p>
+
+    <h3>Bom Saber: Observações sobre GET:</h3>
+    <ul>
+      <li>Anexa os dados do formulário ao URL, em pares de nome/valor</li>
+      <li>
+        NUNCA use GET para enviar dados confidenciais! (os dados do formulário
+        enviado são visíveis na URL!)
+      </li>
+      <li>O comprimento de um URL é limitado (2048 caracteres)</li>
+      <li>
+        Útil para envios de formulários em que um usuário deseja marcar o
+        resultado como favorito
+      </li>
+      <li>
+        GET é bom para dados não seguros, como strings de consulta no Google
+      </li>
+    </ul>
+
+    <h3>Bom Saber: Observações sobre POST:</h3>
+    <ul>
+      <li>
+        Anexa os dados do formulário dentro do corpo da solicitação HTTP (os
+        dados do formulário enviado não são mostrados na URL)
+      </li>
+      <li>
+        O POST não tem limitações de tamanho e pode ser usado para enviar
+        grandes quantidades de dados.
+      </li>
+      <li>Os envios de formulário com POST não podem ser marcados</li>
+      <li>
+        Dica: Sempre use POST se os dados do formulário contiverem informações
+        confidenciais ou pessoais!
+      </li>
+    </ul>
+
+    <h2>Atributo autocomplete (preenchimento automatico) do input</h2>
+    <p>
+      O autocomplete atributo especifica se um formulário deve ter o
+      preenchimento automático ativado ou desativado.
+    </p>
+    <p>
+      Quando o preenchimento automático está ativado, o navegador preenche
+      automaticamente os valores com base nos valores que o usuário inseriu
+      anteriormente.
+    </p>
+
+    <h2>Atributo novalidate do input</h2>
+    <p>
+      O novalidate atributo é um atributo booleano. Quando presente, especifica
+      que os dados do formulário (input) não devem ser validados quando
+      enviados.
+    </p>
+
+    <h2>O elemento button</h2>
+    <p>O button elemento define um botão clicável</p>
+
+    <h2>Elemento select</h2>
+    <p>O select elemento define uma lista suspensa.</p>
+    <p>Os option elementos definem uma opção que pode ser selecionada.</p>
+    <p>Por padrão, o primeiro item na lista suspensa é selecionado.</p>
+    <p>
+      Para definir uma opção pré-selecionada, adicione o (selected) atributo à
+      opção
+    </p>
+
+    <h2>Valores Visíveis - atributo size do select</h2>
+    <p>Use o size atributo para especificar o número de valores visíveis.</p>
+
+    <h2>Atributo multiple do select</h2>
+    <p>
+      Use o multipleatributo para permitir que o usuário selecione mais de um
+      valor
+    </p>
+
+    <h2>Element textarea</h2>
+    <p>
+      O textarea elemento define um campo de entrada de várias linhas (uma área
+      de texto)
+    </p>
+    <p>
+      O rowsatributo especifica o número visível de linhas em uma área de texto.
+    </p>
+    <p>O colsatributo especifica a largura visível de uma área de texto.</p>
+
+    <h2>O elemento datalist</h2>
+    <p>
+      O datalist elemento especifica uma lista de opções predefinidas para um
+      input elemento.
+    </p>
+    <p>
+      Os usuários verão uma lista suspensa das opções predefinidas à medida que
+      inserem os dados.
+    </p>
+    <p>
+      O list atributo do input elemento deve referir-se ao idatributo do
+      datalist elemento.
+    </p>
+
+    <h2>O elemento saída (output)</h2>
+    <p>
+      O output elemento representa o resultado de um cálculo (como um realizado
+      por um script).
+    </p>
+
+    <h2>Atributo password do input</h2>
+    <p>Define um campo de senha.</p>
+
+    <h2>Atributo reset do input</h2>
+    <p>Reinicialização do tipo de entrada</p>
+    <p>
+      Define um botão de redefinição que redefinirá todos os valores do
+      formulário para seus valores padrão:
+    </p>
+
+    <h2>Atributo color do input</h2>
+    <p>Cor do tipo de entrada</p>
+    <p>É usado para campos de entrada que devem conter uma cor.</p>
+    <p>
+      Dependendo do suporte do navegador, um seletor de cores pode aparecer no
+      campo de entrada.
+    </p>
+
+    <h2>Atributo date do input</h2>
+    <p>Data do tipo de entrada</p>
+    <p>É usado para campos de entrada que devem conter uma data.</p>
+    <p>
+      Você também pode usar os atributos mine para adicionar restrições às
+      datas:max
+    </p>
+    <p>
+      O (input type="datetime-local") especifica um campo de entrada de data e
+      hora, sem fuso horário.
+    </p>
+    <p>
+      Dependendo do suporte do navegador, um seletor de data pode aparecer no
+      campo de entrada.
+    </p>
+
+    <h2>Atributo file do input</h2>
+    <p>
+      O (input type="file") define um campo de seleção de arquivo e um botão
+      "Procurar" para uploads de arquivos.
+    </p>
+
+    <h2>Atributo hidden do input</h2>
+    <p>Tipo de entrada oculto - (input type="hidden")</p>
+    <p>
+      Um campo oculto permite que os desenvolvedores da Web incluam dados que
+      não podem ser vistos ou modificados pelos usuários quando um formulário é
+      enviado.
+    </p>
+    <p>
+      Um campo oculto geralmente armazena o registro do banco de dados que
+      precisa ser atualizado quando o formulário é enviado.
+    </p>
+    <p>
+      Observação: embora o valor não seja exibido para o usuário no conteúdo da
+      página, ele fica visível (e pode ser editado) usando qualquer ferramenta
+      de desenvolvedor do navegador ou a funcionalidade "Exibir código-fonte".
+      Não use entradas ocultas como forma de segurança!
+    </p>
+
+    <h2>Atributo month do input</h2>
+    <p>Tipo de entrada do mês - (input type="month")</p>
+    <p>Permite ao usuário selecionar um mês e um ano.</p>
+    <p>
+      Dependendo do suporte do navegador, um seletor de data pode aparecer no
+      campo de entrada.
+    </p>
+
+    <h2>Atributo range do input</h2>
+    <p>(input type="range")</p>
+    <p>
+      define um controle para inserir um número cujo valor exato não é
+      importante (como um controle deslizante). O intervalo padrão é de 0 a 100.
+      No entanto, você pode definir restrições sobre quais números são aceitos
+      com os atributos min, maxe :step.
+    </p>
+
+    <h2>Atributo search do input</h2>
+    <p>Pesquisa de Tipo de entrada - (input type="search")</p>
+    <p>
+      É usado para campos de pesquisa (um campo de pesquisa se comporta como um
+      campo de texto normal).
+    </p>
+
+    <h2>Atributo tel do input</h2>
+    <p>(input type="tel")</p>
+    <p>
+      É usado para campos de entrada que devem conter um número de telefone.
+    </p>
+
+    <h2>Atributo time do input</h2>
+    <p>(input type="time")</p>
+    <p>Permite ao usuário selecionar um horário (sem fuso horário).</p>
+    <p>
+      Dependendo do suporte do navegador, um seletor de tempo pode aparecer no
+      campo de entrada.
+    </p>
+
+    <h2>Atributo url do input</h2>
+    <p>(input type="url")</p>
+    <p>É usado para campos de entrada que devem conter um endereço URL.</p>
+    <p>
+      Dependendo do suporte do navegador, o campo url pode ser validado
+      automaticamente quando enviado.
+    </p>
+    <p>
+      Alguns smartphones reconhecem o tipo de URL e adicionam ".com" ao teclado
+      para corresponder à entrada do URL.
+    </p>
+
+    <h2>Atributo week do input</h2>
+    <p>(input type="week")</p>
+    <p>Permite ao usuário selecionar uma semana e um ano.</p>
+    <p>
+      Dependendo do suporte do navegador, o campo url pode ser validado
+      automaticamente quando enviado.
+    </p>
+
+    <h2>Atributo readonly do input</h2>
+    <p>
+      O readonly atributo de entrada especifica que um campo de entrada é
+      somente leitura.
+    </p>
+    <p>
+      Um campo de entrada somente leitura não pode ser modificado (no entanto,
+      um usuário pode tabular até ele, destacá-lo e copiar o texto dele).
+    </p>
+    <p>
+      O valor de um campo de entrada somente leitura será enviado ao enviar o
+      formulário!
+    </p>
+
+    <h2>Atributo disabled do input</h2>
+    <p>
+      O disabled atributo de entrada especifica que um campo de entrada deve ser
+      desabilitado.
+    </p>
+    <p>Um campo de entrada desabilitado é inutilizável e não clicável.</p>
+    <p>
+      O valor de um campo de entrada desativado não será enviado ao enviar o
+      formulário!
+    </p>
+
+    <h2>Atributo size do input</h2>
+    <p>
+      O size atributo de entrada especifica a largura visível, em caracteres, de
+      um campo de entrada.
+    </p>
+    <p>O valor padrão para sizeé 20.</p>
+    <p>
+      Observação: o sizeatributo funciona com os seguintes tipos de entrada:
+      texto, pesquisa, tel, url, email e senha.
+    </p>
+
+    <h2>Atributo maxlength do input</h2>
+    <p>
+      O maxlength atributo de entrada especifica o número máximo de caracteres
+      permitidos em um campo de entrada.
+    </p>
+    <p>
+      Observação: quando a maxlengthé definido, o campo de entrada não aceitará
+      mais do que o número especificado de caracteres. No entanto, esse atributo
+      não fornece nenhum feedback. Portanto, se você deseja alertar o usuário,
+      deve escrever o código JavaScript.
+    </p>
+
+    <h2>Atributo pattern do input</h2>
+    <p>
+      O pattern atributo de entrada especifica uma expressão regular com a qual
+      o valor do campo de entrada é verificado quando o formulário é enviado.
+    </p>
+    <p>
+      O pattern atributo funciona com os seguintes tipos de entrada: texto,
+      data, pesquisa, url, tel, e-mail e senha.
+    </p>
+    <p>
+      Dica: Use o atributo de título global para descrever o padrão para ajudar
+      o usuário.
+    </p>
+
+    <h2>Atributo placeholder do input - O atributo de espaço reservado</h2>
+    <p>
+      O placeholderatributo de entrada especifica uma dica curta que descreve o
+      valor esperado de um campo de entrada (um valor de amostra ou uma breve
+      descrição do formato esperado).
+    </p>
+    <p>
+      A dica curta é exibida no campo de entrada antes que o usuário insira um
+      valor.
+    </p>
+    <p>
+      O placeholderatributo funciona com os seguintes tipos de entrada: texto,
+      pesquisa, url, tel, email e senha.
+    </p>
+
+    <h2>Atributo required do input - O Atributo Necessário</h2>
+    <p>
+      O required atributo de entrada especifica que um campo de entrada deve ser
+      preenchido antes de enviar o formulário.
+    </p>
+    <p>
+      O required atributo funciona com os seguintes tipos de entrada: texto,
+      pesquisa, url, tel, e-mail, senha, selecionadores de data, número, caixa
+      de seleção, rádio e arquivo.
+    </p>
+
+    <h2>Atributo placeholder do input - O atributo de espaço reservado</h2>
+    <p>
+      O placeholderatributo de entrada especifica uma dica curta que descreve o
+      valor esperado de um campo de entrada (um valor de amostra ou uma breve
+      descrição do formato esperado).
+    </p>
+    <p>
+      A dica curta é exibida no campo de entrada antes que o usuário insira um
+      valor.
+    </p>
+    <p>
+      O placeholderatributo funciona com os seguintes tipos de entrada: texto,
+      pesquisa, url, tel, email e senha.
+    </p>
+
+    <h2>Atributo step do input</h2>
+    <p>
+      O step atributo de entrada especifica os intervalos de número legal para
+      um campo de entrada. Exemplo: se step="3", os números legais podem ser -3,
+      0, 3, 6, etc.
+    </p>
+    <p>
+      Dica: Este atributo pode ser usado junto com os atributos max e min para
+      criar um intervalo de valores legais.
+    </p>
+    <p>
+      O stepatributo funciona com os seguintes tipos de entrada: número,
+      intervalo, data, data-hora-local, mês, hora e semana.
+    </p>
+
+    <h2>Atributo autofocus do input</h2>
+    <p>
+      O autofocusatributo de entrada especifica que um campo de entrada deve
+      obter foco automaticamente quando a página for carregada.
+    </p>
+  </body>
+</html>

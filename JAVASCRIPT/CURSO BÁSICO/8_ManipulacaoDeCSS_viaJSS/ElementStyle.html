@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      /*Exemplo 8*/
+
+      .ativo {
+        background-color: black;
+        color: white;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>element.style</h1>
+
+    <!-- Exemplo 4-->
+    <h1 id="titulo">Olá Mundo!</h1>
+
+    <hr />
+
+    <!-- Exemplo 5-->
+    <h2 id="title">Clique no botão abaixo:</h2>
+    <button onclick="mudarEstilo()">Mudar Estilo</button>
+
+    <hr />
+
+    <!-- Exemplo 7-->
+
+    <button id="btn">Passe o mouse aqui</button>
+
+    <hr />
+
+
+    <!-- Exemplo 8-->
+
+    <h2 id="novoTitulo">Clique para alternar o estilo</h2>
+
+    <hr />
+
+
+    <script>
+      // O que é o element.style?
+      // O element.style é uma propriedade em JavaScript que permite acessar e modificar os estilos CSS diretamente em um elemento HTML específico.
+      // Ele representa o atributo "style" do elemento, que contém regras de estilo inline aplicadas diretamente ao elemento.
+      // Cada elemento HTML (como <div>, <h1>, <button>) tem uma propriedade chamada .style, que permite acessar e modificar estilos CSS diretamente via JavaScript.
+      // sintaxe: elemento.style.propriedadeCSS = "valor";
+
+      // Exemplo 1 - Modificando estilos inline
+      const elemento = document.createElement("div");
+      elemento.textContent = "Olá, Mundo!";
+      document.body.appendChild(elemento);
+
+      // Modificando estilos usando element.style
+      elemento.style.color = "blue"; // Define a cor do texto como azul
+      elemento.style.backgroundColor = "lightgray"; // Define a cor de fundo como cinza claro
+      elemento.style.padding = "10px"; // Adiciona um padding de 10 pixels
+      elemento.style.border = "2px solid black"; // Adiciona uma borda preta de 2 pixels
+
+      // Exemplo 2 - Acessando estilos existentes
+      console.log("Cor do texto:", elemento.style.color); // Saída: Cor do texto: blue
+      console.log("Cor de fundo:", elemento.style.backgroundColor); // Saída: Cor de fundo: lightgray
+
+      // Exemplo 3 - Removendo estilos inline
+      elemento.style.color = ""; // Remove a cor do texto definida inline
+      console.log("Cor do texto após remoção:", elemento.style.color); // Saída: Cor do texto após remoção: (string vazia)
+
+      // Exemplo 4 - Modificando estilos de um elemento existente no HTML
+
+      const titulo = document.getElementById("titulo");
+      titulo.style.color = "blue";
+      titulo.style.fontSize = "40px";
+      titulo.style.textAlign = "center";
+      titulo.style.backgroundColor = "lightgray";
+
+      /*
+        Quando a propriedade CSS tem hífen, como background-color, no JavaScript você escreve em camelCase, ou seja: backgroundColor
+
+            CSS                   JavaScript
+        background-color	    backgroundColor
+        font-size	            fontSize
+        text-align	            textAlign
+        border-radius	        borderRadius
+        margin-top	            marginTop
+        z-index	                zIndex
+        */
+
+      // Exemplo 5 - com botão
+
+      function mudarEstilo() {
+        const title = document.getElementById("title");
+        title.style.color = "white";
+        title.style.backgroundColor = "black";
+        title.style.padding = "20px";
+        title.style.borderRadius = "10px";
+      }
+
+      // Exemplo 6 - Alterando multiplas propriedades com style.cssText
+
+      title.style.cssText =
+        "color: yellow; background-color: blue; font-size: 30px; padding: 15px; border-radius: 5px;";
+
+      // Exemplo 7 - Estilos dinâmicos e interativos
+      // Você pode criar efeitos visuais com base em eventos do usuário (como onmouseover e onmouseout)
+
+      const btn = document.getElementById("btn");
+
+      btn.onmouseover = () => {
+        btn.style.backgroundColor = "green";
+        btn.style.color = "white";
+      };
+
+      btn.onmouseout = () => {
+        btn.style.backgroundColor = "lightgray";
+        btn.style.color = "black";
+      };
+
+      // Exemplo 8 - Alternando estilos com classList
+      // Embora element.style seja ótimo para mudanças pontuais, para projetos maiores é melhor usar classes CSS e
+      // alterá-las via JavaScript com classList.
+
+      const novoTitulo = document.getElementById("novoTitulo");
+      novoTitulo.onclick = () => {
+        novoTitulo.classList.toggle("ativo");  // .ativo é a classe CSS definida no <style> no ínicio do arquivo.
+      };
+
+    </script>
+  </body>
+</html>

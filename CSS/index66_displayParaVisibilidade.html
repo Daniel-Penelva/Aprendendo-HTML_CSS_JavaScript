@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /* display inline */
+      li {
+        display: inline;
+      }
+
+      /* display block */
+      span {
+        display: block;
+      }
+
+      a {
+        display: block;
+      }
+
+      /*display none */
+      h1.none {
+        display: none;
+      }
+
+      /* visibility hidden */
+      h1.hidden {
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Explicação</h1>
+    <h2>Layout CSS - display para visibilidade</h2>
+
+    <p>
+      A displaypropriedade é a propriedade CSS mais importante para controlar o
+      layout.
+    </p>
+
+    <p>A displaypropriedade especifica se/como um elemento é exibido.</p>
+
+    <p>
+      Cada elemento HTML tem um valor de exibição padrão, dependendo do tipo de
+      elemento. O valor de exibição padrão para a maioria dos elementos é:
+    </p>
+
+    <p>Inline - visibilidade na mesma linha</p>
+    <p>Block - visibilidade em bloco</p>
+    <p>none - visibilidade oculta</p>
+
+    <h1>
+      ------------------------------------------------------------------------------
+    </h1>
+    <h3>Exemplo display inline</h3>
+    <h4>Exibir uma lista de links como um menu horizontal:</h4>
+
+    <ul>
+      <li><a href="/html/default.asp" target="_blank">HTML</a></li>
+      <li><a href="/css/default.asp" target="_blank">CSS</a></li>
+      <li><a href="/js/default.asp" target="_blank">JavaScript</a></li>
+    </ul>
+
+    <h1>
+      ------------------------------------------------------------------------------
+    </h1>
+    <h3>Exemplo display block</h3>
+    <h4>Exibir elementos de extensão como elementos de bloco</h4>
+
+    <span>Uma propriedade de exibição com</span>
+    <span>um valor de "bloco" resulta em</span>
+    <span>uma quebra de linha entre cada elemento de extensão.</span>
+
+    <br />
+
+    <a href="/html/default.asp" target="_blank">HTML</a>
+    <a href="/css/default.asp" target="_blank">CSS</a>
+    <a href="/js/default.asp" target="_blank">JavaScript</a>
+
+    <h1>
+      ------------------------------------------------------------------------------
+    </h1>
+    <h3>Exemplo display none (oculto)</h3>
+    <p>
+      Ocultar um elemento pode ser feito definindo a display propriedade como
+      none. O elemento ficará oculto e a página será exibida como se o elemento
+      não estivesse lá.
+    </p>
+
+    <h1>Este é um título visível</h1>
+    <h1 class="none">Este é um título oculto</h1>
+    <p>Observe que o elemento h1 com display: none; não ocupa espaço.</p>
+
+    <h1>
+      ------------------------------------------------------------------------------
+    </h1>
+    <h3>Exemplo visibility hidden</h3>
+    <p>
+      No entanto, o elemento ainda ocupará o mesmo espaço de antes. O elemento
+      ficará oculto, mas ainda afetará o layout
+    </p>
+
+    <h1>Este é um título visível</h1>
+    <h1 class="hidden">Este é um título oculto</h1>
+    <p>Observe que o cabeçalho oculto ainda ocupa espaço.</p>
+  </body>
+</html>

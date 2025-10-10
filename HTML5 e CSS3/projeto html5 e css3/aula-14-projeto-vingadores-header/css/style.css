@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+/*  A variavel display + o valor flex determina que a posição da lista fique flutuando (vai para cima) para ser manipulada 
+    A variavel justify-content + o valor space-around posiciona a lista no canto da tela */
+header {
+    background-color: #111111;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+header img {
+    width: 180px;
+}
+
+/* A variável list-style + o valor none é para retirar a marcação da lista (a bolinha preta do marcador) 
+   A variavel display + o valor flex determina que a posição das palavras fique flutuando */
+header ul {
+    list-style: none;
+    display: flex;
+}
+
+/* Repare que é uma hierarquia do caminho para alcançar a tag li */
+header ul li + li {
+    margin-left: 24px;
+}
+
+/* A variável text-decoration + o valor none é para retirar o sublinhado da palavra  
+   A variavel transition define o tempo de transição que leva ao passar o mouse na palavra */
+header a {
+    color: #ebebeb;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+header a:hover {
+    color: #f13239;
+}
+

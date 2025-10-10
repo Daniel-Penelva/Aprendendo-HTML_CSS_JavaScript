@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Template Literals</h1>
+
+    <script>
+      /*
+        O que são Template Literals?
+        Os Template Literals são strings delimitadas por crases (`)
+        em vez de aspas simples ' ' ou duplas " ".  
+    */
+
+      // Exemplo 1
+
+      let nome = "Daniel";
+      console.log(`Olá, ${nome}! Seja bem-vindo!`);
+
+      // ======================================================================================
+
+      // Exemplo 2 - Interpolação de expressões
+      // Você pode usar qualquer expressão JavaScript dentro de ${ ... }, não apenas variáveis.
+
+      let a = 10;
+      let b = 5;
+
+      console.log(`A soma de ${a} + ${b} é igual a ${a + b}.`);
+
+
+      // ======================================================================================
+
+      // Exemplo 2 - Strings multilinha
+      // Antes do ES6, era preciso concatenar ou usar \n para quebrar linhas:
+
+      let texto = `
+            Linha 1
+            Linha 2
+            Linha 3
+        `;
+
+      console.log(texto);
+
+      // Exemplo prático — mensagem dinâmica
+
+      let name = "Daniel";
+      let age = 30;
+      let city = "São Paulo";
+
+      let message = `
+        Usuário: ${name}
+        Idade: ${age}
+        Cidade: ${city}
+        `;
+
+      console.log(message);
+
+
+      // ======================================================================================
+
+      // Exemplo 2 - Funções de template
+      // Você pode criar funções que processam templates literais.
+
+      function saudacao(strings, nome, idade) {
+        return `${strings[0]}${nome}${strings[1]}${idade}${strings[2]}`;
+      }
+      let nome2 = "Daniel";
+      let idade2 = 30;
+      let mensagem2 = saudacao`Olá, ${nome2}! Você tem ${idade2} anos.`;
+      console.log(mensagem2);
+
+
+      // ======================================================================================
+      
+      // Exemplo 3 - HTML dinâmico
+
+      let titulo = "Bem-vindo ao meu site";
+      let conteudo = "Este é um exemplo de template literal em HTML.";
+      let html = `
+            <h1>${titulo}</h1>
+            <p>${conteudo}</p>
+        `;
+      document.body.innerHTML += html;
+
+
+      // ======================================================================================
+
+      // Exemplo 4 - Tagged Templates
+
+      function destaque(strings, ...valores) {
+        return strings.reduce((resultado, string, i) => {
+          return `${resultado}${string}<strong>${valores[i] || ""}</strong>`;
+        }, "");
+      }
+      let produto = "notebook";
+      let preco = 2500;
+      let mensagem3 = destaque`O ${produto} custa R$ ${preco}.`;
+      console.log(mensagem3);
+
+
+      // ======================================================================================
+
+      // Exemplo 5 - Uso comum no DOM
+      // Os Template Literals são excelentes para gerar conteúdo HTML dinamicamente
+
+      let product = "Notebook";
+      let price = 3500;
+
+      document.body.innerHTML = `
+            <h2>Produto: ${product}</h2>
+            <p>Preço: R$ ${price}</p>
+        `;
+
+
+        // ======================================================================================
+        
+        // Exemplo 6 - Criação de tabelas HTML
+
+        let users = [
+            { name: "Alice", age: 28 },
+            { name: "Bob", age: 34 },
+            { name: "Charlie", age: 22 }
+        ];
+        let table = `
+            <table border="1">
+                <tr>
+                    <th>Nome</th>
+                    <th>Idade</th>
+                </tr>
+                ${users.map(user => `
+                    <tr>
+                        <td>${user.name}</td>
+                        <td>${user.age}</td>
+                    </tr>
+                `).join('')}
+            </table>
+        `;
+        document.body.innerHTML += table;
+
+
+        // ======================================================================================
+        
+        // Exemplo 7 - Criação de listas HTML
+        let items = ["Maçã", "Banana", "Laranja"];
+        let list = `
+            <ul>
+                ${items.map(item => `<li>${item}</li>`).join('')}
+            </ul>
+        `;
+        document.body.innerHTML += list;
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Desestruturação (Destructuring)</h1>
+    <p>Resultados no console</p>
+    
+    <script>
+        // Desestruturação de Objetos e Arrays
+
+        // Exemplo 1 - Desestruturação de Objetos
+        const pessoa = {
+            nome: 'Ana',
+            idade: 25,
+            endereco: {
+                cidade: 'São Paulo',
+                estado: 'SP'
+            }
+        };
+
+        // Desestruturando o objeto pessoa
+        // As chaves { } indicam que estamos extraindo propriedades de um objeto.
+        // As variáveis recebem automaticamente os valores correspondentes do objeto.
+        const { nome, idade, endereco: { cidade, estado } } = pessoa;
+
+        console.log(nome); // Ana
+        console.log(idade); // 25
+        console.log(cidade); // São Paulo
+        console.log(estado); // SP
+
+
+        // renomeando variaveis durante a desestruturação
+        const { nome: nomePessoa, idade: idadePessoa } = pessoa;
+        console.log(nomePessoa); // Ana
+        console.log(idadePessoa); // 25 
+
+        // ATENÇÃO!!! Isso é útil quando há conflito de nomes ou quando quer deixar mais claro o significado.
+
+
+        //=============================================================================================
+
+        // Exemplo 2 - Desestruturação de Arrays
+        // Arrays usam colchetes [ ], e os valores são extraídos pela posição.
+
+        const numeros = [10, 20, 30, 40];
+
+        // Desestruturando o array numeros
+        const numbers = [1, 2, 3, 4, 5];
+        const [a, b] = numbers;
+        console.log(a, b); // 1 2 
+
+
+        // Pulando posições
+        // Você pode ignorar elementos com vírgulas
+        const valores = [100, 200, 300];
+        const [um, , tres] = valores;
+        console.log(um); // 100
+        console.log(tres); // 300
+
+
+        //=============================================================================================
+
+        // Exemplo 3 - Função com Desestruturação
+        function mostrarInfo({ nome, idade }) {
+            console.log(`Nome: ${nome}, Idade: ${idade}`);
+        }
+
+        mostrarInfo(pessoa); // Nome: Ana, Idade: 25
+
+
+
+        //=============================================================================================
+
+        // Exemplo 4 - Valores Padrão na desestruturação
+        // Se a propriedade não existir, você pode definir um valor padrão
+
+        const funcionario = { nome: 'Carlos' };
+        const { nome: nomeFunc, idade: idadeFunc = 30 } = funcionario;
+        console.log(nomeFunc); // Carlos
+        console.log(idadeFunc); // 30 (valor padrão)
+
+
+        // Exemplo Extra:
+
+        const [x = 0, y = 0, z = 0] = [5, 10];
+        console.log(x, y, z); // 5 10 0 (z recebe o valor padrão 0)
+
+
+        //=============================================================================================
+
+        // Exemplo 5 - Desestruturação com troca de valores
+        // Uma forma elegante de trocar valores sem variável temporária
+
+        let numA = 10, numB = 20;
+        [numA, numB] = [numB, numA];
+        console.log(numA, numB); // 20 10
+
+
+        //=============================================================================================
+
+        // Exemplo 6 - Rest operator (...)
+        //Você pode capturar o “resto” dos elementos
+
+        const [primeiro, segundo, ...resto] = numeros;
+        console.log(primeiro); // 10
+        console.log(segundo); // 20
+        console.log(resto); // [30, 40]
+
+
+        // Exemplo Extra - Rest operator com arrays
+        const [t,r, ...restar] = [1, 2, 3, 4, 5];
+        console.log(restar); // [3, 4, 5]
+        
+
+        // Também funciona com objetos
+        const { name, ...outros } = { nome: 'Ana', idade: 25, cidade: 'SP' };
+        console.log(outros); // { idade: 25, cidade: 'SP' }
+
+
+
+        //=============================================================================================
+
+        // Exemplo 7 - Destructuring Aninhado (Objetos + Arrays)
+        // Você pode combinar objetos e arrays em estruturas complexas:
+
+        const usuario = {
+            firstname: "Daniel",
+            endereco: {
+                rua: "Rua A",
+                numero: 123
+            },
+            hobbies: ["música", "programar"]
+        };
+
+        const { firstname, endereco: { rua }, hobbies: [hobby1] } = usuario;
+
+        console.log(firstname);  // Daniel
+        console.log(rua);   // Rua A
+        console.log(hobby1); // música
+
+
+        //=============================================================================================
+
+        // Exemplo 7 - Destructuring com Funções que retornam Arrays ou Objetos
+        // Esse é um uso muito comum!
+
+        // Retorno de função (Array)
+        function coordenadas() {
+            return [10, 20];
+        }
+
+        const [c, d] = coordenadas();
+        console.log(c, d); // 10 20
+
+
+        // Retorno de função (Objeto)
+        function registrarUsuario() {
+            return { nomeUsuario: "Daniel", idadeUsuario: 30 };
+        }
+
+        const { nomeUsuario, idadeUsuario } = registrarUsuario();
+        console.log(nomeUsuario, idadeUsuario); // Daniel 30
+
+    
+    </script>
+</body>
+</html>

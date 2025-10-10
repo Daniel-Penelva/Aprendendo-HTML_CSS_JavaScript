@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Local Storage</h1>
+
+    <!-- Exemplo 7 -->
+
+    <input type="text" id="name" placeholder="Digite seu nome" />
+    <button onclick="salvar()">Salvar</button>
+    <button onclick="mostrar()">Mostrar</button>
+
+    <p id="resultado"></p>
+
+    <hr />
+
+    <!-- Exemplo 9 - Exemplo Prático -->
+    <h2>Preferência de Tema</h2>
+    <button id="temaBtn">Alternar Tema</button>
+
+    <script>
+      // O que é o Local Storage?
+      // O Local Storage é uma funcionalidade do navegador que permite armazenar dados localmente no computador do usuário.
+      // Ele é parte da Web Storage API e oferece uma maneira simples de salvar pares chave-valor no navegador, ou seja, permite armazenar
+      // dados no navegador do usuário de forma persistente e recuperá-los posteriormente.
+      // Os dados armazenados no Local Storage persistem mesmo após o fechamento do navegador, ao contrário dos cookies, que têm um tempo de expiração.
+      // Cada domínio (site) tem seu próprio espaço de armazenamento, o que significa que os dados armazenados por um site não podem ser acessados por outro site.
+      // Portanto, os dados ficam salvos mesmo após recarregar a página ou fechar o navegador (até serem apagados manualmente ou pelo código).
+
+      // Sintaxe básica:
+      // localStorage.setItem('chave', 'valor'); // Armazena um item
+      // localStorage.getItem('chave'); // Recupera um item
+      // localStorage.removeItem('chave'); // Remove um item
+      // localStorage.clear(); // Limpa todos os itens
+
+      // Exemplo 1 - Armazenando dados
+      localStorage.setItem("nome", "João");
+      localStorage.setItem("idade", "30");
+
+      // Exemplo 2 - Recuperando dados
+      const nome = localStorage.getItem("nome");
+      const idade = localStorage.getItem("idade");
+      console.log(`Nome: ${nome}, Idade: ${idade}`);
+
+      // Exemplo 3 - Removendo dados
+      localStorage.removeItem("idade");
+
+      // Exemplo 4 - Verificando se o dado foi removido
+      const idadeRemovida = localStorage.getItem("idade");
+      console.log(`Idade após remoção: ${idadeRemovida}`); // Deve ser null
+
+      // Exemplo 5 - Limpando todos os dados
+      localStorage.clear();
+
+      // Exemplo 6 - Verificando se todos os dados foram limpos
+      const nomeLimpo = localStorage.getItem("nome");
+      console.log(`Nome após limpar: ${nomeLimpo}`); // Deve ser null
+
+      // ===============================================================================================
+
+      // Exemplo 7
+
+      function salvar() {
+        const name = document.getElementById("name").value;
+        localStorage.setItem("nomeUsuario", name);
+        alert("Nome salvo no Local Storage com sucesso!");
+      }
+
+      function mostrar() {
+        const name = localStorage.getItem("nomeUsuario");
+        document.getElementById("resultado").textContent = name
+          ? `Bem-vindo, ${name}!`
+          : "Nenhum nome salvo.";
+      }
+
+      // ===============================================================================================
+
+      // Exemplo 8 - Armazenando objetos e arrays
+      // O localStorage só aceita strings, mas podemos converter objetos em texto com JSON.stringify(), e depois reconverter com JSON.parse().
+
+      const usuario = {
+        nome: "Daniel",
+        idade: 25,
+        cursos: ["HTML", "CSS", "JavaScript"],
+      };
+
+      // salvar
+      localStorage.setItem("usuario", JSON.stringify(usuario));
+
+      // recuperar
+      const dados = JSON.parse(localStorage.getItem("usuario"));
+      console.log(dados.nome); // Daniel
+      console.log(dados.idade); // 25
+      console.log(dados.cursos); // ["HTML", "CSS", "JavaScript"]
+
+      // Verificando se há algo armazenado
+      if (localStorage.getItem("usuario")) {
+        console.log("Usuário encontrado!");
+      } else {
+        console.log("Nenhum usuário salvo.");
+      }
+
+      // Removendo os dados
+      localStorage.removeItem("usuario");
+
+      // Limpa tudo
+      localStorage.clear();
+
+      // ===============================================================================================
+
+      // Exemplo 9 - Exemplo Prático
+
+      const body = document.body;
+      const btn = document.getElementById("temaBtn");
+
+      // Carrega o tema salvo
+      const temaSalvo = localStorage.getItem("tema");
+      if (temaSalvo === "escuro") body.style.backgroundColor = "black";
+
+      btn.addEventListener("click", () => {
+        if (body.style.backgroundColor === "black") {
+          body.style.backgroundColor = "white";
+          localStorage.setItem("tema", "claro");
+        } else {
+          body.style.backgroundColor = "black";
+          body.style.color = "white";
+          localStorage.setItem("tema", "escuro");
+        }
+      });
+    </script>
+  </body>
+</html>

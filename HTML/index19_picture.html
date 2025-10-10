@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <h2>The picture Element</h2>
+
+    <picture>
+      <source media="(min-width: 650px)" srcset="image/img_food.jpg" />
+      <source media="(min-width: 465px)" srcset="image/img_car.jpg" />
+      <img src="image/img_girl.jpg" style="width: auto" />
+    </picture>
+
+    <p>
+      Redimensionar o navegador para ver diferentes versões do carregamento da
+      imagem em diferentes tamanhos de viewport. O navegador procura o primeiro
+      elemento de origem em que a consulta de média corresponda à largura atual
+      da janela de visualização do usuário, e busca a imagem especificada no
+      atributo srcset.
+    </p>
+
+    <p>
+      O elemento img é necessário como a última tag filho do bloco de declaração
+      de imagem. O elemento img é usado para fornecer compatibilidade com
+      versões anteriores para navegadores que não suportam o elemento picture ou
+      se nenhuma das tags de origem corresponder.
+    </p>
+
+    <p>
+      <strong>Observação:</strong> o navegador usará o primeiro
+      <source />
+      elemento com valores de atributo correspondentes e ignorar� os 'source'
+      elementos seguintes.
+    </p>
+    <p>
+      <strong>Observação:</strong> o elemento de imagem não é suportado no IE12
+      e anterior ou no Safari 9.0 e anterior.
+    </p>
+
+    <h2>Bom saber</h2>
+    <p>
+      O elemento HTML 'picture' oferece aos desenvolvedores da Web mais
+      flexibilidade na especificação de recursos de imagem.
+    </p>
+
+    <p>
+      O 'picture' elemento contêm um ou mais 'source' elementos, cada um
+      referindo-se a diferentes imagens por meio do srcset atributo. Desta
+      forma, o navegador pode escolher a imagem que melhor se adapta à
+      visualização e/ou dispositivo atual.
+    </p>
+
+    <p>
+      Cada 'source' elemento possui um mediaatributo que define quando a imagem
+      é a mais adequada.
+    </p>
+  </body>
+</html>

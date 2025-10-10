@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>setTimeout</h1>
+
+    <script>
+      // setTimeout() — Executa uma vez depois de um tempo
+      // sintaxe: setTimeout(função, tempoEmMilissegundos);
+      // função → o código que será executado.
+      // tempoEmMilissegundos → tempo de espera antes da execução (1000 ms = 1 segundo).
+
+      // Exemplo 1- Simples
+
+      setTimeout(() => {
+        console.log("Passaram-se 3 segundos!");
+      }, 3000);
+
+      // =======================================================================================
+
+      // Exemplo 2 - Cancelando um setTimeout
+
+      const timer = setTimeout(() => {
+        console.log("Isto não será exibido!");
+      }, 3000);
+
+      clearTimeout(timer); // cancela antes de 3 segundos
+
+      // =======================================================================================
+
+      // Exemplo 3 - Usando função nomeada com setTimeout
+      function saudacao() {
+        console.log("Olá! Esta é uma saudação após 2 segundos.");
+      }
+      setTimeout(saudacao, 2000); // Chama a função saudacao após 2 segundos
+
+      // =======================================================================================
+
+      // Exemplo 4 - Passando parâmetros para a função no setTimeout
+      function mostrarMensagem(mensagem) {
+        console.log(mensagem);
+      }
+      setTimeout(
+        mostrarMensagem,
+        2500,
+        "Esta mensagem é exibida após 2.5 segundos."
+      );
+
+      // =======================================================================================
+
+      // Exemplo 5 - Usando setTimeout dentro de um loop
+      for (let i = 1; i <= 5; i++) {
+        setTimeout(() => {
+          console.log(`Contagem: ${i}`);
+        }, i * 1000); // Exibe a contagem a cada segundo
+      }
+
+    </script>
+  </body>
+</html>

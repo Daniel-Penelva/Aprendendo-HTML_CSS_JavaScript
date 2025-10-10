@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1> Confirm </h1>
+	<p> As respostas estão no console </p>
+
+    <script>
+        // A função confirm() exibe uma caixa de diálogo com uma mensagem e dois botões: OK e Cancelar.
+        // Retorna true se o usuário clicar em OK, e false se clicar em Cancelar.
+        // Uso comum: confirmar exclusões, saídas, logoff, etc.
+        // Sintaxe: confirm(mensagem);
+
+        // Exemplo 1 - Uso básico do confirm()
+
+        let resultado = confirm("Você deseja continuar?");
+        console.log("Resultado do confirm:", resultado);
+
+        //=============================================================================================
+
+        // Exemplo 2 - Usando confirm() para decisões simples
+
+        if (confirm("Deseja apagar este item?")) {
+            console.log("Item apagado.");
+        } else {
+            console.log("Ação cancelada.");
+        }
+
+        //=============================================================================================
+
+        // Exemplo 3 - Confirm dentro de uma função
+
+        function perguntarUsuario() {
+            let resposta = confirm("Você gosta de JavaScript?");
+            return resposta ? "Que legal!" : "Que pena!";
+        }
+
+        console.log(perguntarUsuario());
+
+        // OBS. O confirm() é útil para obter confirmações rápidas do usuário antes de executar ações importantes.
+    </script>
+</body>
+</html>

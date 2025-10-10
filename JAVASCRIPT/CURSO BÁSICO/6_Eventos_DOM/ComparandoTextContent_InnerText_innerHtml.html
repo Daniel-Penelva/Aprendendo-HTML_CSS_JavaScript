@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Comparando textContent, innerText e innerHTML</title>
+    <style>
+      body {
+        font-family: Arial;
+        padding: 20px;
+      }
+
+      button {
+        margin: 5px;
+        padding: 10px;
+        cursor: pointer;
+      }
+
+      .bloco {
+        margin-top: 20px;
+        padding: 15px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+      }
+
+      .oculto {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      Comparando <code>textContent</code>, <code>innerText</code> e
+      <code>innerHTML</code>
+    </h1>
+
+    <button id="btnTextContent">Usar textContent</button>
+    <button id="btnInnerText">Usar innerText</button>
+    <button id="btnInnerHTML">Usar innerHTML</button>
+
+    <div class="bloco" id="resultado">
+      <p>Conteúdo original</p>
+    </div>
+
+    <hr />
+
+    <h3>Diferença prática de leitura:</h3>
+
+    <div class="bloco" id="exemploLeitura">
+      <p>Texto visível</p>
+      <p class="oculto">Texto oculto (display: none)</p>
+    </div>
+
+    <button id="btnLer">Ler valores</button>
+
+    <script>
+      const resultado = document.getElementById("resultado");
+
+      // Botão 1 - textContent
+      document
+        .getElementById("btnTextContent")
+        .addEventListener("click", () => {
+          resultado.textContent =
+            "<b>Olá!</b> Isso é texto puro (sem formatação).";
+        });
+
+      // Botão 2 - innerText
+      document.getElementById("btnInnerText").addEventListener("click", () => {
+        resultado.innerText =
+          "<b>Olá!</b> O innerText também mostra só o texto, mas respeita visibilidade CSS.";
+      });
+
+      // Botão 3 - innerHTML
+      document.getElementById("btnInnerHTML").addEventListener("click", () => {
+        resultado.innerHTML =
+          "<b>Olá!</b> Isso é HTML interpretado — <i>veja o negrito e o itálico!</i>";
+      });
+
+      // Testando leitura
+      document.getElementById("btnLer").addEventListener("click", () => {
+        const exemplo = document.getElementById("exemploLeitura");
+        console.log("textContent →", exemplo.textContent);
+        console.log("innerText →", exemplo.innerText);
+      });
+    </script>
+  </body>
+</html>

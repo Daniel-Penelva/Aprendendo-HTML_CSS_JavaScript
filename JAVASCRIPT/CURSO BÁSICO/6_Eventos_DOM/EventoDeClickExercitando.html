@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Eventos de Click em JavaScript</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+        background-color: #f0f0f0;
+      }
+
+      button {
+        margin: 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      button:hover {
+        background-color: #ddd;
+      }
+
+      #contador {
+        font-weight: bold;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Exemplo de Eventos de Click</h1>
+
+    <button id="btnMensagem">Mostrar Mensagem</button>
+    <button id="btnCor">Mudar Cor de Fundo</button>
+    <button id="btnContador">Contar Cliques</button>
+
+    <p>Total de cliques: <span id="contador">0</span></p>
+
+    <script>
+      // Seleciona os elementos
+      const btnMensagem = document.getElementById("btnMensagem");
+      const btnCor = document.getElementById("btnCor");
+      const btnContador = document.getElementById("btnContador");
+      const contador = document.getElementById("contador");
+
+      let totalCliques = 0;
+
+      // 1 Evento de clique simples
+      btnMensagem.addEventListener("click", () => {
+        alert("Você clicou no botão de mensagem!");
+      });
+
+      // 2 Evento que muda a cor de fundo
+      btnCor.addEventListener("click", () => {
+        // Gera uma cor aleatória
+        const corAleatoria =
+          "#" + Math.floor(Math.random() * 16777215).toString(16);
+        document.body.style.backgroundColor = corAleatoria;
+      });
+
+      // 3️ Evento que conta quantos cliques foram feitos
+      btnContador.addEventListener("click", () => {
+        totalCliques++;
+        contador.textContent = totalCliques;
+      });
+    </script>
+  </body>
+</html>

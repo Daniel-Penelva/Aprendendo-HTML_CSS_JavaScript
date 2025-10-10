@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>Listas HTML</h1>
+    <p>
+      As listas HTML permitem que os desenvolvedores da Web agrupem um conjunto
+      de itens relacionados em listas.
+    </p>
+
+    <h2>Uma lista HTML não ordenada</h2>
+    <p>
+      Uma lista não ordenada começa com a 'ul' tag. Cada item da lista começa
+      com a 'li' tag.
+    </p>
+    <p>
+      Os itens da lista serão marcados com marcadores (pequenos círculos pretos)
+      por padrão
+    </p>
+
+    <ul>
+      <li>Café</li>
+      <li>Chá</li>
+      <li>Leite</li>
+    </ul>
+
+    <h3>Escolha de marcadores de lista NÃO ordenado</h3>
+    <p>
+      A propriedade CSS list-style-typeé usada para definir o estilo do marcador
+      de item da lista. Pode ter um dos seguintes valores:
+    </p>
+    <p>disc = marcador (padrão)</p>
+    <p>circle = círculo</p>
+    <p>square = quadrado</p>
+    <p>none = não será marcado</p>
+
+    <ul style="list-style-type: disc">
+      <li>Café</li>
+      <li>Chá</li>
+      <li>Leite</li>
+    </ul>
+
+    <br />
+
+    <ul style="list-style-type: circle">
+      <li>Café</li>
+      <li>Chá</li>
+      <li>Leite</li>
+    </ul>
+
+    <br />
+
+    <ul style="list-style-type: square">
+      <li>Café</li>
+      <li>Chá</li>
+      <li>Leite</li>
+    </ul>
+
+    <br />
+
+    <ul style="list-style-type: none">
+      <li>Café</li>
+      <li>Chá</li>
+      <li>Leite</li>
+    </ul>
+
+    <h3>Listas aninhadas</h3>
+    <p>As listas podem ser aninhadas (lista dentro da lista).</p>
+
+    <ul>
+      <li>Café</li>
+      <li>
+        Chá
+        <ul>
+          <li>Chá preto</li>
+          <li>Chá verde</li>
+        </ul>
+      </li>
+      <li>Leite</li>
+    </ul>
+
+    <h1>
+      ---------------------------------------------------------------------------
+    </h1>
+    <h2>Uma lista HTML ordenada</h2>
+    <p>
+      Uma lista ordenada começa com a 'ol' tag. Cada item da lista começa com a
+      'li' tag.
+    </p>
+    <p>Os itens da lista serão marcados com números por padrão</p>
+
+    <ol>
+      <li>Café</li>
+      <li>Chá</li>
+      <li>Leite</li>
+    </ol>
+
+    <h3>Escolha de marcadores de lista ordenado</h3>
+    <p>
+      O type atributo da 'ol' tag, define o tipo de marcador do item da lista:
+    </p>
+    <p>type="1" - numerados com números</p>
+    <p>type="A" - letras maiúsculas</p>
+    <p>type="a" - letras minúsculas</p>
+    <p>type="I" - números romanos maiúsculos</p>
+    <p>type="i" - número romanos minúsculos</p>
+
+    <ol type="1">
+      <li>Café</li>
+      <li>Chá</li>
+      <li>Leite</li>
+    </ol>
+
+    <br />
+
+    <ol type="A">
+      <li>Café</li>
+      <li>Chá</li>
+      <li>Leite</li>
+    </ol>
+
+    <ol type="a">
+      <li>Café</li>
+      <li>Chá</li>
+      <li>Leite</li>
+    </ol>
+
+    <ol type="I">
+      <li>Café</li>
+      <li>Chá</li>
+      <li>Leite</li>
+    </ol>
+
+    <ol type="i">
+      <li>Café</li>
+      <li>Chá</li>
+      <li>Leite</li>
+    </ol>
+
+    <h3>Contagem da lista de controle</h3>
+    <p>
+      Por padrão, uma lista ordenada começará a contar a partir de 1. Se você
+      quiser começar a contar a partir de um número especificado, poderá usar o
+      start atributo:
+    </p>
+
+    <ol start="50">
+      <li>Café</li>
+      <li>Chá</li>
+      <li>Leite</li>
+    </ol>
+
+    <ol type="I" start="50">
+      <li>Café</li>
+      <li>Chá</li>
+      <li>Leite</li>
+    </ol>
+
+    <h3>Listas aninhadas</h3>
+    <p>As listas podem ser aninhadas (lista dentro da lista):</p>
+
+    <ol>
+      <li>Café</li>
+      <li>
+        Chá
+        <ol>
+          <li>Chá preto</li>
+          <li>Chá verde</li>
+        </ol>
+      </li>
+      <li>Leite</li>
+    </ol>
+
+    <h1>
+      ---------------------------------------------------------------------------
+    </h1>
+    
+    <h2>Lista de Descrição</h2>
+    <p>
+      Uma lista de descrição é uma lista de termos, com uma descrição de cada
+      termo.
+    </p>
+    <p>
+      A 'dl' tag define a lista de descrição, a 'dt' tag define o termo (nome) e
+      a 'dd' tag descreve cada termo:
+    </p>
+
+    <dl>
+      <dt>Café</dt>
+      <dd>- bebida quente preta</dd>
+      <dt>Leite</dt>
+      <dd>- bebida gelada branca</dd>
+    </dl>
+  </body>
+</html>

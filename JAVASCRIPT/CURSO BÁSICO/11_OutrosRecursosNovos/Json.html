@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>JSON</h1>
+
+    <script>
+      /*
+        O que é JSON?
+
+        JSON (JavaScript Object Notation) é um formato leve de troca de dados, baseado em texto, muito parecido com os 
+        objetos do JavaScript.
+        Ele é:
+            . Simples de ler e escrever;
+            . Independente de linguagem;
+            . Muito usado em requisições de APIs e armazenamento local. 
+     */
+
+      // Exemplo 1 - JSON.stringify() → objeto ➜ string JSON
+      // Converte um objeto JavaScript em uma string JSON.
+
+      const pessoa = { nome: "Daniel", idade: 30, cidade: "São Paulo" };
+
+      const jsonString = JSON.stringify(pessoa);
+
+      console.log(jsonString);
+
+      // ======================================================================================
+
+      // Exemplo 2 - JSON.parse() → string JSON ➜ objeto
+      // Converte uma string JSON em um objeto JavaScript.
+
+      const jsonString2 = '{"nome":"Daniel","idade":30,"cidade":"São Paulo"}';
+      const pessoa2 = JSON.parse(jsonString2);
+
+      console.log(pessoa2);
+      console.log(pessoa2.nome); // Acessando a propriedade 'nome'
+      console.log(pessoa2.idade); // Acessando a propriedade 'idade'
+      console.log(pessoa2.cidade); // Acessando a propriedade 'cidade'
+
+      // ======================================================================================
+
+      // Exemplo 3 - Exemplo prático: Salvando e lendo do localStorage
+
+      const usuario = { nome: "Daniel", idade: 30 };
+
+      // Salvar no localStorage
+      localStorage.setItem("usuario", JSON.stringify(usuario));
+
+      // Ler e converter de volta para objeto
+      const dados = JSON.parse(localStorage.getItem("usuario"));
+
+      console.log(dados.nome); // Daniel
+
+      /*
+        Útil quando:
+            . Você recebe dados de uma API em formato JSON;
+            . Ou lê algo do localStorage.
+      */
+
+
+        // ======================================================================================
+        
+        // Exemplo 4 - Formatação de JSON
+        // Você pode formatar uma string JSON para torná-la mais legível.
+        
+        const pessoa3 = { nome: "Daniel", idade: 30, cidade: "São Paulo" };
+        const jsonString3 = JSON.stringify(pessoa3, null, 2); // Indentação de 2 espaços
+        console.log(jsonString3);
+        
+        // Útil para logs ou depuração.
+
+    </script>
+  </body>
+</html>

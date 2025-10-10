@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	
+	<!-- Exemplo 1 -->
+	<h1> Evento de Click onclick</h1>
+	<h3> Clique no botão abaixo <h3>
+	<button onclick="mostrarMensagem()">Clique aqui</button>
+	
+	<hr>
+	
+	<!-- Exemplo 2 -->
+	<h3> Clique no botão abaixo <h3>
+	<button id="btn">Clique aqui</button>
+	
+	
+	<hr>
+	
+	<!-- Exemplo 3 -->
+	<h3> Clique no botão abaixo <h3>
+	<button id="botao">Clique aqui</button>
+	
+	
+	<hr>
+	
+	<!-- Exemplo 4 -->
+	<h3> Clique no botão abaixo <h3>
+	<button id="teste">Clique em qualquer lugar do botão</button>
+	
+	
+	<hr>
+	
+	<!-- Exemplo 5 -->
+	<h3> Clique no botão abaixo <h3>
+	<button id="testeButton">Opção 1</button>
+	
+	<h3> Clique no botão abaixo <h3>
+	<button id="testeButton0">Opção 2</button>
+	
+	
+	<hr>
+	
+	<!-- Exemplo 6 -->
+	<h3> Clique no botão abaixo <h3>
+	<button id="testeButton1">Clique no botão</button>
+	
+	
+	<hr>
+	
+	<!-- Exemplo 7 -->
+	<h3> Clique em qualquer área<h3>
+	
+	
+	
+        <script type="text/JavaScript">
+		
+		// Exemplo 1
+		function mostrarMensagem() {
+			alert("Você clicou no botão!");
+		}
+		
+		// ========================================================================================================================
+		
+		// Exemplo 2 - Atribuindo o evento via JavaScript 
+		// O evento é associado via propriedade onclick do elemento. Utiliza-se um id que vai está declarado no .getElementById
+		
+		const botao = document.getElementById("btn");
+		
+		botao.onclick = function() {
+			alert("Você clicou usando onclick")
+		}	
+
+		
+		// ========================================================================================================================
+		
+		// Exemplo 3 - Usando addEventListener()
+		// Essa é a forma mais flexível e moderna, porque permite adicionar vários eventos no mesmo elemento.
+		
+		const btn = document.getElementById("botao");
+		
+		btn.addEventListener("click", function() { 
+			alert("Você clicou usando addEventListener");
+		});
+		
+		
+		// ========================================================================================================================
+		
+		// Exemplo 4 - Acessando informações do evento
+		// Quando você usa addEventListener, pode capturar detalhes sobre o clique (como coordenadas, botão usado, etc.)
+		
+		const button = document.getElementById("teste");
+		
+		button.addEventListener("click", function(evento){
+			console.log("Posição X: ", evento.clientX);
+			console.log("Posição Y: ", evento.clientY);
+			console.log("Elemento: ", evento.target);
+		});
+		
+		
+		// ========================================================================================================================
+		
+		// Exemplo 5 - Removendo um evento (Ou seja, Se clicar novamente — não acontece nada).
+		// Você pode remover um evento adicionado via addEventListener com removeEventListener.
+		
+		// Opção 1: Remover o evento depois do primeiro clique.
+		const bbtn = document.getElementById("testeButton");
+		
+		function mostrar(){
+			console.log("Clicou!");
+			bbtn.removeEventListener("click", mostrar); // remove só depois do primeiro clique
+		}	
+
+		bbtn.addEventListener("click", mostrar);
+		
+		// Opção 2: Remover o evento após alguns segundos.
+		
+		const bbtn1 = document.getElementById("testeButton0");
+		
+		function mostrar(){
+			console.log("Clicou!");
+		}	
+		
+		bbtn1.addEventListener("click", mostrar);
+		
+		setTimeout(() => {
+			bbtn1.removeEventListener("click", mostrar);
+			console.log("Evento removido após 5 segundos");
+		}, 5000);
+		
+		
+		
+		// ========================================================================================================================
+		
+		// Exemplo 6 - Outras ideias com clique
+		// Mudar o texto de um botão ao clicar
+		
+		const teste1 = document.getElementById("testeButton1");
+		
+		teste1.addEventListener("click", () => {
+			teste1.textContent = "Clicado!";
+		});
+		
+		
+		// ========================================================================================================================
+		
+		// Exemplo 7 - Outras ideias com clique
+		// Alterar cor de fundo
+		
+		document.body.addEventListener("click", () => {
+			document.body.style.backgroundColor = "lightblue";
+		});
+		
+		</script>
+</body>
+</html>

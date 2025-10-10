@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Testando JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+	<body>
+	
+	<h1> Evento de Teclado </h1>
+	
+	<!-- Exemplo 1 -->
+	<input type="text" id="campo" placeholder="Digite algo">
+	
+	<hr>
+	
+	<!-- Exemplo 2 -->
+	<input type="text" id="campo2" placeholder="Digite algo">
+	
+	
+	<hr>
+	
+	<!-- Exemplo 3 -->
+	<input type="text" id="campo3" placeholder="Digite algo">
+	
+	
+	<hr>
+	
+	<!-- Exemplo 3 -->
+	<input type="text" id="campo4" placeholder="Digite algo">
+
+
+	<script type="text/JavaScript">
+			
+		// Exemplo 1: onkeydown
+		// Dispara assim que o usuário pressiona uma tecla, antes de soltar.
+		// Captura qualquer tecla, incluindo teclas especiais (Shift, Ctrl, setas, etc).
+			
+		const campo = document.getElementById("campo");
+
+		campo.addEventListener("keydown", (evento) => {
+		  console.log("Tecla pressionada (keydown):", evento.key);
+		});
+		
+		
+		// ========================================================================================================================
+		
+		// Exemplo 2: onkeyup
+		// Dispara quando o usuário solta a tecla.
+		// Muito útil para validar entradas após o usuário digitar.
+		
+		const campo2 = document.getElementById("campo2");
+
+		campo2.addEventListener("keyup", (evento) => {
+		  console.log("Tecla liberada (keyup):", evento.key);
+		});
+		
+		
+		// ========================================================================================================================
+		
+		// Exemplo 3: onkeypress (obsoleto em alguns navegadores)
+		// Dispara enquanto uma tecla que gera caractere é pressionada.
+		// Não captura teclas como Ctrl, Shift, Delete, setas.
+		// Atualmente, é menos recomendado, pois o keydown e keyup substituem quase todos os casos.
+		
+		const campo3 = document.getElementById("campo3");
+
+		campo3.addEventListener("keypress", (evento) => {
+		  console.log("Tecla pressionada (keypress):", evento.key);
+		});
+		
+		
+		// ========================================================================================================================
+		
+		// Exemplo 4: Exemplo prático combinado
+		
+		const campo4 = document.getElementById("campo4");
+
+		campo4.addEventListener("keydown", (e) => console.log("keydown:", e.key));
+		campo4.addEventListener("keypress", (e) => console.log("keypress:", e.key));
+		campo4.addEventListener("keyup", (e) => console.log("keyup:", e.key));
+				
+	</script>	
+    </body>
+	
+	
+	<!--
+	Dica:
+	Hoje, para a maioria dos projetos, prefira keydown e keyup.
+	Use keypress somente se realmente precisar de teclas de caractere antigas ou compatibilidade com navegadores muito antigos.
+	-->
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Testando JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+	<body>
+	
+	<h1> Seletor de Conteúdo - querySelectorAll()</h1>
+	
+	<p class="item">Item 1</p>
+	<p class="item">Item 2</p>
+	
+	
+        <script type="text/JavaScript">
+		
+		// querySelectorAll()
+		// Seleciona todos os elementos que correspondem a um seletor CSS.
+		// Retorna um NodeList, que pode ser percorrida com forEach.
+		
+		const todosItens = document.querySelectorAll(".item");
+
+		todosItens.forEach((item, index) => {
+		  item.textContent += ` - ${index + 1}`;
+		});
+			
+		</script>	
+    </body>
+
+</html>

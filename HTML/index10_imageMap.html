@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>Mapas de imagem</h2>
+    <p>
+      Clique no computador, no telefone ou na xícara de café para ir para uma
+      nova página e ler mais sobre o assunto:
+    </p>
+
+    <img
+      src="image/workplace.jpg"
+      alt="Workplace"
+      usemap="#workmap"
+      width="400"
+      height="379"
+    />
+
+    <map name="workmap">
+      <area
+        shape="rect"
+        coords="34,44,270,350"
+        alt="Computer"
+        href="index11_1_imageMapComputer.html"
+      />
+      <area
+        shape="rect"
+        coords="290,172,333,250"
+        alt="Phone"
+        href="index11_2_imageMapCellphone.html"
+      />
+      <area
+        shape="circle"
+        coords="337,300,44"
+        alt="Cup of coffee"
+        href="index11_3_imageMapCoffe.html"
+      />
+    </map>
+
+    <h1>Bom saber:</h1>
+    <p>
+      A tag HTML 'map' define um mapa de imagem. Um mapa de imagem é uma imagem
+      com áreas clicáveis. As áreas são definidas com uma ou mais 'area' tags.
+    </p>
+    <p>
+      Como funciona: A ideia por trás de um mapa de imagem é que você deve ser
+      capaz de realizar diferentes ações, dependendo de onde você clicar na
+      imagem.
+    </p>
+    <p>
+      A imagem é inserida usando a 'img' tag. A única diferença de outras
+      imagens é que você deve adicionar um 'usemap' atributo.
+    </p>
+    <p>
+      O usemap valor começa com uma marca de hash # seguida pelo nome do mapa de
+      imagem e é usado para criar um relacionamento entre a imagem e o mapa de
+      imagem.
+    </p>
+    <p>Em seguida, adicione um 'map' elemento.</p>
+    <p>
+      O 'map' elemento é usado para criar um mapa de imagem e é vinculado à
+      imagem usando o name atributo obrigatório.
+    </p>
+    <p>O name atributo deve ter o mesmo valor do 'img' atributo de usemap.</p>
+    <p>Em seguida, adicione as áreas clicáveis.</p>
+    <p>Uma área clicável é definida usando um 'area' elemento.</p>
+    <p>
+      Você deve definir a forma da área clicável e pode escolher um destes
+      valores:
+    </p>
+    <p>1. rect- define uma região retangular</p>
+    <p>2. circle- define uma região circular</p>
+    <p>3. poly- define uma região poligonal</p>
+    <p>4. default- define toda a região</p>
+    <p>
+      Você também deve definir algumas coordenadas para poder colocar a área
+      clicável na imagem.
+    </p>
+    <p>
+      As coordenadas para shape="rect" vêm em pares, uma para o eixo x e outra
+      para o eixo y.
+    </p>
+    <p>
+      Assim, as coordenadas 34,44 estão localizadas a 34 pixels da margem
+      esquerda e a 44 pixels do topo
+    </p>
+    <p>
+      As coordenadas 270,350 estão localizadas a 270 pixels da margem esquerda e
+      a 350 pixels do topo:
+    </p>
+    <p><img src="image/workplace_1.jpg" alt="Workplace" /></p>
+    <p>
+      Para adicionar uma área de círculo, primeiro localize as coordenadas do
+      centro do círculo.
+    </p>
+    <p>Em seguida, especifique o raio do círculo: 44pixeis</p>
+    <p><img src="image/workplace_2.jpg" alt="Workplace" /></p>
+    <p>
+      O shape="poly" contêm vários pontos de coordenadas, o que cria uma forma
+      formada com linhas retas (um polígono).
+    </p>
+    <p>Isso pode ser usado para criar qualquer forma.</p>
+    <p>Como talvez uma forma de croissant!</p>
+    <p><img src="image/workplace_3.jpg" alt="Workplace" /></p>
+  </body>
+</html>

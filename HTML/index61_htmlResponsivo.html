@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      .left {
+        background-color: #2196f3;
+        padding: 20px;
+        float: left;
+        width: 20%; /* The width is 20%, by default */
+      }
+
+      .main {
+        background-color: #f1f1f1;
+        padding: 20px;
+        float: left;
+        width: 60%; /* The width is 60%, by default */
+      }
+
+      .right {
+        background-color: #04aa6d;
+        padding: 20px;
+        float: left;
+        width: 20%; /* The width is 20%, by default */
+      }
+
+      /* Use a media query to add a break point at 800px: */
+      @media screen and (max-width: 800px) {
+        .left,
+        .main,
+        .right {
+          width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Imagem responsiva</h2>
+    <p>
+      Para criar um site responsivo, adicione a seguinte meta tag a todas as
+      suas páginas da web
+    </p>
+    <p>
+      (meta name="viewport" content="width=device-width, initial-scale=1.0")
+    </p>
+    <p>
+      Isso definirá a janela de visualização da sua página, que fornecerá ao
+      navegador instruções sobre como controlar as dimensões e o dimensionamento
+      da página.
+    </p>
+    <p>
+      "max-width:100%" evita que a imagem fique maior do que seu tamanho
+      original. No entanto, se você diminuir a janela do navegador, a imagem
+      ainda será reduzida.
+    </p>
+    <p>Redimensionar a janela do navegador para ver o efeito.</p>
+
+    <img src="image/img_girl.jpg" style="max-width: 100%; height: auto" />
+
+    <h2>Mostrar imagens diferentes dependendo da largura do navegador</h2>
+    <p>
+      O elemento HTML picture permite definir diferentes imagens para diferentes
+      tamanhos de janela do navegador. Redimensione a janela do navegador para
+      ver como a imagem abaixo muda dependendo da largura:
+    </p>
+
+    <h1>
+      -------------------------------------------------------------------------
+    </h1>
+    <h2>Mostrar imagens diferentes dependendo da largura do navegador</h2>
+    <p>
+      Redimensione a largura do navegador e a imagem mudará para 600px e 1500px.
+    </p>
+
+    <picture>
+      <source srcset="image/img_smallflower.jpg" media="(max-width: 600px)" />
+      <source srcset="image/img_flowers.jpg" media="(max-width: 1500px)" />
+      <source srcset="image/flowers.jpg" />
+      <img src="image/img_flowers.jpg" alt="Flowers" style="width: auto" />
+    </picture>
+
+    <h1>
+      -------------------------------------------------------------------------
+    </h1>
+    <h2>Tamanho de texto responsivo</h2>
+    <p>
+      O tamanho do texto pode ser definido com uma unidade "vw", que significa a
+      "largura da janela de visualização".
+    </p>
+
+    <h1 style="font-size: 10vw">Texto responsivo</h1>
+
+    <p style="font-size: 5vw">
+      Redimensionar a janela do navegador para ver como o tamanho do texto é
+      dimensionado.
+    </p>
+
+    <p style="font-size: 5vw">
+      Use a unidade "vw" ao dimensionar o texto. 10vw definirá o tamanho para
+      10% da largura da janela de visualização.
+    </p>
+
+    <p>
+      Viewport é o tamanho da janela do navegador. 1vw = 1% da largura da janela
+      de visualização. Se a janela de visualização tiver 50 cm de largura, 1vw é
+      0,5 cm.
+    </p>
+
+    <h1>
+      -------------------------------------------------------------------------
+    </h1>
+    <h2>Consultas de mídia</h2>
+    <p>
+      Além de redimensionar textos e imagens, também é comum usar media queries
+      em páginas web responsivas.
+    </p>
+    <p>
+      Com consultas de mídia, você pode definir estilos completamente diferentes
+      para diferentes tamanhos de navegador.
+    </p>
+    <p>
+      Exemplo: redimensione a janela do navegador para ver que os três elementos
+      div abaixo serão exibidos horizontalmente em telas grandes e empilhados
+      verticalmente em telas pequenas:
+    </p>
+
+    <p>
+      Certifique-se de atingir o ponto de interrupção em 800px ao redimensionar
+      este quadro.
+    </p>
+
+    <div class="left">
+      <p>Left Menu</p>
+    </div>
+
+    <div class="main">
+      <p>Main Content</p>
+    </div>
+
+    <div class="right">
+      <p>Right Content</p>
+    </div>
+  </body>
+</html>

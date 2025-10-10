@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Async e Await</h1>
+
+    <script>
+      /*
+        O que é Async/Await?
+        Async/Await é uma sintaxe mais moderna e legível para trabalhar com operações assíncronas em JavaScript.
+        Ela é construída sobre Promises, mas torna o código mais parecido com código síncrono, facilitando a leitura e manutenção.
+
+        - A palavra-chave async é usada para declarar uma função assíncrona.
+        - A palavra-chave await só pode ser usada dentro de funções async e faz o JavaScript "esperar" por uma Promise ser resolvida ou rejeitada antes de continuar a execução do código.
+
+        O que é await?
+        A palavra-chave await pausa a execução da função até que a Promise seja resolvida.
+        Ela só pode ser usada dentro de funções async.
+    */
+
+      // Exemplo 1 - Função async simples
+
+      async function exemplo() {
+        return "Olá, mundo!";
+      }
+
+      exemplo().then(console.log); // Saída: "Olá, mundo!"
+
+      /* Explicando:
+        . async faz a função retornar uma Promise automaticamente.
+        . Você pode usar .then() para capturar o resultado.
+    */
+
+      // ===================================================================================
+
+      // Exemplo 2 - Usando await com Promises
+
+      function esperar(ms) {
+        return new Promise((resolve) => setTimeout(resolve, ms));
+      }
+
+      async function executar() {
+        console.log("Início");
+
+        await esperar(2000); // Espera 2 segundos
+
+        console.log("2 segundos depois");
+
+        await esperar(1000); // Espera mais 1 segundo
+
+        console.log("1 segundo depois");
+      }
+
+      executar();
+
+      /*
+            Fluxo de execução:
+                1. "Início" é impresso imediatamente.
+                2. A função espera 2 segundos antes de imprimir "2 segundos depois".
+                3. Depois, espera mais 1 segundo antes de imprimir "1 segundo depois".
+        */
+
+      // Exemplo Extra
+
+      function obterDados() {
+        return new Promise((resolve) => {
+          setTimeout(() => resolve("Dados recebidos!"), 2000);
+        });
+      }
+
+      async function mostrarDados() {
+        console.log("Buscando dados...");
+        const resultado = await obterDados(); // aguarda a Promise resolver
+        console.log(resultado);
+        console.log("Processo finalizado!");
+      }
+
+      mostrarDados();
+
+      /*
+        Explicando:
+            . A função obterDados() retorna uma Promise que resolve após 2 segundos.
+            . A função mostrarDados() usa await para esperar a resolução dessa Promise antes de continuar.
+      */
+
+      // Exemplo Extra - Vários awaits em sequência
+      // Você pode usar vários await para executar etapas em ordem
+
+      async function processo() {
+        const etapa1 = await new Promise((res) =>
+          setTimeout(() => res("Etapa 1 concluída"), 1000)
+        );
+        console.log(etapa1);
+
+        const etapa2 = await new Promise((res) =>
+          setTimeout(() => res("Etapa 2 concluída"), 1000)
+        );
+        console.log(etapa2);
+
+        console.log("Todas as etapas finalizadas!");
+      }
+
+      processo();
+
+      /*
+        Explicando:
+            . Cada await pausa a execução até que a Promise correspondente seja resolvida.
+            . Isso permite que você escreva código assíncrono de forma sequencial e fácil de entender.
+      */
+
+
+      // ===================================================================================
+
+      // Exemplo 3 - Tratamento de erros com try/catch
+      // Como await funciona de forma semelhante ao código síncrono, você pode usar o bloco try...catch para tratar erros.
+
+      async function buscarDados() {
+        try {
+          const resposta = await fetch("https://api.exemplo.com/dados");
+          if (!resposta.ok) {
+            throw new Error("Erro na requisição");
+          }
+          const dados = await resposta.json();
+          console.log(dados);
+        } catch (erro) {
+          console.error("Erro ao buscar dados:", erro);
+        }
+      }
+
+      // buscarDados(); // Descomente para testar (use uma URL válida)
+
+      /*
+            Explicando:
+                . O bloco try tenta executar o código que pode falhar.
+                . Se algo der errado, o controle passa para o bloco catch, onde o erro pode ser tratado.
+      */
+
+      // Exemplo Extra
+
+      function buscarUsuario() {
+        return new Promise((resolve, reject) => {
+          const sucesso = false;
+          setTimeout(() => {
+            if (sucesso) resolve("Usuário encontrado!");
+            else reject("Erro: usuário não encontrado!");
+          }, 1500);
+        });
+      }
+
+      async function executar() {
+        try {
+          const usuario = await buscarUsuario();
+          console.log(usuario);
+        } catch (erro) {
+          console.error(erro);
+        } finally {
+          console.log("Operação concluída!");
+        }
+      }
+
+      executar();
+
+      /*
+      Explicando:
+        . A função buscarUsuario() retorna uma Promise que pode ser resolvida ou rejeitada.
+        . A função executar() usa try/catch para lidar com ambos os casos.
+        . O bloco finally é executado independentemente do resultado, útil para limpeza ou mensagens finais.
+    */
+    </script>
+  </body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+p.one {
+  border: 2px solid black;
+  outline: #4CAF50 solid 10px;
+  margin: auto;  
+  padding: 20px;
+  text-align: center;
+}
+
+/* outline-style */
+p {outline-color:red;}
+
+p.dotted {outline-style: dotted;}
+p.dashed {outline-style: dashed;}
+p.solid {outline-style: solid;}
+p.double {outline-style: double;}
+p.groove {outline-style: groove;}
+p.ridge {outline-style: ridge;}
+p.inset {outline-style: inset;}
+p.outset {outline-style: outset;}
+
+/* outline-color */
+p.ex1 {
+  border: 2px solid black;
+  outline-style: solid;
+  outline-color: red;
+}
+
+p.ex2 {
+  border: 2px solid black;
+  outline-style: dotted;
+  outline-color: blue;
+}
+
+p.ex3 {
+  border: 2px solid black;
+  outline-style: outset;
+  outline-color: grey;
+}
+
+/* outline-width*/
+p.ex4 {
+  border: 1px solid black;
+  outline-style: solid;
+  outline-color: red;
+  outline-width: thin;
+}
+
+p.ex5 {
+  border: 1px solid black;
+  outline-style: solid;
+  outline-color: red;
+  outline-width: medium;
+}
+
+p.ex6 {
+  border: 1px solid black;
+  outline-style: solid;
+  outline-color: red;
+  outline-width: thick;
+}
+
+p.ex7 {
+  border: 1px solid black;
+  outline-style: solid;
+  outline-color: red;
+  outline-width: 4px;
+}
+
+/* outline off-set */
+p.two {
+  margin: 30px;
+  border: 1px solid black;
+  outline: 1px solid red;
+  outline-offset: 15px;
+}
+
+/* outline abreviado */
+p.ex8 {outline: dashed;}
+p.ex9 {outline: dotted red;}
+p.ex10 {outline: 5px solid yellow;}
+p.ex11 {outline: thick ridge pink;}
+
+</style>
+</head>
+<body>
+
+<h2>CSS Outline (contorno) </h2>
+<p class="one">Este elemento tem uma borda preta de 2px e um contorno verde com uma largura de 10px.</p>
+
+<h2>---------- Explicação ----------</h2>
+<h2> Outline CSS </h2>
+<p>Um contorno é uma linha desenhada ao redor dos elementos, FORA das bordas, para fazer o elemento "se destacar".</p>
+
+<h3>CSS tem as seguintes propriedades de contorno:</h3>
+
+<h4> ---------- outline-style (estilo) ---------- </h4>
+<p>A outline-style propriedade especifica o estilo do contorno e pode ter um dos seguintes valores:</p>
+
+<p>dotted- Define um contorno pontilhado</p>
+<p>dashed- Define um contorno tracejado</p>
+<p>solid- Define um contorno sólido</p>
+<p>double- Define um contorno duplo</p>
+<p>groove- Define um contorno ranhurado 3D</p>
+<p>ridge- Define um contorno estriado 3D</p>
+<p>inset- Define um contorno de inserção 3D</p>
+<p>outset- Define um esboço inicial 3D</p>
+<p>none- Não define contorno</p>
+<p>hidden- Define um contorno oculto</p>
+
+<h2>A propriedade outline-style</h2>
+
+<p class="dotted">Um contorno pontilhado</p>
+<p class="dashed">Um contorno tracejado</p>
+<p class="solid">Um contorno sólido</p>
+<p class="double">Um contorno duplo</p>
+<p class="groove">Um contorno de ranhura. O efeito depende do valor da cor do contorno.</p>
+<p class="ridge">Um contorno de crista. O efeito depende do valor da cor do contorno.</p>
+<p class="inset">Um contorno inserido. O efeito depende do valor da cor do contorno.</p>
+<p class="outset">Um esboço inicial. O efeito depende do valor da cor do contorno.</p>
+
+<h4> ---------- outline-color (cor) ---------- </h4>
+<p>A outline-color propriedade é usada para definir a cor do contorno.</p>
+
+<p>A cor pode ser definida por:</p>
+
+<p>nome - especifique um nome de cor, como "vermelho"</p>
+<p>HEX - especifique um valor hexadecimal, como "#ff0000"</p>
+<p>RGB - especifique um valor RGB, como "rgb(255,0,0)"</p>
+<p>HSL - especifique um valor HSL, como "hsl(0, 100%, 50%)"</p>
+<p>inverter - realiza uma inversão de cores (o que garante que o contorno fique visível, independentemente da cor do fundo)</p>
+
+<p>A propriedade outline-color é usada para definir a cor do contorno.</p>
+
+<p class="ex1">Um contorno vermelho sólido.</p>
+<p class="ex2">Um contorno azul pontilhado.</p>
+<p class="ex3">Um contorno cinza inicial.</p>
+
+<h4> ---------- outline-width (largura) ---------- </h4>
+<p>A outline-color propriedade é usada para definir a cor do contorno.</p>
+
+<p>A cor pode ser definida por:</p>
+
+<p>A outline-width propriedade especifica a largura do contorno e pode ter um dos seguintes valores:</p>
+<p>fino (thin) -  (normalmente 1px)</p>
+<p>médio (medium) -  (normalmente 3px)</p>
+<p>espessura (thick) - (normalmente 5px)</p>
+<p>Um tamanho específico (specific size) - (em px, pt, cm, em, etc)</p>
+
+<h2>A propriedade da outline-width </h2>
+
+<p class="ex4">Um contorno fino.</p>
+<p class="ex5">Um contorno médio.</p>
+<p class="ex6">Um contorno grosso.</p>
+<p class="ex7">Um contorno de 4px de espessura.</p>
+
+<h4> ---------- outline off-set (deslocamento) ---------- </h4>
+<p>A outline-color propriedade é usada para definir a cor do contorno.</p>
+<p>A propriedade de deslocamento (off-set) de contorno adiciona espaço entre um contorno e a aresta/borda de um elemento.</p>
+<p>O espaço entre um elemento e seu contorno é transparente.</p>
+
+<h2>A propriedade de deslocamento do contorno</h2>
+
+<p class="two">Este parágrafo tem um contorno de 15px fora da borda da borda.</p>
+
+<h4> ---------- outline (abreviado) ---------- </h4>
+<p>A outlinepropriedade é uma propriedade abreviada para definir as seguintes propriedades de contorno individuais:</p>
+<p>outline-width</p>
+<p>outline-style(requeridos)</p>
+<p>outline-color</p>
+<p>A outline propriedade é especificada como um, dois ou três valores da lista acima. A ordem dos valores não importa.</p>
+
+<h2>A propriedade outline abreviada </h2>
+
+<p class="ex8">Um contorno tracejado.</p>
+<p class="ex9">Um contorno vermelho pontilhado.</p>
+<p class="ex10">Um contorno amarelo sólido de 5px.</p>
+<p class="ex11">Um contorno rosa grosso.</p>
+
+
+</body>
+</html>

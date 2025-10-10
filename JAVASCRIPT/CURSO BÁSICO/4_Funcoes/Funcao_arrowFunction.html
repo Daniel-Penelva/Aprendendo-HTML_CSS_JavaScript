@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Testando JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h1>Funções - Arrow Function</h1>
+	<p> Respostas no console </p>
+
+    <script>
+	
+	// O que é uma Arrow Function?
+	// A Arrow Function é uma função anônima que utiliza a sintaxe:
+	// const nome = (parametros) => { instruções };
+	// Ela é uma forma simplificada de escrever expressões de função (const nome = function() {}).
+	
+	// Exemplo 1 - Exemplo básico (sem parâmetro)
+	
+	const saudacao = () => {
+	  console.log("Olá, mundo!");
+	};
+	
+	saudacao();
+	
+	//===================================================================================================
+	
+	// Exemplo 2 - Com parâmetro
+	// Com um parâmetro, você pode omitir os parênteses
+	
+	const dobrar = n => {
+	  return n * 2;
+	};
+
+	console.log(dobrar(5)); // Saída: 10
+	
+	
+	//===================================================================================================
+	
+	// Exemplo 3 - Com mais parâmetros
+	// Com mais de um parâmetro, os parênteses são obrigatórios
+	
+	const somar = (a, b) => {
+	  return a + b;
+	};
+
+	console.log(somar(3, 7)); // Saída: 10
+	
+	
+	//===================================================================================================
+	
+	// Exemplo 4 - Arrow Function com retorno implícito
+	// Se o corpo da função tiver apenas uma linha, você pode remover as chaves e o return.
+	
+	const soma = (a, b) => a + b;
+
+	console.log(soma(5, 2)); // Saída: 7
+	
+	// Isso é chamado de retorno implícito — o valor da expressão é automaticamente retornado.
+	
+	
+	//===================================================================================================
+	
+	// Exemplo 5 - Arrow Function em arrays
+	// Muito útil com métodos como map, filter, reduce, etc.:
+	
+	const numeros = [1, 2, 3, 4, 5];
+
+	const dobrados = numeros.map(num => num * 2);
+
+	console.log(dobrados); // Saída: [2, 4, 6, 8, 10]]
+	
+	
+	//===================================================================================================
+	
+	// Exemplo 6 - Diferença principal: o this
+	// A grande diferença das Arrow Functions é que elas não criam seu próprio this.
+	// Isso quer dizer que o valor de this dentro de uma arrow function é o mesmo do contexto onde ela foi criada.
+	
+	function Pessoa() {
+	  this.idade = 27;
+
+	  setInterval(() => {
+		this.idade++;
+		console.log(this.idade);
+	  }, 1000);
+	}
+
+	new Pessoa(); // 'this' é o mesmo da função Pessoa
+
+
+    </script>
+</body>
+</html>

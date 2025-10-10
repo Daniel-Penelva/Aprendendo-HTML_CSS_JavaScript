@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Evento de Click Onchange</h1>
+
+    <!-- Exemplo 1 -->
+
+    <label>Digite seu nome: </label>
+    <input type="text" id="nome" onchange="mostrarNome()" />
+
+    <hr />
+
+    <!-- Exemplo 2 -->
+
+    <label>Escolha uma cor: </label>
+    <select id="cores" onchange="mostrarCor()">
+      <option value="">Selecione</option>
+      <option value="vermelho">Vermelho</option>
+      <option value="azul">Azul</option>
+      <option value="verde">Verde</option>
+    </select>
+
+    <hr />
+
+    <!-- Exemplo 3 -->
+
+    <label>Digite um número: </label>
+    <input type="number" id="numero" />
+
+    <hr />
+
+    <!-- Exemplo 4 -->
+    <input type="text" id="texto" placeholder="Digite algo..." />
+
+    <script type="text/JavaScript">
+
+      // ========================================================================================================================
+
+      // Exemplo 1 - onchange com <input>
+      // O evento só dispara depois que o usuário altera o valor e sai do campo (pressionando Tab, clicando fora, etc).
+
+      function mostrarNome() {
+      	let nome = document.getElementById("nome").value;
+      	alert ("Você digitou: " + nome);
+      }
+
+
+      // ========================================================================================================================
+
+      // Exemplo 2 - onchange com <select>
+      // Aqui o onchange dispara assim que o usuário muda a opção no menu suspenso.
+
+      function mostrarCor() {
+      	let cor = document.getElementById("cores").value;
+      	alert("Cor escolhida: " + cor);
+      }
+
+
+      // ========================================================================================================================
+
+      // Exemplo 3 - onchange em tempo real (com input)
+      // Vantagem: você separa o JavaScript do HTML, deixando o código mais limpo e fácil de manter.
+
+      const campo = document.getElementById("numero");
+
+      campo.addEventListener("change", () => {
+      	console.log("Valor alterado para:", campo.value);
+      });
+
+
+
+      // ========================================================================================================================
+
+      // Exemplo 4 - Usando addEventListener
+      // O onchange só dispara depois que o campo perde o foco. Se quiser reagir enquanto o usuário digita, use o evento oninput
+
+      document.getElementById("texto").addEventListener("input", (e) => {
+      	console.log("Digitando:", e.target.value);
+      });
+    </script>
+  </body>
+</html>

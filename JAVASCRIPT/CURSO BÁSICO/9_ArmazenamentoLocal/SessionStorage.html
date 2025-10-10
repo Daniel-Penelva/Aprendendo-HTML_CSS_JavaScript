@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Session Storage</h1>
+
+    <!-- Exemplo 7 -->
+
+    <h2>Armazenando dados com sessionStorage</h2>
+
+    <input type="text" id="nome" placeholder="Digite seu nome">
+    <button onclick="salvar()">Salvar</button>
+    <button onclick="mostrar()">Mostrar</button>
+    <button onclick="limpar()">Limpar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+      // O que é o Session Storage?
+      // O Session Storage é uma funcionalidade do navegador que permite armazenar dados localmente no computador do usuário durante a sessão de navegação.
+      // Ele é parte da Web Storage API e oferece uma maneira simples de salvar pares chave-valor no navegador, ou seja, permite armazenar
+      // dados no navegador do usuário de forma temporária e recuperá-los posteriormente.
+      // Os dados armazenados no Session Storage são específicos para a aba ou janela do navegador e são apagados quando a aba ou janela é fechada.
+      // Cada domínio (site) tem seu próprio espaço de armazenamento, o que significa que os dados armazenados por um site não podem ser acessados por outro site.
+      // Portanto, os dados ficam salvos apenas durante a sessão atual (até a aba ou janela ser fechada).
+      // O sessionStorage é uma área de armazenamento do navegador parecida com o localStorage, mas com uma diferença fundamental
+
+      /*
+                Característica	               localStorage	                                sessionStorage
+                Duração	           Permanente (até ser apagado manualmente)	        Somente durante a sessão do navegador
+                Disponibilidade	   Disponível em todas as abas do mesmo domínio	    Isolado por aba e por janela
+                Capacidade média	               ~5 MB	                                      ~5 MB
+                Persistência	   Continua mesmo após fechar o navegador	        É apagado ao fechar a aba ou navegador
+        */
+
+      // Sintaxe básica:
+      // sessionStorage.setItem('chave', 'valor'); // Armazena um item
+      // sessionStorage.getItem('chave'); // Recupera um item
+      // sessionStorage.removeItem('chave'); // Remove um item
+      // sessionStorage.clear(); // Limpa todos os itens
+
+      // Exemplo 1 - Armazenando dados
+      sessionStorage.setItem("nome", "Maria");
+      sessionStorage.setItem("idade", "25");
+
+      // Exemplo 2 - Recuperando dados
+      const nome = sessionStorage.getItem("nome");
+      const idade = sessionStorage.getItem("idade");
+      console.log(`Nome: ${nome}, Idade: ${idade}`);
+
+      // Exemplo 3 - Removendo dados
+      sessionStorage.removeItem("idade");
+
+      // Exemplo 4 - Verificando se o dado foi removido
+      const idadeRemovida = sessionStorage.getItem("idade");
+      console.log(`Idade após remoção: ${idadeRemovida}`); // Deve ser null
+
+      // Exemplo 5 - Limpando todos os dados
+      sessionStorage.clear();
+
+      // Exemplo 6 - Verificando se todos os dados foram limpos
+      const nomeLimpo = sessionStorage.getItem("nome");
+      console.log(`Nome após limpar: ${nomeLimpo}`); // Deve ser null
+
+      // =============================================================================================
+
+      // Exemplo 7
+
+      function salvar() {
+        const nome = document.getElementById("nome").value;
+        sessionStorage.setItem("usuario", nome);
+        alert("Nome salvo na sessão!");
+      }
+
+      function mostrar() {
+        const nome = sessionStorage.getItem("usuario");
+        document.getElementById("resultado").textContent = nome ? `Bem-vindo, ${nome}!` : "Nenhum nome salvo na sessão.";
+      }
+
+      function limpar() {
+        sessionStorage.removeItem("usuario");
+        document.getElementById("resultado").textContent = "Sessão limpa!";
+      }
+    </script>
+  </body>
+</html>

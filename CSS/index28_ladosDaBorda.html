@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        text-align: center;
+      }
+
+      p.borda1 {
+        border-top-style: dotted;
+        border-right-style: solid;
+        border-bottom-style: dotted;
+        border-left-style: solid;
+      }
+
+      p.borda2 {
+        border-style: dotted solid;
+      }
+
+      /* Four values */
+      p.four {
+        border-style: dotted solid double dashed;
+      }
+
+      /* Three values */
+      p.three {
+        border-style: dotted solid double;
+      }
+
+      /* Two values */
+      p.two {
+        border-style: dotted solid;
+      }
+
+      /* One value */
+      p.one {
+        border-style: dotted;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <h2>Lados de borda individuais</h2>
+    <p class="borda1">2 estilos de borda diferentes.</p>
+
+    <h1>------ Explicação ------</h1>
+    <h2>Borda CSS - Lados Individuais</h2>
+    <p>
+      No CSS, também existem propriedades para especificar cada uma das bordas
+      (top, right, bottom, and left).
+    </p>
+
+    <h2>Outra forma de ser feito</h2>
+    <p class="borda2">2 estilos de borda diferentes.</p>
+
+    <h2>Então, aqui está como funciona</h2>
+
+    <h3>Se a border-style propriedade tiver quatro valores:</h3>
+    <h3>Estilo de borda: pontilhado sólido duplo tracejado</h3>
+    <p>borda superior é pontilhada = top border is dotted</p>
+    <p>borda direita é sólida = right border is solid</p>
+    <p>borda inferior é dupla = bottom border is double</p>
+    <p>borda esquerda é tracejada = left border is dashed</p>
+
+    <h3>Se a border-style propriedade tiver três valores:</h3>
+    <h3>estilo de borda: duplo sólido pontilhado</h3>
+    <p>borda superior é pontilhada = top border is dotted</p>
+    <p>
+      as bordas direita e esquerda são sólidas = right and left borders are
+      solid
+    </p>
+    <p>borda inferior é dupla = bottom border is double</p>
+
+    <h3>Se a border-style propriedade tiver dois valores:</h3>
+    <h3>estilo de borda: sólido pontilhado</h3>
+    <p>
+      as bordas superior e inferior são pontilhadas = top and bottom borders are
+      dotted
+    </p>
+    <p>
+      as bordas direita e esquerda são sólidas = right and left borders are
+      solid
+    </p>
+
+    <h3>Se a border-style propriedade tiver um valor:</h3>
+    <h3>estilo de borda: pontilhado</h3>
+    <p>todas as quatro bordas são pontilhadas = all four borders are dotted</p>
+
+    <h2>Lados de borda individuais</h2>
+
+    <p class="four">4 estilos de borda diferentes.</p>
+    <p class="three">3 estilos de borda diferentes.</p>
+    <p class="two">2 estilos de borda diferentes.</p>
+    <p class="one">1 estilo de borda.</p>
+  </body>
+</html>

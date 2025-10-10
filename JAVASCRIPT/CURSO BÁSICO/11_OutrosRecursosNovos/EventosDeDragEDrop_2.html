@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      /* Exemplo 1 */
+
+      #caixaArrastavel {
+        width: 100px;
+        height: 100px;
+        background-color: steelblue;
+        color: white;
+        text-align: center;
+        line-height: 100px;
+        cursor: grab;
+      }
+
+      #alvo {
+        width: 200px;
+        height: 200px;
+        border: 2px dashed #555;
+        margin-top: 30px;
+        text-align: center;
+        line-height: 200px;
+      }
+
+      #alvo.over {
+        background-color: lightgreen;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Eventos de Drag e Drop</h1>
+
+    <div id="caixaArrastavel" draggable="true">Arraste-me</div>
+
+    <div id="alvo">Solte aqui</div>
+
+    <script>
+      // Drag and Drop (Arrastar e Soltar)
+      // Esses eventos permitem que elementos HTML sejam arrastados e soltos em diferentes áreas da página.
+      // Você precisa de dois elementos:
+      // Os principais eventos são: (1) Um elemento arrastável (draggable="true") (2) Um elemento de destino (onde o item será solto)
+    /*
+        Evento                      O que faz
+        ondragstart	         Disparado quando o item começa a ser arrastado
+        ondrag	             Enquanto o item está sendo arrastado
+        ondragend	         Quando o item para de ser arrastado
+        ondragover	         Quando o item é arrastado sobre outro elemento
+        ondragenter	         Quando o item entra em uma área válida
+        ondragleave	         Quando o item sai de uma área válida
+        ondrop	             Quando o item é solto na área de destino
+    */
+
+      // Exemplo 1
+
+      const caixa = document.getElementById("caixaArrastavel");
+      const alvo = document.getElementById("alvo");
+
+      // Quando começa a arrastar
+      caixa.ondragstart = function (event) {
+        event.dataTransfer.setData("text", event.target.id);
+        console.log("Iniciou o arraste!");
+      };
+
+      // Quando passa por cima do alvo (precisa impedir o comportamento padrão)
+      alvo.ondragover = function (event) {
+        event.preventDefault();
+        alvo.classList.add("over");
+      };
+
+      // Quando o item sai da área
+      alvo.ondragleave = function () {
+        alvo.classList.remove("over");
+      };
+
+      // Quando solta o item
+      alvo.ondrop = function (event) {
+        event.preventDefault();
+        const id = event.dataTransfer.getData("text");
+        const elemento = document.getElementById(id);
+        alvo.appendChild(elemento);
+        alvo.classList.remove("over");
+        console.log("Item solto com sucesso!");
+      };
+    </script>
+  </body>
+</html>

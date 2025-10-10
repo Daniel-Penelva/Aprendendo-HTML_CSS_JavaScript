@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      /* Exemplo 2 */
+
+      #caixaArrastavel {
+        width: 100px;
+        height: 100px;
+        background-color: steelblue;
+        color: white;
+        text-align: center;
+        line-height: 100px;
+        cursor: grab;
+      }
+
+      #alvo {
+        width: 200px;
+        height: 200px;
+        border: 2px dashed #555;
+        margin-top: 30px;
+        text-align: center;
+        line-height: 200px;
+      }
+
+      #alvo.over {
+        background-color: lightgreen;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Eventos de Drag e Drop</h1>
+
+    <hr />
+
+    <h2>Exemplo de Drag and Drop</h2>
+
+    <div id="caixaArrastavel" draggable="true">Arraste-me</div>
+
+    <div id="alvo">Solte aqui</div>
+
+    <script>
+      // Drag and Drop (Arrastar e Soltar)
+      // Esses eventos permitem que elementos HTML sejam arrastados e soltos em diferentes áreas da página.
+      // Você precisa de dois elementos:
+      // Os principais eventos são: (1) Um elemento arrastável (draggable="true") (2) Um elemento de destino (onde o item será solto)
+      // dragstart: Disparado quando o arrasto começa.
+      // drag: Disparado enquanto o elemento está sendo arrastado.
+      // dragend: Disparado quando o arrasto termina.
+      // dragover: Disparado quando um elemento arrastável é movido sobre um alvo.
+      // drop: Disparado quando o elemento arrastável é solto sobre um alvo.
+      // dragenter: Disparado quando o elemento arrastável entra em um alvo.
+      // dragleave: Disparado quando o elemento arrastável sai de um alvo.
+      // Para que um elemento seja arrastável, ele deve ter o atributo draggable="true".
+
+      // Exemplo 1 básico de Drag and Drop
+
+      const draggableElement = document.createElement("div");
+      draggableElement.textContent = "Arraste-me!";
+      draggableElement.style.width = "100px";
+      draggableElement.style.height = "100px";
+      draggableElement.style.backgroundColor = "lightblue";
+      draggableElement.style.textAlign = "center";
+      draggableElement.style.lineHeight = "100px";
+      draggableElement.style.marginBottom = "20px";
+      draggableElement.setAttribute("draggable", "true");
+      document.body.appendChild(draggableElement);
+
+      const dropZone = document.createElement("div");
+      dropZone.textContent = "Solte aqui!";
+      dropZone.style.width = "200px";
+      dropZone.style.height = "200px";
+      dropZone.style.backgroundColor = "lightgray";
+      dropZone.style.textAlign = "center";
+      dropZone.style.lineHeight = "200px";
+      document.body.appendChild(dropZone);
+
+      draggableElement.addEventListener("dragstart", (event) => {
+        event.dataTransfer.setData("text/plain", "Este é o texto arrastado!");
+        console.log("Arrasto iniciado");
+      });
+
+      dropZone.addEventListener("dragover", (event) => {
+        // dragover - Quando o item é arrastado sobre outro elemento
+        event.preventDefault(); // Necessário para permitir o drop
+        console.log("Elemento arrastável sobre a zona de soltar");
+      });
+
+      dropZone.addEventListener("drop", (event) => {
+        // drop - Quando o item é solto na área de destino
+        event.preventDefault();
+        const data = event.dataTransfer.getData("text/plain");
+        dropZone.textContent = data;
+        console.log("Elemento solto na zona de soltar");
+      });
+
+      draggableElement.addEventListener("dragend", () => {
+        console.log("Arrasto terminado");
+      });
+
+      // ===========================================================================================
+
+      // Exemplo 2
+
+      const caixa = document.getElementById("caixaArrastavel");
+      const alvo = document.getElementById("alvo");
+
+      // Quando começa a arrastar
+      caixa.ondragstart = function (event) {
+        event.dataTransfer.setData("text", event.target.id);
+        console.log("Iniciou o arraste!");
+      };
+
+      // Quando passa por cima do alvo (precisa impedir o comportamento padrão)
+      alvo.ondragover = function (event) {
+        event.preventDefault();
+        alvo.classList.add("over");
+      };
+
+      // Quando o item sai da área
+      alvo.ondragleave = function () {
+        alvo.classList.remove("over");
+      };
+
+      // Quando solta o item
+      alvo.ondrop = function (event) {
+        event.preventDefault();
+        const id = event.dataTransfer.getData("text");
+        const elemento = document.getElementById(id);
+        alvo.appendChild(elemento);
+        alvo.classList.remove("over");
+        console.log("Item solto com sucesso!");
+      };
+    </script>
+  </body>
+</html>

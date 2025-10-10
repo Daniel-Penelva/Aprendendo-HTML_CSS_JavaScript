@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      img {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index: -1;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Propriedade z-index</h1>
+    <img src="image/img_tree.png" />
+    <p>
+      Como a imagem tem um índice z de -1, ela será colocada atrás do texto.
+    </p>
+
+    <h2>Bom saber:</h2>
+    <p>
+      Quando os elementos são posicionados, eles podem se sobrepor a outros
+      elementos.
+    </p>
+    <p>
+      A z-index propriedade especifica a ordem da pilha de um elemento (qual
+      elemento deve ser colocado na frente ou atrás dos outros).
+    </p>
+    <p>
+      Um elemento pode ter uma ordem de pilha positiva (vai sobrepor mais) ou
+      negativa (vai sobrepor menos)
+    </p>
+    <p>
+      Nota: z-index só funciona em elementos posicionados (posição: absoluta,
+      posição: relativa, posição: fixa ou posição: fixa) e itens flexíveis
+      (elementos que são filhos diretos de exibição: elementos flexíveis).
+    </p>
+  </body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Manipulação de Formulário</h1>
+
+    <!-- Exemplo 1 -->
+    <h3>Exemplo 1</h3>
+
+    <form id="meuFormulario">
+      <label>Nome:</label>
+      <input type="text" id="nome" placeholder="Digite seu nome" />
+
+      <label>Email:</label>
+      <input type="email" id="email" placeholder="Digite seu email" />
+
+      <button type="button" onclick="enviarFormulario()">Enviar</button>
+    </form>
+
+    <p id="saida"></p>
+
+    <hr />
+
+    <!-- Exemplo 2 -->
+    <h3>Exemplo 2</h3>
+
+    <form id="cadastroForm">
+      <input type="text" id="usuario" placeholder="Usuário" />
+      <input type="password" id="senha" placeholder="Senha" />
+      <button type="submit">Enviar</button>
+    </form>
+
+    <p id="resultado"></p>
+
+    <hr />
+
+    <!-- Exemplo 3 -->
+    <h3>Exemplo 3</h3>
+
+    <form id="formulario">
+      <label>Nome:</label>
+      <input type="text" id="name" required />
+
+      <label>Idade:</label>
+      <input type="number" id="age" required />
+
+      <button type="submit">Enviar</button>
+    </form>
+
+    <p id="message"></p>
+
+    <hr />
+
+    <!-- Exemplo 4 -->
+    <h3>Exemplo 4</h3>
+
+    <input type="text" id="campoEmail" placeholder="Digite seu e-mail" />
+    <p id="erroEmail"></p>
+
+    <script>
+      // Exemplo 1 - Básico
+      // Aqui é usado o .value para capturar o valor digitado em cada <input>.
+
+      function enviarFormulario() {
+        const nome = document.getElementById("nome").value;
+        const email = document.getElementById("email").value;
+
+        document.getElementById("saida").textContent = `Nome: ${nome} | Email: ${email}`;
+        console.log(`Usuário: ${nome}, Email: ${email}`);
+      }
+
+      // ====================================================================================================================
+
+      // Exemplon 2 - Evento onsubmit
+      // O evento onsubmit é disparado quando o usuário tenta enviar o formulário (com botão tipo submit ou tecla Enter).
+      // Você pode interceptar o envio e impedir que a página recarregue.
+      // event.preventDefault() é essencial para evitar que o navegador recarregue a página.
+
+      document
+        .getElementById("cadastroForm").addEventListener("submit", function (event) {
+          event.preventDefault(); // Impede o envio automático
+
+          const user = document.getElementById("usuario").value;
+          const pass = document.getElementById("senha").value;
+
+          document.getElementById("resultado").textContent = `Login do usuário: ${user} | Senha do usuário: ${pass}`;
+          console.log(`Usuário: ${user}, Senha: ${pass}`);
+        });
+
+      // ====================================================================================================================
+
+      // Exemplon 3 - Validação de formulários
+      // A validação é feita para garantir que os dados inseridos são válidos antes de enviar.
+      // Você pode validar de duas formas:
+      // 1. Validação HTML5 (usando atributos como required, type, minlength, etc.
+      // 2. Validação com JavaScript (personalizada e dinâmica)
+
+      document
+        .getElementById("formulario").addEventListener("submit", function (event) {
+          
+            event.preventDefault();  // essencial para evitar que o navegador recarregue a página.
+
+          const name = document.getElementById("name").value.trim();
+          const age = parseInt(document.getElementById("age").value);
+          const msg = document.getElementById("message");
+
+          if (name === "" || isNaN(age)) {
+            msg.textContent = "Por favor, preencha todos os campos corretamente.";
+            msg.style.color = "red";
+            return;
+          }
+
+          if (age < 18) {
+            msg.textContent = "Você precisa ter pelo menos 18 anos.";
+            msg.style.color = "orange";
+          } else {
+            msg.textContent = `Cadastro realizado com sucesso! Bem-vindo, ${name}.`;
+            msg.style.color = "green";
+          }
+        });
+
+      // ====================================================================================================================
+
+      // Exemplon 4 - Validação em tempo real com oninput
+      // Você pode validar enquanto o usuário digita
+
+      const emailCampo = document.getElementById("campoEmail");
+      const erro = document.getElementById("erroEmail");
+
+      emailCampo.addEventListener("input", () => {
+        if (!emailCampo.value.includes("@")) {
+          erro.textContent = "E-mail inválido!";
+          erro.style.color = "red";
+        } else {
+          erro.textContent = "E-mail válido.";
+          erro.style.color = "green";
+        }
+      });
+    </script>
+  </body>
+</html>

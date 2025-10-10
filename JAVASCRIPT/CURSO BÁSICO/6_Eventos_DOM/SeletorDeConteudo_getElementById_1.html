@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Testando JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+	<body>
+	
+	<h1> Seletor de Conteúdo - getElementById()</h1>
+	
+	<!-- Exemplo 1 -->
+	<p id="mensagem">Olá!</p>
+	
+	<hr>
+	
+	<!-- Exemplo 2 -->
+	
+	<input type="text" id="campo">
+	<button onclick="acao()">Clique aqui</button>
+	
+	
+        <script type="text/JavaScript">
+		
+		// getElementById()
+		// Seleciona um elemento pelo seu ID.
+		// Retorna um único elemento.
+		
+		const p = document.getElementById("mensagem");
+		p.textContent = "Olá, Daniel!";
+			
+		// ==================================================================================
+		
+		// Exemplo 2
+		
+		function acao() {
+		  const campo = document.getElementById("campo");
+		  alert(campo.value);
+		  
+		  campo.value = "";  // apaga o campo
+		  
+		}
+			
+		</script>	
+    </body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Testando JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+	<body>
+	
+	<h1> Variáveis </h1>
+        <script type="text/JavaScript">
+		
+		  // Variavel var
+		  var nome = "Daniel";
+		  var idade = 21;
+		  var altura = 1.74;
+		  var ativo = true;
+		  
+		  // escrita: nomeFuncionario ou nome_funcionario
+		  
+		  // exibir
+		  console.log(nome + " | " + idade + " | " + "altura" + " | " + ativo);
+		  
+		  /*  Sobre var:
+				-> Forma mais antiga de declarar variáveis (antes do ES6, 2015).
+				-> Tem escopo de função (não de bloco).
+				-> Pode ser re-declarada e reatribuída.
+		  */
+		  
+		  // Isso pode gerar bugs em códigos grandes.
+		   var y = 5;
+		   var y = 20; // não dá erro!
+		   console.log(y); // 20  
+
+
+		   // ==========================================================================================
+
+           //  Variavel let
+		   let age = 18;
+		   age = 19; // ok
+		   console.log(age); // 19
+		   
+		   /*
+		   Introduzido no ES6.
+
+				-> Tem escopo de bloco (dentro de { }).
+				-> Pode ser reatribuída, mas não pode ser redeclarada no mesmo escopo.
+		   */
+
+		   // ==========================================================================================
+
+	
+		   // Variavel const - constante (não muda) 
+		   const pi = 3.14;   // pi = 3.1415; // erro! não pode reatribuir
+		   console.log(pi); // 3.14
+
+
+		</script>
+    </body>
+
+</html>

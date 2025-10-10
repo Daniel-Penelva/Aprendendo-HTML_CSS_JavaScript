@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Testando JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h1>Objeto</h1>
+	<p> Respostas no console </p>
+
+    <script>
+        
+    // O que é um objeto?
+	// Um objeto é uma estrutura que armazena dados e comportamentos relacionados a uma entidade.
+    // Ele é composto por:
+	// 1. Propriedades (ou atributos): informações sobre o objeto.
+	// 2. Métodos: funções que descrevem ações que o objeto pode realizar.
+	
+	
+	// Exemplo 1
+	const pessoa = {
+	  nome: "Daniel",
+	  idade: 25,
+	  
+	  saudacao: function() {
+		console.log("Olá! Meu nome é " + this.nome);
+	  }
+	};
+
+	console.log("Nome: ", pessoa.nome, " - Idade: ", pessoa.idade); 
+	pessoa.saudacao(); // Olá! Meu nome é Daniel
+	
+	// ATENÇÃO!!! "this" faz referência ao próprio objeto (no caso, pessoa).
+	
+	
+	// =============================================================================================================
+	
+	// Exemplo 2 - Usando new Object()
+	
+	const carro = new Object();
+	carro.marca = "Toyota";
+	carro.modelo = "Corrola";
+	carro.ano = 2025;
+	
+	console.log("Marca: ", carro.marca, " - Modelo: ", carro.modelo, " - Ano: ", carro.ano);
+
+
+	 
+	// =============================================================================================================
+	
+	// Exemplo 3 - Usando função construtora
+	function Funcionario(nome, idade) {
+	  this.nome = nome;
+	  this.idade = idade;
+	}
+
+	const p1 = new Funcionario("Lucas", 30);
+	console.log(p1.nome); // Lucas
+	console.log(p1.idade); // 30
+	
+	
+	
+	// =============================================================================================================
+	
+	// Exemplo 4 - Usando classes (forma moderna)
+	
+	class Pessoa {
+	  
+	  constructor(nome, idade) {
+		this.nome = nome;
+		this.idade = idade;
+	  }
+	  
+	  apresentar() {
+		console.log(`Olá, meu nome é ${this.nome}`);
+	  }
+	}
+
+	const p2 = new Pessoa("Maria", 28);
+	p2.apresentar(); // Olá, meu nome é Maria
+	
+	
+	
+	// =============================================================================================================
+	
+	// Exemplo 5 - Acessando e modificando propriedades
+	
+	const tecnologia = { programacao: "Java", cargaHoraria: 100 };
+
+	console.log(tecnologia.programacao);      // Java  -> notação de ponto
+	console.log(tecnologia["programacao"]);  // Java  -> notação de colchetes
+
+	tecnologia.cargaHoraria = 200;              // adicionando nova propriedade
+	console.log(tecnologia.cargaHoraria);       // 200
+
+	delete tecnologia.programacao;            // removendo propriedade
+	console.log(tecnologia);            // { programacao: "Java", cargaHoraria: 200 }
+	
+	
+	
+	// =============================================================================================================
+	
+	// Exemplo 6 - Percorrendo objetos
+	// Quando você quer listar todas as propriedades, pode usar - for...in:
+	
+	const livro = { titulo: "1984", autor: "George Orwell", ano: 1949 };
+
+	for (let chave in livro) {
+	  console.log(chave + ": " + livro[chave]);
+	}
+	
+	// Object.keys() → retorna as chaves
+	console.log("Retorna as chaves", Object.keys(livro)); // ["titulo", "autor", "ano"];
+	
+	// Object.values() → retorna os valores
+	console.log("Retorna os valores", Object.values(livro)); // ["1984", "George Orwell", 1949]
+	
+	// Object.entries() → retorna pares [chave, valor]
+	console.log("Retorna pares", Object.entries(livro)); // [["titulo", "1984"], ["autor", "George Orwell"], ["ano", 1949]]
+	
+	
+	
+	// =============================================================================================================
+	
+	// Exemplo 7 - Clonando e mesclando objetos
+	
+	// Copiar propriedades com Object.assign()
+	
+	const destino = {};
+	const origem = { nome: "Carlos", idade: 32 };
+
+	Object.assign(destino, origem);
+	console.log(destino); // { nome: "Carlos", idade: 32 }
+	
+	
+	// Clonar com o operador spread (...)
+	
+	const produto = { nome: "Notebook", preco: 2500 };
+	const copia = { ...produto };
+
+	console.log(copia); // { nome: "Notebook", preco: 2500 }
+	
+	
+	// Mesclar dois objetos
+	
+	const aluno = { nome: "Daniel" };
+	const contato = { email: "daniel@email.com" };
+
+	const perfil = { ...aluno, ...contato };
+	console.log(perfil); // { nome: "Daniel", email: "daniel@email.com" }
+	
+	
+	
+	// =============================================================================================================
+	
+	// Exemplo 8 - Objetos dentro de objetos
+	// Um objeto pode conter outros objetos
+	
+	const professor = {
+	  nome: "Pedro",
+	  endereco: {
+		cidade: "Rio de Janeiro",
+		cep: "20000-000"
+	  }
+	};
+
+	console.log(professor.endereco.cidade); // Rio de Janeiro
+	
+	
+	// =============================================================================================================
+	
+	// Exemplo 9 - Métodos (funções dentro de objetos)
+
+	const calculadora = {
+	  somar(a, b) {
+		return a + b;
+	  },
+	  multiplicar(a, b) {
+		return a * b;
+	  }
+	};
+
+	console.log(calculadora.somar(2, 3)); // 5
+	
+	
+	
+	// =============================================================================================================
+	
+	// Exemplo 10 - Verificando propriedades
+	
+	const user = { nome: "João", idade: 22 };
+
+	console.log("nome" in user); // true
+	console.log("email" in user); // false
+	
+	
+	
+	// =============================================================================================================
+	
+	// Exemplo 11 - Congelando ou travando objetos
+	// Object.freeze() → impede alterações
+	
+	const config = { tema: "claro" };
+	Object.freeze(config);
+
+	config.tema = "escuro"; // não muda
+	console.log(config.tema); // claro
+	
+	
+	// Object.seal() → impede adicionar/remover, mas permite alterar valores existentes
+	
+	const conta = { saldo: 100 };
+	Object.seal(conta);
+
+	conta.saldo = 200; // permitido
+	delete conta.saldo; // não permitido
+
+    </script>
+</body>
+</html>

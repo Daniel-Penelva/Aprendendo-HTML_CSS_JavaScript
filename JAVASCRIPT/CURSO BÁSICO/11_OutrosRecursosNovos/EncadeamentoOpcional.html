@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Encadeamento Opcional (?., ??)</h1>
+
+    <script>
+
+        /*
+        Encadeamento opcional (?.)
+        Esse operador permite acessar propriedades de objetos aninhados com segurança, sem causar erro se alguma delas for undefined ou null.
+        O ?. interrompe a execução se o que está antes for null ou undefined, retornando undefined.
+
+
+        Operador de coalescência nula (??)
+        Esse operador retorna o primeiro valor que não for null nem undefined.
+        É útil para definir valores padrão sem confundir com 0, false ou "" (string vazia), que o || trataria como falsos.
+        */
+
+        
+        const usuario = {
+            nome: "Ana",
+            endereco: {
+                rua: "Rua A",
+                cidade: "Cidade B"
+            }
+        };
+        
+        
+        // Exemplo 1 - Encadeamento opcional (?.)
+        
+        console.log(usuario.endereco?.rua); // "Rua A"
+        console.log(usuario.contato?.telefone); // undefined (sem erro)
+        console.log(usuario.endereco?.cidade); // "Cidade B"
+        console.log(usuario.endereco?.pais); // undefined (sem erro)
+
+
+        // Exemplo 2 - Operador de coalescência nula (??)
+
+        console.log(usuario.contato?.telefone ?? "Telefone não disponível"); // "Telefone não disponível"
+        console.log(usuario.idade ?? 25); // 25 (idade é undefined)
+        console.log(usuario.nome ?? "Usuário desconhecido"); // "Ana" (nome é definido)
+        console.log(usuario.endereco?.cidade ?? "Cidade não disponível"); // "Cidade B" (cidade é definido)
+        console.log(usuario.endereco?.pais ?? "País não disponível"); // "País não disponível" (pais é undefined)
+        console.log(usuario.endereco?.rua ?? "Rua não disponível"); // "Rua A" (rua é definido)
+        console.log(usuario.endereco?.cep ?? "CEP não disponível"); // "CEP não disponível" (cep é undefined)
+
+
+        // Exemplo 3 - Também funciona com funções e arrays
+
+        const lista = [1, 2, 3];
+        console.log(lista?.[1]); // 2
+        console.log(lista?.[10]); // undefined (sem erro)
+        console.log(lista?.[10] ?? "Índice não disponível"); // "Índice não disponível"
+        console.log(lista?.[5] ?? "Índice não disponível"); // "Índice não disponível"
+
+
+        // Exemplo 4 - Funções
+        const funcao = null;
+        console.log(funcao?.() ?? "Função não disponível"); // "Função não disponível"
+
+        const funcao2 = () => "Função executada";
+        console.log(funcao2?.() ?? "Função não disponível"); // "Função executada"
+
+    </script>
+</body>
+</html>

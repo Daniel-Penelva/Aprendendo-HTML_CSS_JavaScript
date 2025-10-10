@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /*posição static*/
+      div.static {
+        position: static;
+        border: 3px solid #73ad21;
+      }
+
+      /*posição relative*/
+      div.relative {
+        position: relative;
+        left: 30px;
+        border: 3px solid #73ad21;
+      }
+
+      /* posição fixed */
+      div.fixed {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        width: 300px;
+        border: 3px solid #73ad21;
+      }
+
+      /*posição relative*/
+      div.relative1 {
+        position: relative;
+        width: 400px;
+        height: 200px;
+        border: 3px solid #73ad21;
+      }
+
+      div.absolute {
+        position: absolute;
+        top: 80px;
+        right: 0;
+        width: 200px;
+        height: 100px;
+        border: 3px solid #73ad21;
+      }
+
+      /*posiçao stick*/
+      div.sticky {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        padding: 5px;
+        background-color: #cae8ca;
+        border: 2px solid #4caf50;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <h1>Layout CSS - Propriedade de Posição</h1>
+    <h2>
+      A position propriedade especifica o tipo de método de posicionamento usado
+      para um elemento:
+    </h2>
+
+    <h3>1. estático (static)</h3>
+    <p>Os elementos HTML são posicionados estáticos por padrão.</p>
+    <p>
+      Os elementos posicionados estáticos não são afetados pelas propriedades
+      superior, inferior, esquerda e direita.
+    </p>
+    <p>
+      Um elemento com position: static;não é posicionado de nenhuma maneira
+      especial; está sempre posicionado de acordo com o fluxo normal da página
+    </p>
+
+    <h3>2. relativo (relative)</h3>
+    <p>
+      Um elemento com position: relative;é posicionado em relação à sua posição
+      normal.
+    </p>
+    <p>
+      Definir as propriedades superior, direita, inferior e esquerda de um
+      elemento relativamente posicionado fará com que ele seja ajustado para
+      longe de sua posição normal. Outros conteúdos não serão ajustados para
+      caber em qualquer lacuna deixada pelo elemento.
+    </p>
+
+    <h3>3. fixo (fixed)</h3>
+    <p>
+      Um elemento com position: fixed;é posicionado em relação à viewport, o que
+      significa que ele sempre permanece no mesmo lugar, mesmo que a página seja
+      rolada. As propriedades superior, direita, inferior e esquerda são usadas
+      para posicionar o elemento.
+    </p>
+    <p>
+      Um elemento fixo não deixa uma lacuna na página onde normalmente estaria
+      localizado.
+    </p>
+
+    <h3>absoluto ou fixo (absolute ou sticky)</h3>
+    <p>
+      Um elemento com position: absolute;é posicionado em relação ao ancestral
+      posicionado mais próximo (em vez de posicionado em relação à viewport,
+      como fixo).
+    </p>
+    <p>
+      No entanto; se um elemento posicionado absoluto não tiver ancestrais
+      posicionados, ele usará o corpo do documento e se moverá junto com a
+      rolagem da página.
+    </p>
+    <p>
+      Nota: Elementos posicionados absolutos são removidos do fluxo normal e
+      podem sobrepor elementos.
+    </p>
+
+    <h3>4. sticky</h3>
+    <p>
+      Um elemento com position: sticky;é posicionado com base na posição de
+      rolagem do usuário.
+    </p>
+    <p>
+      Um elemento fixo alterna entre relativee fixed, dependendo da posição de
+      rolagem. Ele é posicionado relativo até que uma determinada posição de
+      deslocamento seja encontrada na viewport - então ele "sticky" no lugar
+      (como position:fixed).
+    </p>
+    <p></p>
+
+    <h1>Exemplificando:</h1>
+
+    <h1>
+      --------------------------------------------------------------------------
+    </h1>
+    <h2>posição: estático (static)</h2>
+
+    <p>
+      Um elemento com posição: estático; não está posicionado de forma especial;
+      isto está sempre posicionado de acordo com o fluxo normal da página:
+    </p>
+
+    <div class="static">This div element has position: static;</div>
+
+    <h1>
+      --------------------------------------------------------------------------
+    </h1>
+    <h2>posição: relativo (relative)</h2>
+    <p>
+      Um elemento com posição: relativa; está posicionado em relação à sua
+      posição normal:
+    </p>
+
+    <div class="relative">Este elemento div tem posição: relativo;</div>
+
+    <h1>
+      --------------------------------------------------------------------------
+    </h1>
+    <h2>posição: fixo (fixed)</h2>
+
+    <p>
+      Um elemento com posição: fixo; está posicionado em relação à janela de
+      visualização, o que significa que sempre permanece no mesmo lugar, mesmo
+      que a página seja rolada:
+    </p>
+
+    <div class="fixed">Este elemento div tem posição: fixed;</div>
+
+    <h1>
+      --------------------------------------------------------------------------
+    </h1>
+    <h2>posição: absoluto (absolte)</h2>
+
+    <p>
+      Um elemento com posição: absoluta; é posicionado em relação ao ancestral
+      posicionado mais próximo (em vez de posicionado em relação à janela de
+      visualização, como fixo):
+    </p>
+
+    <div class="relative1">
+      Este elemento div tem posição: relativo;
+      <div class="absolute">Este elemento div tem posição: absolute;</div>
+    </div>
+
+    <h1>
+      --------------------------------------------------------------------------
+    </h1>
+    <h2>posição: sticky</h2>
+
+    <p>
+      Tente <b>rolar</b> dentro deste quadro para entender como funciona o
+      posicionamento fixo.
+    </p>
+
+    <div class="sticky">Eu sou pegajoso!</div>
+
+    <div style="padding-bottom: 2000px">
+      <p>
+        Neste exemplo, o elemento fixo fica no topo da página (topo: 0), quando
+        você atinge a posição de rolagem.
+      </p>
+      <p>Role para cima para remover a aderência.</p>
+      <p>
+        Algum texto para permitir a rolagem. Mas a razão pela qual a direita se
+        orgulha de você, eu faço que cada um o derrube. Traz-nos o trabalho de
+        repúdio e Deixe-os ser feitos para esses anúncios. Não o incomode com
+        prazeres.
+      </p>
+      <p>
+        Algum texto para permitir a rolagem. Mas a razão pela qual a direita se
+        orgulha de você, eu faço que cada um o derrube. Traz-nos o trabalho de
+        repúdio e Deixe-os ser feitos para esses anúncios. Não o incomode com
+        prazeres.
+      </p>
+    </div>
+  </body>
+</html>

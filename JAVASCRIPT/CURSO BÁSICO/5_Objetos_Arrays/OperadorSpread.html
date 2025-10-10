@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Spread Operator (Operador Espalhar)</h1>
+    <p>Resultados no console</p>
+    
+    <script>
+
+        // O Spread é usado para copiar, combinar ou expandir valores de arrays e objetos.
+        // Espalha elementos de um array ou propriedades de um objeto.
+        // sintaxe: [...array], {...obj}
+
+        // Exemplo 1 - Copiando Arrays
+
+        const numeros = [1, 2, 3];
+        const copia = [...numeros];
+
+        console.log(copia); // [1, 2, 3]
+
+        //=============================================================================================
+
+        // Exemplo 2 - Concatenando arrays
+
+        const a = [1, 2];
+        const b = [3, 4];
+        const resultado = [...a, ...b];
+
+        console.log(resultado); // [1, 2, 3, 4]
+
+
+        //=============================================================================================
+
+        // Exemplo 3 - Adicionando novos elementos
+
+        const numbers = [2, 3];
+        const novoArray = [1, ...numbers, 4];
+
+        console.log(novoArray); // [1, 2, 3, 4]
+
+        //=============================================================================================
+
+        // Exemplo 4 - Copiando e modificando objetos
+        const pessoa = { nome: "Daniel", idade: 30 };
+        const copy = { ...pessoa, cidade: "São Paulo" };
+
+        console.log(copy);  // { nome: 'Daniel', idade: 30, cidade: 'São Paulo' }
+
+        // OBS. O Spread é muito usado em frameworks modernos (como React) para atualizar estado sem alterar o original.
+
+
+        //=============================================================================================
+
+        // Exemplo 5 - Passando parâmetros em funções
+
+        let valores;
+
+        // Antes
+        valores = [5, 10, 15];
+        console.log(Math.max(valores)); // NaN (não funciona)
+
+        // Comm Spread]
+        valores = [5, 10, 15];
+        console.log(Math.max(...valores)); // 15 (funciona)
+
+    </script>
+</body>
+</html>

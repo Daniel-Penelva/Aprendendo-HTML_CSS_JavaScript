@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Testando JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+	<body>
+	
+	<h1> Vetor (ou Array)</h1>
+	<p> As respostas estão no console </p>
+	
+	<!-- Exemplo 1 -->
+	
+	
+        <script type="text/JavaScript">
+		
+		// O que é um Array?
+		// Um array (ou “vetor”) é uma lista ordenada de valores, que podem ser de qualquer tipo: números, strings, objetos, até outras listas.
+		
+		let frutas;
+		
+		// Exemplo 1 - Básico
+		frutas = ["Maçã", "Banana", "Laranja"];
+		console.log(frutas[0]); // Maçã]
+		
+		
+		// =============================================================================================
+		
+		// // Exemplo 2 - Criando Arrays
+		
+		let numbers = [10, 20, 30];       // forma literal
+		let nomes = new Array("Ana", "João"); // forma com construtor
+		let vazio = [];                   // array vazio
+		
+		
+		// =============================================================================================
+		
+		// Exemplo 3 - Principais métodos de manipulação
+		
+		// push() — adiciona no final
+		
+		frutas = ["Maçã", "Banana"];
+		frutas.push("Laranja");
+		console.log(frutas); // ["Maçã", "Banana", "Laranja"]
+		
+		
+		// pop() — remove o último elemento
+		
+		frutas = ["Maçã", "Banana", "Laranja"];
+		frutas.pop();
+		console.log(frutas); // ["Maçã", "Banana"]
+		
+		
+		// unshift() — adiciona no início
+		
+		frutas = ["Banana"];
+		frutas.unshift("Maçã");
+		console.log(frutas); // ["Maçã", "Banana"]
+		
+		
+		// shift() — remove o primeiro elemento
+		
+		frutas = ["Maçã", "Banana"];
+		frutas.shift();
+		console.log(frutas); // ["Banana"]
+		
+		
+		// =============================================================================================
+		
+		// Exemplo 4 - Métodos para fatiar ou alterar
+		
+		// slice() — cria uma cópia parcial
+		// Não altera o array original.
+		
+		let numeros;
+		let parte;
+		
+		numeros = [10, 20, 30, 40, 50];
+		parte = numeros.slice(1, 4); 
+		console.log(parte); // [20, 30, 40]         // O primeiro número é o índice inicial, o segundo é o fim (não incluso).
+		console.log(numeros); // [10, 20, 30, 40, 50]
+		
+		
+		// splice() — remove, adiciona ou substitui
+		// Sintaxe: array.splice(início, quantidade, itensOpcional...)
+		
+		numeros = [10, 20, 30, 40, 50];
+
+		// remove 2 elementos a partir do índice 1
+		numeros.splice(1, 2);
+		console.log(numeros); // [10, 40, 50]
+
+		// adiciona elementos
+		numeros.splice(1, 0, 15, 25);
+		console.log(numeros); // [10, 15, 25, 40, 50]
+		
+		
+		
+		// =============================================================================================
+		
+		// Exemplo 5 - Métodos de iteração (percorrer arrays)
+		
+		// forEach() — percorre cada item do array
+		// Não retorna nada — serve apenas para executar uma ação.
+		
+		frutas = ["Maçã", "Banana", "Laranja"];
+
+		frutas.forEach(function(fruta, indice) {
+		  console.log(indice + ": " + fruta);
+		});
+		
+		
+		// map() — cria um novo array transformado
+		// Ideal quando você quer transformar os valores.
+		
+		numeros = [1, 2, 3];
+		let dobrados = numeros.map(n => n * 2);
+
+		console.log(dobrados); // [2, 4, 6]
+		
+		
+		// filter() — cria um novo array filtrando valores
+		// Ideal para selecionar elementos que satisfazem uma condição.
+		
+		let idades = [12, 18, 25, 30];
+		let adultos = idades.filter(idade => idade >= 18);
+
+		console.log(adultos); // [18, 25, 30]
+		
+		
+		// reduce() — reduz o array a um único valor
+		// O primeiro parâmetro (acumulador) guarda o valor acumulado.
+		// O segundo (valor) é o item atual.
+		// O 0 no final é o valor inicial.
+		
+		numeros = [10, 20, 30];
+		let soma = numeros.reduce((acumulador, valor) => acumulador + valor, 0);
+
+		console.log(soma); // 60
+		
+		
+		
+		// =============================================================================================
+		
+		// Exemplo 6 - Outros métodos úteis
+		
+		// find() — retorna o primeiro valor que atende a condição
+		
+		let resultado;
+		
+		numeros = [5, 10, 15, 20];
+	    resultado = numeros.find(n => n > 10);
+		console.log(resultado); // 15
+		
+		
+		// findIndex() — retorna o índice do primeiro valor que atende a condição
+		
+		resultado = numeros.findIndex(n => n > 10);
+		console.log(resultado); // 2
+		
+		
+		// includes() — verifica se existe um valor
+		
+		frutas = ["Maçã", "Banana"];
+		console.log(frutas.includes("Banana")); // true
+		
+		
+		// join() — junta todos os elementos em uma string
+		
+		let palavras = ["Olá", "mundo"];
+		console.log(palavras.join(" ")); // "Olá mundo"
+		
+		
+		// sort() — ordena o array (como texto por padrão)
+		numeros = [30, 10, 2];
+		console.log(numeros.sort()); // [10, 2, 30] — cuidado! (ordem textual, ou seja, dez, dois e trinta)
+
+		numeros.sort((a, b) => a - b); // agora numérico
+		console.log(numeros); // [2, 10, 30]
+		
+		
+		// reverse() — inverte a ordem dos elementos
+		let letras = ["A", "B", "C"];
+		letras.reverse();
+		console.log(letras); // ["C", "B", "A"]
+		
+		
+		
+		// =============================================================================================
+		
+		// Exemplo 7 - Arrays de objetos (com métodos)
+
+		// Esses métodos também funcionam com objetos dentro de arrays
+		
+		let produtos = [
+		  { nome: "Notebook", preco: 2500 },
+		  { nome: "Mouse", preco: 80 },
+		  { nome: "Teclado", preco: 150 }
+		];
+
+		let caros = produtos.filter(p => p.preco > 100);
+		console.log(caros);
+		// [{ nome: "Notebook", preco: 2500 }, { nome: "Teclado", preco: 150 }]
+		
+		
+		// =============================================================================================
+		
+		// Exemplo 8 - Armazenar qualquer tipo de dado no array
+		
+		// você pode armazenar qualquer tipo de dado, misturar tipos e até funções!
+		
+		let misto = [1, "Texto", true, { nome: "Daniel" }, [10, 20]];
+		console.log(misto);
+			
+		</script>	
+    </body>
+
+</html>

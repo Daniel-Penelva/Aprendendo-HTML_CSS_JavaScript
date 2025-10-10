@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Módulo import e export</h1>
+
+    <script type="module">
+      /*
+            O que são módulos em JavaScript?
+
+            Módulos são arquivos JavaScript que exportam funcionalidades (variáveis, funções, classes) 
+            para serem reutilizadas em outros arquivos através de importações.
+            Eles ajudam a organizar o código, promover a reutilização e evitar poluição do escopo global.
+
+            Ou seja, Módulos permitem dividir o código em arquivos separados e importar/exportar funcionalidades entre eles.
+            Isso evita ter um único arquivo gigante e facilita manutenção, testes e reuso.
+            
+                . export → torna uma variável, função ou classe disponível para outros arquivos.
+                . import → importa algo exportado de outro módulo.
+            
+            Na tag do script type="module" é obrigatório para usar import/export no navegador.
+        */
+
+      // Exemplo 1 - Importação nomeada - Arquivo: mathUtils.js
+
+      // Importação nomeada - Arquivo: mathUtils.js
+      import { somar, substract, PI } from "./mathUtils.js";
+
+      console.log(somar(2, 3)); // 5
+      console.log(substract(5, 2)); // 3
+      console.log(PI); // 3.14159
+
+      // ======================================================================================
+
+      // Exemplo 2 - Importação padrão - Arquivo: mensagem.js
+      import saudacao from "./mensagem.js";
+      saudacao("Daniel"); // Olá, Daniel! Bem-vindo ao módulo de mensagens.
+
+      // ======================================================================================
+
+      // Exemplo 3 - Combinação de importações
+      // Você pode misturar importações padrão e nomeadas:
+
+      // import saudacao, { PI } from "./mathUtils.js";
+
+
+    </script>
+  </body>
+</html>

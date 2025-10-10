@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /* Padrão */
+      * {
+        box-sizing: border-box;
+      }
+
+      /* Exemplo 1 */
+      .box {
+        float: left;
+        width: 33.33%;
+        padding: 50px;
+      }
+
+      .clearfix::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+
+      /* Exemplo 2 */
+      .img-container {
+        float: left;
+        width: 33.33%;
+        padding: 5px;
+      }
+
+      .clearfix_1::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+
+      /* Exemplo 3 */
+
+      .box_1 {
+        float: left;
+        width: 50%;
+        padding: 50px;
+        height: 300px;
+      }
+
+      .clearfix_2::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+
+      /* Exemplo 4 */
+      .flex-container {
+        display: flex;
+        flex-wrap: nowrap;
+        background-color: DodgerBlue;
+      }
+
+      .flex-container .box_2 {
+        background-color: #f1f1f1;
+        width: 50%;
+        margin: 10px;
+        text-align: center;
+        line-height: 75px;
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Exemplo 1</h1>
+    <h2>Grade de caixas</h2>
+    <p>Caixas flutuantes lado a lado:</p>
+
+    <div class="clearfix">
+      <div class="box" style="background-color: #bbb">
+        <p>Algum texto dentro da caixa.</p>
+      </div>
+      <div class="box" style="background-color: #ccc">
+        <p>Algum texto dentro da caixa.</p>
+      </div>
+      <div class="box" style="background-color: #ddd">
+        <p>Algum texto dentro da caixa.</p>
+      </div>
+    </div>
+
+    <p>
+      <strong>Observação:</strong> aqui, usamos o hack clearfix para cuidar do
+      fluxo do layout. Também usamos a propriedade box-sizing para garantir que
+      a caixa não quebre devido ao preenchimento extra. Tente remover este
+      código para ver o efeito.
+    </p>
+
+    <br />
+    <br />
+    <br />
+
+    <h1>Exemplo 2</h1>
+
+    <h2>Imagens lado a lado</h2>
+    <p>Imagens flutuantes lado a lado:</p>
+
+    <div class="clearfix_1">
+      <div class="img-container">
+        <img src="image/img_5terre.jpg" alt="Italy" style="width: 100%" />
+      </div>
+      <div class="img-container">
+        <img src="image/img_forest.jpg" alt="Forest" style="width: 100%" />
+      </div>
+      <div class="img-container">
+        <img
+          src="image/img_mountains.jpg"
+          alt="Mountains"
+          style="width: 100%"
+        />
+      </div>
+    </div>
+
+    <p>
+      Observe que também usamos o hack clearfix para cuidar do fluxo do layout e
+      que adicionamos a propriedade box-sizing para garantir que o contêiner da
+      imagem não quebre devido ao preenchimento extra. Tente remover este código
+      para ver o efeito.
+    </p>
+
+    <br />
+    <br />
+    <br />
+
+    <h1>Exemplo 3</h1>
+    <h2>Caixas de altura igual</h2>
+    <p>Caixas flutuantes com alturas iguais:</p>
+
+    <div class="clearfix_2">
+      <div class="box_1" style="background-color: #bbb">
+        <h2>Caixa 1</h2>
+        <p>Some content, some content, some content</p>
+      </div>
+      <div class="box_1" style="background-color: #ccc">
+        <h2>Caixa 2</h2>
+        <p>Algum conteúdo, algum conteúdo, algum conteúdo</p>
+        <p>Algum conteúdo, algum conteúdo, algum conteúdo</p>
+        <p>Algum conteúdo, algum conteúdo, algum conteúdo</p>
+      </div>
+    </div>
+
+    <p>
+      Este exemplo não é muito flexível. Não há problema em usar a altura do CSS
+      se você puder garantir que as caixas sempre terão a mesma quantidade de
+      conteúdo, mas nem sempre é o caso. Se você tentar o exemplo acima em um
+      celular (ou redimensionar a janela do navegador), verá que o conteúdo da
+      segunda caixa será exibido fora da caixa.
+    </p>
+    <p>
+      Volte ao tutorial e encontre outra solução, se não for o que você deseja.
+    </p>
+
+    <h1>Exemplo 4</h1>
+    <h3><b>Observação:</b></h3>
+    <p>
+      No entanto , isso não é muito flexível. Tudo bem se você puder garantir
+      que as caixas sempre terão a mesma quantidade de conteúdo. Mas muitas
+      vezes, o conteúdo não é o mesmo. Se você tentar o exemplo acima em um
+      celular, verá que o conteúdo da segunda caixa será exibido fora da caixa.
+      É aqui que o CSS3 Flexbox é útil - pois pode esticar automaticamente as
+      caixas para que sejam tão longas quanto a caixa mais longa:
+    </p>
+
+    <h1>Caixas flexíveis</h1>
+
+    <div class="flex-container">
+      <div class="box_2">
+        Caixa 1 - Este é um texto para garantir que o conteúdo fique realmente
+        alto. Este é um texto para garantir que o conteúdo fique realmente alto.
+      </div>
+      <div class="box">Caixa 2 - Minha altura seguirá a Caixa 1.</div>
+    </div>
+
+    <p>Tente redimensionar a janela do navegador para ver o layout flexível.</p>
+    <p>
+      <strong>Observação:</strong> o Flexbox não é compatível com o Internet
+      Explorer 10 ou versões anteriores.
+    </p>
+  </body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Testando JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+	<body>
+	
+	<h1> Manipulação de Strings</h1>
+	<p> As respostas estão no console </p>
+	
+	<!-- Exemplo 1 -->
+	
+	
+        <script type="text/JavaScript">
+		
+		// O que é uma String?
+		// Uma string é uma sequência de caracteres — texto.
+		// Ela pode ser criada com aspas simples ' ', duplas " ", ou crases ` ` (para template strings).
+		
+		
+		// Exemplo 1 - Básico
+		// As template strings (com crase) permitem interpolação e múltiplas linhas.
+		
+		let nome = "Daniel";
+		let frase = 'Aprendendo JavaScript';
+		let saudacao = `Olá, ${nome}!`; // template string
+		
+		console.log("Nome: ", nome, " | Frase: ", frase, " | Suadação: ", saudacao);
+		
+		
+		// =============================================================================================
+		
+		// Exemplo 2 - Propriedade básica
+		
+		// length - Retorna o tamanho (quantidade de caracteres):
+		
+		let texto;
+		
+		texto = "JavaScript";
+		console.log(texto.length); // 10
+		
+		
+		
+		// =============================================================================================
+		
+		// Exemplo 3 - Principais métodos de String - Extração de partes da string
+		
+		// slice(inicio, fim) - Extrai parte da string.
+		
+		texto = "JavaScript";
+		console.log(texto.slice(0, 4)); // "Java"
+		
+		
+		// O índice final não é incluído. Pode usar índices negativos:
+		
+		console.log(texto.slice(-6)); // "Script"
+
+		
+		// substring(inicio, fim) - Parecido com slice(), mas não aceita números negativos.
+		
+		console.log(texto.substring(4)); // "Script"
+
+		
+		
+		// substr(inicio, comprimento) :. (antigo) - Extrai com base em posição e quantidade de caracteres.
+		
+		console.log(texto.substr(0, 4)); // "Java"
+
+		
+		
+		// =============================================================================================
+		
+		// Exemplo 4 - Principais métodos de String - Conversão de texto
+		
+		// Conversão de texto - toUpperCase() / toLowerCase()
+		
+		let name = "Daniel";
+		console.log(name.toUpperCase()); // "DANIEL"
+		console.log(name.toLowerCase()); // "daniel"
+		
+		
+		// trim() — remove espaços extras
+		
+		let entrada = "  JavaScript  ";
+		console.log(entrada.trim()); // "JavaScript"
+		
+		// Também existem:
+		// trimStart() — remove só do início
+		// trimEnd() — remove só do final
+		
+		
+		
+		// =============================================================================================
+		
+		// Exemplo 5 - Principais métodos de String - Busca e comparação
+		
+		
+		// Busca e comparação - indexOf() — primeira ocorrência
+		
+		texto = "Aprendendo JavaScript";
+		console.log(texto.indexOf("Java")); // 12
+		
+		
+		// lastIndexOf() — última ocorrência
+		
+		console.log(texto.lastIndexOf("a")); // 14
+		
+		
+		// includes() — verifica se contém
+		
+		console.log(texto.includes("Java")); // true
+		
+
+		// startsWith() / endsWith()
+		
+		console.log(texto.startsWith("Aprendendo")); // true
+		console.log(texto.endsWith("Script"));       // true
+		
+		
+		
+		// =============================================================================================
+		
+		// Exemplo 6 - Principais métodos de String - Substituição e repetição
+		
+		
+		// replace() — substitui texto
+		
+		frase = "Olá mundo!";
+		let nova = frase.replace("mundo", "Daniel");
+		console.log(nova); // "Olá Daniel!"
+		
+		//Dica: para substituir todas as ocorrências, use expressão regular com /g:
+		
+		frase = "banana banana banana";
+		console.log(frase.replace(/banana/g, "maçã"));
+		// "maçã maçã maçã"
+		
+		
+		// repeat() — repete o texto
+		
+		let risada = "ha".repeat(3);
+		console.log(risada); // "hahaha"
+		
+		
+		
+		// =============================================================================================
+		
+		// Exemplo 7 - Principais métodos de String - Quebra e junção de strings
+		
+		// split() — divide em partes
+        // Transforma uma string em array com base em um separador
+		
+		let nomes = "Ana,João,Carlos";
+		let lista = nomes.split(",");
+		console.log(lista); // ["Ana", "João", "Carlos"]
+		
+		
+		// concat() — junta strings
+		let a = "Olá ";
+		let b = "Mundo!";
+		console.log(a.concat(b)); // "Olá Mundo!"
+		
+		// Ou simplesmente: console.log(a + b);
+		
+		
+		
+		// =============================================================================================
+		
+		// Exemplo 8 - Principais métodos de String - Interpolação moderna com Template Strings.
+		// Usando crases ` `, você pode inserir variáveis e expressões diretamente:
+		
+		let firstname = "Daniel";
+		let age = 30;
+		console.log(`Meu nome é ${firstname} e tenho ${age} anos.`);
+		
+		// Também permite múltiplas linhas:
+		
+		texto = `
+			Linha 1
+			Linha 2
+			Linha 3
+		`;
+		
+		console.log(texto);
+		
+		
+	    // =============================================================================================
+		
+		// Exemplo 9 - PMétodos úteis extras
+		
+		// charAt(i) - Retorna o caractere no índice
+		const texto1 = "JavaScript";
+		console.log(texto1.charAt(4)); // Saída: S
+		
+		
+		// charCodeAt(i) - Código Unicode do caractere
+		const texto2 = "A";
+		console.log(texto2.charCodeAt(0)); // Saída: 65
+		
+		
+		// padStart(len, char) - Preenche início com caracteres
+		const texto3 = "5";
+		console.log(texto3.padStart(3, "0")); // Saída: 005
+		
+		
+		// padEnd(len, char) - Preenche final com caracteres
+		const texto4 = "5";
+		console.log(texto4.padEnd(3, "0")); // Saída: 500
+		
+		
+		// localeCompare() - Compara duas strings alfabeticamente
+		const texto5a = "banana";
+		const texto5b = "abacaxi";
+		console.log(texto5a.localeCompare(texto5b)); 
+		// Saída: 1 (significa que "banana" vem depois de "abacaxi" na ordem alfabética)
+				
+		
+		// =============================================================================================
+		
+		// Exemplo 10 - Exemplo prático
+		
+		let texto6 = "JavaScript é incrível!";
+		let palavras = texto6.split(" ");
+		let fraseMaiuscula = texto6.toUpperCase();
+
+		console.log(palavras);       // ["JavaScript", "é", "incrível!"]
+		console.log(fraseMaiuscula); // "JAVASCRIPT É INCRÍVEL!"
+		console.log(texto6.includes("Java")); // true
+
+
+		</script>	
+    </body>
+
+</html>

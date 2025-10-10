@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+/* Text align center - left - right*/    
+h1.ex1 {
+  text-align: center;
+}
+
+h2.ex2 {
+  text-align: left;
+}
+
+h3.ex3 {
+  text-align: right;
+}
+
+/* text align justify */
+div {
+  border: 1px solid black;
+  padding: 10px;
+  width: 200px;
+  height: 200px;
+  text-align: justify;
+}
+
+/* text align-last */
+p.a {
+  text-align-last: right;
+}
+
+p.b {
+  text-align-last: center;
+}
+
+p.c {
+  text-align-last: justify;
+}
+
+/* text align direction e unicode-bidi*/
+p.one {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+}
+
+/* Align vertical */
+img.a {
+  vertical-align: baseline;
+}
+
+img.b {
+  vertical-align: text-top;
+}
+
+img.c {
+  vertical-align: text-bottom;
+}
+
+img.d {
+  vertical-align: sub;
+}
+
+img.e {
+  vertical-align: super;
+}
+
+</style>
+</head>
+<body>
+
+<h1>---------- Explicação ----------</h1>
+<h2> Alignment (Alinhamento) Text CSS</h2>
+
+<p>A text-align propriedade é usada para definir o alinhamento horizontal de um texto.</p>
+<p>Um texto pode ser alinhado à esquerda ou à direita, centralizado ou justificado.</p>
+<h1>Exemplo:</h1>
+
+<h1 class="ex1">Título 1 (centro)</h1>
+<h2 class="ex2">Título 2 (à esquerda)</h2>
+<h3 class="ex3">Título 3 (à direita)</h3>
+
+<p>Os três cabeçalhos acima estão alinhados ao centro, à esquerda e à direita.</p>
+
+<p>-----------------------------------------------------------------------------------------------</p>
+<h2> Align justify (justificado) </h2>
+<p>Quando a text-alignpropriedade é definida como "justify", cada linha é esticada para que cada linha tenha a mesma largura e as margens esquerda e direita sejam retas (como em revistas e jornais)</p> 
+
+<p>O alinhamento de texto: justificar; value estica as linhas para que cada linha tenha a mesma largura (como em jornais e revistas).</p>
+<h1>Exemplo:</h1>
+
+<div>
+Em meus anos mais jovens e vulneráveis, meu pai me deu alguns conselhos que venho pensando desde então. 'Sempre que você sentir vontade de criticar alguém', ele me disse, 'lembre-se de que todas as pessoas neste mundo não tiveram as vantagens que você teve.'
+</div>
+
+<p>-----------------------------------------------------------------------------------------------</p>
+<h2> text-align-last </h2>
+<p>A text-align-last propriedade especifica como alinhar a última linha de um texto.</p> 
+<h1>Exemplo:</h1>
+
+<h3>text-align-last: direita:</h3>
+<p class="a">É importante aprender a lição em si, a ser seguida pelo provedor de educação. Sim, sempre houve um travesseiro, mas o travesseiro lisonjeia o gato. Vestibulum volutpat tellus diam, consecutio gravida libero rhoncus ut.</p>
+
+<h3>text-align-last: center:</h3>
+<p class="b">É importante aprender a lição em si, para acompanhar o processo de ensino. Sim, sempre houve um travesseiro, mas o travesseiro lisonjeia o gato. Vestibulum volutpat tellus diam, consecutio gravida libero rhoncus ut.</p>
+
+<h3>text-align-last: justificar:</h3>
+<p class="c">É importante aprender a lição em si, ela será seguida pelo provedor de educação. Sim, sempre houve um travesseiro, mas o travesseiro lisonjeia o gato. Vestibulum volutpat tellus diam, consecutio gravida libero rhoncus ut.</p>
+
+<p>-----------------------------------------------------------------------------------------------</p>
+<h2> Align direction e unicode-bidi </h2>
+<p>As propriedades directione unicode-bidipodem ser usadas para alterar a direção do texto de um elemento</p> 
+<h1>Exemplo:</h1>
+
+<p>Esta é a direção de texto padrão.</p>
+
+<p class="one">Esta é a direção do texto da direita para a esquerda.</p>
+
+<p>-----------------------------------------------------------------------------------------------</p>
+<h2> Align Vertical </h2>
+<p>A vertical-align propriedade define o alinhamento vertical de um elemento.</p> 
+<h1>Exemplo:</h1>
+
+
+<h2>alinhamento vertical: linha de base (padrão):</h2>
+<p>Uma <img class="a" src="image/sqpurple.gif" width="9" height="9"> imagem com um alinhamento padrão.</p>
+
+<h2>alinhamento vertical: topo do texto:</h2>
+<p>Uma <img class="b" src="image/sqpurple.gif" width="9" height="9"> imagem com um alinhamento de texto no topo.</p>
+
+<h2>vertical-align: text-bottom:</h2>
+<p>Uma <img class="c" src="image/sqpurple.gif" width="9" height="9"> imagem com um alinhamento de texto inferior.</p>
+
+<h2>alinhamento vertical: sub:</h2>
+<p>Uma <img class="d" src="image/sqpurple.gif" width="9" height="9"> imagem com um subalinhamento.</p>
+
+<h2>alinhamento vertical: sup:</h2>
+<p>Uma <img class="e" src="image/sqpurple.gif" width="9" height="9"> imagem com um superalinhamento.</p>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

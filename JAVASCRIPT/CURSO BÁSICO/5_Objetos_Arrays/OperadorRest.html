@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Rest Operator (Operador Agrupar)</h1>
+    <p>Resultados no console</p>
+
+
+    <script>
+
+        // O Rest faz o oposto do Spread: junta vários valores em um único array.
+
+        // Exempplo 1 - Em funções
+
+        function somar(...numeros) {
+            return numeros.reduce((total, n) => total + n, 0);
+        }
+
+        console.log(somar(1, 2, 3, 4)); // 10
+
+        // OBS. Aqui, ...numeros coleta todos os argumentos da função em um array.
+
+
+        //=============================================================================================
+
+        // Exemplo 2 - Com destructuring de arrays
+
+        const [primeiro, ...resto] = [10, 20, 30, 40];
+        console.log(primeiro); // 10
+        console.log(resto);    // [20, 30, 40]
+
+
+        //=============================================================================================
+
+        // Exemplo 3 - Com destructuring de objetos
+        
+        const pessoa = { 
+            nome: "Daniel", 
+            idade: 30, 
+            cidade: "São Paulo" 
+        };
+
+        const { nome, ...dadosRestantes } = pessoa;
+
+        console.log(nome);            // Daniel
+        console.log(dadosRestantes);  // { idade: 30, cidade: 'São Paulo' }
+
+    </script>
+</body>
+</html>

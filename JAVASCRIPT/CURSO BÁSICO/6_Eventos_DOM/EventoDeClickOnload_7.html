@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Testando JavaScript</title>
+    <meta charset="UTF-8">
+	
+	<script>
+	
+      // Mostrando carregamento
+	  // Usar window.onload (mantendo o script no <head>)
+	  // O código só roda quando toda a página estiver carregada, então o <img> existe.
+	  
+	  window.onload = function() {
+		const imagem = document.getElementById("foto");
+
+		imagem.onload = function() {
+		  console.log("Imagem carregada!");
+		};
+	  };
+	  
+	</script>	
+	
+</head>
+	<body>
+	<h1> Evento de Click onload </h1>
+	
+	<img id="foto" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuHnJDLOcdm_0b6N6kNj-1OvO9KhKYgqIy0w&s">
+	
+    </body>
+
+</html>

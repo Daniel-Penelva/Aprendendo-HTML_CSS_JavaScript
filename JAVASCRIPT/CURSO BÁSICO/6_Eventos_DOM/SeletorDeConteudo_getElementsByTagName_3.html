@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Testando JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+	<body>
+	
+	<h1> Seletor de Conteúdo - getElementsByTagName()</h1>
+	
+	<!-- Exemplo 1 -->
+	<p>Parágrafo 1</p>
+	<p>Parágrafo 2</p>
+	
+	<hr>
+	
+	<!-- Exemplo 2 -->
+	
+	<button onClick = "acao()"> Selecionar</button>
+	
+	<h2>JavaScript</h2>
+	<h2>Java</h2>
+	<h2>HTML</h2>
+	<h2>CSS</h2>
+	
+	
+        <script type="text/JavaScript">
+		
+		// Exemplo 1
+		// getElementsByTagName()
+		// Seleciona todos os elementos de uma determinada tag HTML.
+		// Também retorna um HTMLCollection.
+		
+		const paragrafos = document.getElementsByTagName("p");
+		paragrafos[0].textContent = "Alterado!";
+		
+		
+		// ==============================================================================
+		
+		// Exemplo 2
+		
+		function acao() {
+			var texto = document.getElementsByTagName("h2")[0];
+			alert(texto.innerHTML);
+		}
+ 			
+		</script>	
+    </body>
+
+</html>

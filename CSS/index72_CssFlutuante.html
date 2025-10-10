@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      img.float_right {
+        float: right;
+      }
+
+      img.float_left {
+        float: left;
+      }
+
+      img.float_none {
+        float: none;
+      }
+
+      /* Flutuar um ao lado do outro */
+      div {
+        float: left;
+        padding: 15px;
+      }
+
+      .div1 {
+        background: red;
+      }
+
+      .div2 {
+        background: yellow;
+      }
+
+      .div3 {
+        background: green;
+      }
+
+    </style>
+  </head>
+  <body>
+    <h1>Bom saber:</h1>
+    <p>A propriedade CSS float especifica como um elemento deve flutuar.</p>
+    <p>
+      A float propriedade é usada para posicionar e formatar o conteúdo, por
+      exemplo, deixar uma imagem flutuar à esquerda do texto em um contêiner.
+    </p>
+    <p>A floatpropriedade pode ter um dos seguintes valores:</p>
+    <p>left- O elemento flutua à esquerda de seu contêiner</p>
+    <p>right- O elemento flutua à direita de seu contêiner</p>
+    <p>
+      none- O elemento não flutua (será exibido apenas onde ocorre no texto).
+      Isso é padrão
+    </p>
+    <p>inherit- O elemento herda o valor float de seu pai</p>
+    <p>
+      Em seu uso mais simples, a floatpropriedade pode ser usada para quebrar
+      texto em torno de imagens.
+    </p>
+
+    <h2>exemplo - Float Right (Flutuando a direita)</h2>
+
+    <p>
+      Neste exemplo, a imagem flutuará para a direita no parágrafo e o texto no
+      parágrafo irá envolver a imagem.
+    </p>
+
+    <p>
+      <img
+        src="image/pineapple.jpg"
+        alt="Pineapple"
+        style="width: 170px; height: 170px; margin-left: 15px"
+        class="float_right"
+      />
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+      imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae
+      scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec
+      congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet.
+      Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent
+      convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis
+      dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc
+      venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida
+      venenatis. Integer fringilla congue eros non fermentum. Sed dapibus
+      pulvinar nibh tempor porta. Cras ac leo purus. Mauris quis diam velit.
+    </p>
+
+    <br />
+    <br />
+    <br />
+
+    <h2>exemplo - Float Left (Flutuando a esquerda)</h2>
+    <p>
+      Neste exemplo, a imagem flutuará para a esquerda no parágrafo e o texto no
+      parágrafo irá envolver a imagem.
+    </p>
+
+    <p>
+      <img
+        src="image/pineapple.jpg"
+        alt="Pineapple"
+        style="width: 170px; height: 170px; margin-right: 15px"
+        class="float_left"
+      />
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+      imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae
+      scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec
+      congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet.
+      Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent
+      convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis
+      dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc
+      venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida
+      venenatis. Integer fringilla congue eros non fermentum. Sed dapibus
+      pulvinar nibh tempor porta. Cras ac leo purus. Mauris quis diam velit.
+    </p>
+
+    <br />
+    <br />
+    <br />
+
+    <h2>exemplo - Float none</h2>
+    <p>
+      A imagem será exibida exatamente onde ela ocorre no texto (float: none;)
+    </p>
+
+    <p>
+      <img
+        src="image/pineapple.jpg"
+        alt="Pineapple"
+        style="width: 170px; height: 170px"
+        class="float_none"
+      />
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+      imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae
+      scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec
+      congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet.
+      Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent
+      convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis
+      dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc
+      venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida
+      venenatis. Integer fringilla congue eros non fermentum. Sed dapibus
+      pulvinar nibh tempor porta. Cras ac leo purus. Mauris quis diam velit.
+    </p>
+
+    <h2>Exemplo - Flutuar um ao lado do outro</h2>
+    <p>
+      Normalmente, os elementos div serão exibidos um sobre o outro. No entanto,
+      se usarmos float: left, podemos deixar os elementos flutuarem um ao lado
+      do outro.
+    </p>
+
+    <p>Neste exemplo, os três divs flutuarão um ao lado do outro.</p>
+
+    <div class="div1">Div 1</div>
+    <div class="div2">Div 2</div>
+    <div class="div3">Div 3</div>
+  </body>
+</html>

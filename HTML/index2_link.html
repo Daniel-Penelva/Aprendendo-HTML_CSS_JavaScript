@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>HTML Links</h2>
+    <p>Os links HTML são definidos com a tag a:</p>
+
+    <a href="https://www.w3schools.com">Este é um link</a>
+
+    <h1>-------------------- Explicação --------------------</h1>
+
+    <h2>O atributo href</h2>
+    <p>
+      A 'a' tag define um hiperlink. O href atributo especifica a URL da página
+      para a qual o link vai.
+    </p>
+
+    <h1>-------------------- Bom Saber --------------------</h1>
+    <h2>O atributo de destino</h2>
+    <p>
+      Por padrão, a página vinculada será exibida na janela atual do navegador.
+      Para alterar isso, você deve especificar outro destino para o link.
+    </p>
+    <p>O target atributo especifica onde abrir o documento vinculado.</p>
+    <p>O targetatributo pode ter um dos seguintes valores:</p>
+    <p>
+      _self - Padrão. Abre o documento na mesma janela/guia em que foi clicado
+    </p>
+    <p>_blank - Abre o documento em uma nova janela ou guia</p>
+    <p>_parent - Abre o documento no quadro pai</p>
+    <p>_top - Abre o documento em todo o corpo da janela</p>
+
+    <h2>O atributo alvo</h2>
+
+    <a href="https://www.w3schools.com/" target="_blank">Visite W3Schools!</a>
+
+    <p>
+      Se target="_blank", o link será aberto em uma nova janela ou guia do
+      navegador.
+    </p>
+
+    <h1>-------------------- Bom Saber --------------------</h1>
+    <h2>URLs absolutos vs. URLs relativos</h2>
+    <p>
+      Ambos os exemplos acima estão usando um URL absoluto (um endereço da Web
+      completo) no href atributo.
+    </p>
+    <p>
+      Um link local (um link para uma página dentro do mesmo site) �
+      especificado com um URL relativo (sem a parte "https://www")
+    </p>
+
+    <h2>Absolute URLs</h2>
+    <p><a href="https://www.w3.org/">W3C</a></p>
+    <p><a href="https://www.google.com/">Google</a></p>
+
+    <h2>Relative URLs</h2>
+    <p>
+      <a href="C:\Users\d4nan\Pictures\Chevrolet Camaro 2012 DUB 22.jpg">HTML Images</a>
+    </p>
+
+    <h1>-------------------- Bom Saber --------------------</h1>
+    <h2>Links HTML - Use uma imagem como um link</h2>
+    <p>
+      Para usar uma imagem como link, basta colocar a 'img' tag dentro da 'a'
+      tag:
+    </p>
+
+    <h2>Imagem como link</h2>
+
+    <p>A imagem abaixo é um link. Tente clicar nele.</p>
+
+    <a href="https://www.w3schools.com/"
+      ><img
+        src="image/smiley.gif"
+        alt="HTML tutorial"
+        style="width: 42px; height: 42px"
+    /></a>
+
+    <h1>-------------------- Bom Saber --------------------</h1>
+    <h2>Link para um endereço de e-mail</h2>
+    <p>
+      Use mailto:dentro do hrefatributo para criar um link que abra o programa
+      de e-mail do usuário (para permitir que ele envie um novo e-mail)
+    </p>
+
+    <h2>Link para um endereço de e-mail</h2>
+
+    <p>
+      Para criar um link que abre no programa de e-mail do usuário (para
+      permitir que ele envie um novo e-mail), use mailto: dentro do atributo
+      href:
+    </p>
+
+    <p><a href="mailto:d4n.penelva@gmail.com">Enviar e-mail</a></p>
+
+    <h1>-------------------- Bom Saber --------------------</h1>
+    <h2>Botão como um link</h2>
+    <p>
+      Para usar um botão HTML como um link, você precisa adicionar algum código
+      JavaScript.
+    </p>
+    <p>
+      O JavaScript permite que você especifique o que acontece em determinados
+      eventos, como o clique de um botão:
+    </p>
+
+    <h2>Botão como um link</h2>
+
+    <p>Clique no botão para ir para o tutorial de HTML.</p>
+
+    <button onclick="document.location='https://www.w3schools.com/'">
+      Tutorial de HTML
+    </button>
+
+    <h1>-------------------- Bom Saber --------------------</h1>
+    <h2>Títulos de links</h2>
+    <p>
+      O titleatributo especifica informções extras sobre um elemento. As
+      informações geralmente são mostradas como um texto de dica de ferramenta
+      quando o mouse passa sobre o elemento.
+    </p>
+
+    <h2>Títulos de links</h2>
+    <p>
+      O atributo title especifica informações extras sobre um elemento. As
+      informações geralmente são mostradas como um texto de dica de ferramenta
+      quando o mouse passa sobre o elemento.
+    </p>
+    <a
+      href="https://www.w3schools.com/html/"
+      title="Vá para a seção HTML do W3Schools"
+      >Visite nosso tutorial HTML</a
+    >
+
+    <h1>-------------------- Bom Saber --------------------</h1>
+    <h2>Marcadores de links</h2>
+    <p>Os marcadores podem ser úteis se uma página da Web for muito longa.</p>
+    <p>
+      Para criar um marcador - primeiro crie o marcador e, em seguida, adicione
+      um link a ele.
+    </p>
+    <p>
+      Quando o link for clicado, a página rola para baixo ou para cima até o
+      local com o marcador.
+    </p>
+    <p>Primeiro, use o idatributo para criar um marcador</p>
+    <p>
+      Em seguida, adicione um link ao marcador ("Jump to Chapter 4"), dentro da
+      mesma página
+    </p>
+    <p>Você também pode adicionar um link para um marcador em outra página</p>
+
+    <p><a href="#C4">Pular para o Capítulo 4</a></p>
+    <p><a href="#C7">Pular para o Capítulo 7</a></p>
+    <p><a href="#C10">Pular para o Capítulo 10</a></p>
+
+    <h2>Chapter 1</h2>
+    <p>This chapter explains ba bla bla</p>
+
+    <h2>Chapter 2</h2>
+    <p>This chapter explains ba bla bla</p>
+
+    <h2>Chapter 3</h2>
+    <p>This chapter explains ba bla bla</p>
+
+    <h2 id="C4">Chapter 4</h2>
+    <p>This chapter explains ba bla bla</p>
+
+    <h2>Chapter 5</h2>
+    <p>This chapter explains ba bla bla</p>
+
+    <h2>Chapter 6</h2>
+    <p>This chapter explains ba bla bla</p>
+
+    <h2 id="C7">Chapter 7</h2>
+    <p>This chapter explains ba bla bla</p>
+
+    <h2>Chapter 8</h2>
+    <p>This chapter explains ba bla bla</p>
+
+    <h2>Chapter 9</h2>
+    <p>This chapter explains ba bla bla</p>
+
+    <h2 id="C10">Chapter 10</h2>
+    <p>This chapter explains ba bla bla</p>
+
+    <h2>Chapter 11</h2>
+    <p>This chapter explains ba bla bla</p>
+  </body>
+</html>

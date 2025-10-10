@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+        
+      ul.a {
+        list-style-position: outside;
+      }
+
+      ul.b {
+        list-style-position: inside;
+      }
+
+
+      /* list-style-type:none */
+      ul.demo {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+
+    </style>
+  </head>
+  <body>
+    <h1>A propriedade list-style-position</h1>
+
+    <h2>posição de estilo de lista: fora (padrão):</h2>
+    <ul class="a">
+      <li>
+        Café - Uma bebida preparada a partir de grãos de café torrados, que são
+        as sementes das bagas da planta Coffea
+      </li>
+      <li>
+        Chá - Uma bebida aromática comumente preparada derramando água quente ou
+        fervente sobre folhas curadas da Camellia sinensis, um arbusto perene
+        nativo da Ásia
+      </li>
+      <li>
+        Coca Cola - Um refrigerante carbonatado produzido pela The Coca-Cola
+        Company. O nome da bebida se refere a dois de seus ingredientes
+        originais, que eram nozes de cola (fonte de cafeína) e folhas de coca
+      </li>
+    </ul>
+
+    <h2>list-style-position: inside:</h2>
+    <ul class="b">
+      <li>
+        Café - Uma bebida preparada a partir de grãos de café torrados, que são
+        as sementes das bagas da planta Coffea
+      </li>
+      <li>
+        Chá - Uma bebida aromática comumente preparada derramando água quente ou
+        fervente sobre folhas curadas da Camellia sinensis, um arbusto perene
+        nativo da Ásia
+      </li>
+      <li>
+        Coca Cola - Um refrigerante carbonatado produzido pela The Coca-Cola
+        Company. O nome da bebida se refere a dois de seus ingredientes
+        originais, que eram nozes de cola (fonte de cafeína) e folhas de coca
+      </li>
+    </ul>
+
+    <h1>Bom Saber</h1>
+    <h2>Posicione os Marcadores de Item da Lista</h2>
+    <p>
+      A list-style-position propriedade especifica a posição dos marcadores de
+      item de lista (marcadores).
+    </p>
+    <p>
+      Posição de estilo de lista: fora; - significa que os marcadores estarão
+      fora do item da lista. O início de cada linha de um item de lista será
+      alinhado verticalmente.
+    </p>
+    <p>
+      Posição de estilo de lista: dentro; - significa que os marcadores estarão
+      dentro do item da lista. Como faz parte do item da lista, ele fará parte
+      do texto e colocará o texto no início.
+    </p>
+
+    <h1>
+      --------------------------------------------------------------------------------------
+    </h1>
+    <h2>Remova marcadores, margem e preenchimento da lista</h2>
+    <p>
+      A list-style-type:none propriedade também pode ser usada para remover os
+      marcadores/marcadores.
+    </p>
+    <p>
+      Observe que a lista também possui margem e preenchimento padrão. Para
+      remover isso, adicione margin:0 e padding:0 a ul ou ol.
+    </p>
+
+    <ul class="demo">
+      <li>Coffee</li>
+      <li>Tea</li>
+      <li>Coca Cola</li>
+    </ul>
+  </body>
+</html>

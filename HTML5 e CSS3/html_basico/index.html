@@ -1,0 +1,96 @@
+<!-- 
+ATALHO: shift + !
+Vai criar a estrutura completa do HTML
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendendo HTML 5</title>
+</head>
+<body>
+    <p id="topo">ancora</p>
+
+    <h1>HTML 5</h1>
+    <p>
+        TESTANDO HTML 5
+    </p>
+
+    <hr>
+
+    <h2>Subtitulo HTML 5</h2>
+    <p>
+        TESTANDO HTML 5
+    </p>
+
+    <hr>
+    <!--Listas-->
+    <h2>Lista não ordenada</h2>
+    <ul>
+        <li>carro</li>
+        <li>Programação</li>
+    </ul>
+
+    <h2>Lista ordenada</h2>
+    <ol>
+        <li>carro</li>
+        <li>Programação</li>
+    </ol>
+
+    <h2>Lista aninhada</h2>
+    <ul>
+        <li>carro</li>
+        <ol>
+            <li>Ferrari</li>
+            <li>BMW</li>
+        </ol>
+        <li>Programação</li>
+        <ol>
+            <li>JAVA</li>
+            <li>Python</li>
+        </ol>
+    </ul>
+
+    <hr>
+
+    <h2>Imagem</h2>
+    <img src="DBZ.jpg" alt="Foto DBZ" width="200px">
+
+    <h2>Imagem dentro da pasta</h2>
+    <img src="images/GRUMEC.jpg" alt="Foto GRUMEC" width="200PX">
+    
+    <!-- Dica: Atalho: ctrl + espaço (Fazer isso dentro das aspas da variavel src vai abrir 
+        os destinos dos arquivos de imagens) 
+
+        OBS. É possivel copiar link de imagem de uma página web para gerar a imagem
+    -->
+
+    <hr>
+    <h2>Ancoras</h2>
+
+    <h3><a href="#java">JAVA</a></h3>
+    <h3><a href="#python">Python</a></h3>
+    
+    <h4 id="java">JAVA</h4>
+    <p>Java é uma linguagem de programação orientada a objetos desenvolvida na década de 90 por uma equipe de programadores chefiada por James Gosling, na empresa Sun Microsystems. Em 2008 o Java foi adquirido pela empresa Oracle Corporation.</p>
+
+    <h4><a id="python">Python</a></h4>
+    <p>Python é uma linguagem de programação de alto nível, interpretada de script, imperativa, orientada a objetos, funcional, de tipagem dinâmica e forte. Foi lançada por Guido van Rossum em 1991</p>
+
+
+    <h3><a href="#topo">Ir para o topo</a></h3>
+
+    <!-- É possivel criar ancoras para outras páginas, basta adicionar o caminho da pasta e do arquivo
+    Ex: href = "pasta/arquivo"-->
+
+    <h2>links</h2>
+    <p><a href="https://www.google.com/">Google</a></p>
+
+    <p>Abrindo em outra janela</p>
+    <p><a href="https://www.google.com/" target="_blank">Google</a></p>
+
+</body>
+</html>

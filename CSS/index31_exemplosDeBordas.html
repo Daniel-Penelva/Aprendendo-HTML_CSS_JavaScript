@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      p.one {
+        border-style: solid;
+        border-top: thick double #ff0000;
+      }
+
+      p {
+        border-style: solid;
+      }
+      p.none {
+        border-bottom-style: none;
+      }
+      p.dotted {
+        border-bottom-style: dotted;
+      }
+      p.dashed {
+        border-bottom-style: dashed;
+      }
+      p.solid {
+        border-bottom-style: solid;
+      }
+      p.double {
+        border-bottom-style: double;
+      }
+      p.groove {
+        border-bottom-style: groove;
+      }
+      p.ridge {
+        border-bottom-style: ridge;
+      }
+      p.inset {
+        border-bottom-style: inset;
+      }
+      p.outset {
+        border-bottom-style: outset;
+      }
+
+      p.two {
+        border-style: solid;
+        border-left-width: 15px;
+      }
+
+      p.three {
+        border-style: solid;
+        border-color: #0000ff;
+      }
+
+      p.four {
+        border-style: solid;
+        border-color: #ff0000 #0000ff;
+      }
+
+      p.five {
+        border-style: solid;
+        border-color: #ff0000 #00ff00 #0000ff;
+      }
+
+      p.six {
+        border-style: solid;
+        border-color: #ff0000 #00ff00 #0000ff rgb(250, 0, 255);
+      }
+
+      p.seven{
+        border-style: solid;
+        border-right-color: #ff0000;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Todas as propriedades da borda superior em uma declaração</h2>
+    <p class="one">Este é algum texto em um parágrafo.</p>
+
+    <h2>Definir o estilo da borda inferior</h2>
+    <p class="none">Sem borda inferior.</p>
+    <p class="dotted">Uma borda inferior pontilhada.</p>
+    <p class="dashed">Uma borda inferior tracejada.</p>
+    <p class="solid">Uma borda inferior sólida.</p>
+    <p class="double">Uma borda inferior dupla.</p>
+    <p class="groove">Uma borda inferior da ranhura.</p>
+    <p class="ridge">Uma borda inferior da crista.</p>
+    <p class="inset">Uma borda inferior embutida.</p>
+    <p class="outset">Uma borda inferior inicial.</p>
+
+    <h2>Definir a largura da borda esquerda</h2>
+    <p class="two">
+      <b>Nota:</b> A propriedade "border-left-width" não funciona se for usada
+      sozinha. Use a propriedade "border-style" para definir as bordas primeiro.
+    </p>
+
+    <h2>Definir a cor das quatro bordas</h2>
+    <p class="three">Borda de uma cor!</p>
+    <p class="for">Borda bicolor!</p>
+    <p class="five">Borda tricolor!</p>
+    <p class="six">Borda de quatro cores!</p>
+    <p>
+      <b>Nota:</b> A propriedade "border-color" não funciona se for usada
+      sozinha. Use a propriedade "border-style" para definir as bordas primeiro.
+    </p>
+
+    <h2>Definir a cor da borda direita</h2>
+    <p class="seven">Este é algum texto em um parágrafo.</p>
+  </body>
+</html>

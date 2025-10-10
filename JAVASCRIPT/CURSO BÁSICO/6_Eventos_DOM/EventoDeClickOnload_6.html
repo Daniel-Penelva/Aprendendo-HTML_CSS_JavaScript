@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script>
+      // Mostrando carregamento
+      // Um uso clássico: mostrar uma mensagem de “carregando” até o site estar pronto.
+
+      window.addEventListener("load", () => {
+        document.getElementById("titulo").textContent =
+          "Pronto! Página carregada com sucesso.";
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Evento de Click onload</h1>
+
+    <h1 id="titulo">Carregando...</h1>
+  </body>
+</html>

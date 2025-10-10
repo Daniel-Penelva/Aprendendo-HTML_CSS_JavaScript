@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Testando JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+	<body>
+	
+	<h1> textContent </h1>
+	
+	
+	<!-- Exemplo 1 -->
+	
+	<p id="mensagem"></p>
+	
+	<hr>
+	
+	<!-- Exemplo 2 -->
+	
+	<button id="botao">Clique aqui</button>
+	<p id="msg"></p>
+	
+	<hr>
+	
+	<!-- Exemplo 3 -->
+	
+	<p id="info">Aprendendo JavaScript</p>
+	
+	<hr>
+	
+	<!-- Exemplo 4 -->
+	
+	<p id="demo"></p>
+	
+	
+	<hr>
+	
+	<!-- Exemplo 5 -->
+	<p id="resultado"></p>
+	
+	
+        <script type="text/JavaScript">
+		
+		// O textContent é uma propriedade dos elementos HTML no JavaScript que representa todo o texto dentro do elemento, sem tags HTML.
+		// Você pode:
+		// Ler o texto existente (exibir no console, por exemplo),
+		// Ou alterar esse texto (exibir algo novo na tela).
+		
+		
+		// Exemplo 1 - Escrever um texto na tela
+		
+		const msg = document.getElementById("mensagem");
+		msg.textContent = "Olá, bem-vindo ao site!";
+		
+		
+		// ========================================================================================================================
+		
+		// Exemplo 2 - Atualizar o texto dinamicamente
+		// Cada vez que o botão é clicado, o texto dentro de <p> muda.
+		
+		const btn = document.getElementById("botao");
+		const mensagem = document.getElementById("msg");
+
+		btn.addEventListener("click", () => {
+		  mensagem.textContent = "Você clicou no botão!";
+		});
+		
+		
+		// ========================================================================================================================
+		
+		// Exemplo 3 - Ler o texto atual de um elemento
+		// Isso lê o texto e mostra no console.
+		
+		const info = document.getElementById("info");
+		console.log(info.textContent); // Saída: Aprendendo JavaScript
+		
+		
+		// ========================================================================================================================
+		
+		// Exemplo 4 - Diferença entre textContent e innerHTML
+		// textContent - Escreve texto puro, não interpreta tags HTML - Exemplo: <p>&lt;b&gt;Olá&lt;/b&gt;</p>
+		// innerHTML - Interpreta tags HTML dentro da string - Exemplo: <p><b>Olá</b></p> (negrito visível)
+		
+		// Prefira textContent quando o conteúdo vem do usuário (para evitar injeção de código malicioso).
+		// Use innerHTML só quando você controla o conteúdo e quer incluir formatação HTML.
+		
+		const demo = document.getElementById("demo");
+
+		demo.textContent = "<b>Olá!</b>";   // Mostra literalmente <b>Olá!</b>
+		demo.innerHTML = "<b>Olá!</b>";     // Mostra Olá! em negrito
+		
+		
+		
+		// ========================================================================================================================
+		
+		// Exemplo 5 - Concatenar texto com variáveis
+						
+		const nome = "Daniel";
+		const resultado = document.getElementById("resultado");
+
+		resultado.textContent = "Olá, " + nome + "! Seja bem-vindo!";		
+						
+		</script>	
+    </body>
+
+</html>

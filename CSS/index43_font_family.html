@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- fonte do google -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+
+    <!-- Vários efeitos -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=neon|outline|emboss|shadow-multiple">
+
+    <!-- Efeito de fogo -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=fire">
+
+<style>
+.p1 {
+  font-family: "Times New Roman", Times, serif;
+}
+
+.p2 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.p3 {
+  font-family: "Lucida Console", "Courier New", monospace;
+}
+
+/* font-style */
+p.normal1 {
+  font-style: normal;
+}
+
+p.italic {
+  font-style: italic;
+}
+
+p.oblique {
+  font-style: oblique;
+}
+
+/* font-weight */
+p.normal2 {
+  font-weight: normal;
+}
+
+p.light {
+  font-weight: lighter;
+}
+
+p.thick {
+  font-weight: bold;
+}
+
+p.thicker {
+  font-weight: 900;
+}
+
+/* font variant */
+p.normal3 {
+  font-variant: normal;
+}
+
+p.small {
+  font-variant: small-caps;
+}
+
+/* font-size em px*/
+h1.one {
+  font-size: 40px;
+}
+
+h2.two {
+  font-size: 30px;
+}
+
+p.three {
+  font-size: 14px;
+}
+
+/* font size em Em*/
+h1.four {
+  font-size: 2.5em; /* 40px/16=2.5em */
+}
+
+h2.five {
+  font-size: 1.875em; /* 30px/16=1.875em */
+ }
+
+p.six {
+  font-size: 0.875em; /* 14px/16=0.875em */
+}
+
+/* fonte do google */
+h1.google1, p.google2 {
+  font-family: "Sofia", sans-serif;
+}
+
+p.google3{
+    /* estilizando tamanho */
+    font-family: "Sofia", sans-serif;
+    font-size: 30px;
+    text-shadow: 3px 3px 3px #ababab;
+}
+
+/* Pares de fontes */
+
+h1.ex1 {
+  font-family: Georgia, serif;
+  font-size: 60px;
+  color: rgb(238, 14, 14);
+}
+
+p.ex2 {
+  background-color: black;
+  font-family: Verdana, sans-serif;
+  font-size: 16px;
+  color: rgb(203, 235, 21);  
+}
+
+/*abreviando propriedades da fonte */
+p.a {
+  font: 20px Arial, sans-serif;
+}
+
+p.b {
+  font: italic bold 12px/30px Georgia, serif;
+}
+
+</style>
+</head>
+<body>
+
+<h1>A propriedade da família de fontes CSS</h1>
+<p>Em CSS, usamos a font-family propriedade para especificar a fonte de um texto.</p>
+
+<h2>Famílias de Fontes Genéricas</h2>
+<h3>Em CSS existem cinco famílias de fontes genéricas:</h3>
+<p>1. Serif -  têm um pequeno traço nas bordas de cada letra. Eles criam uma sensação de formalidade e elegância.</p>
+<p>2. Sans-serif -  têm linhas limpas (sem pequenos traços anexados). Eles criam um visual moderno e minimalista.</p>
+<p>3. Monospace  - aqui todas as letras têm a mesma largura fixa. Eles criam uma aparência mecânica.</p>
+<p>4. Cursive - imitam a caligrafia humana.</p>
+<p>5. Fantasy - são fontes decorativas/divertidas.</p>
+
+
+<h1>Exemplo:</h1>
+
+<h1>CSS font-family</h1>
+<p class="p1">Este é um parágrafo, Mostrando a Times New Roman font.</p>
+<p class="p2">Este é um parágrafo, Mostrando a Arial font.</p>
+<p class="p3">Este é um parágrafo, Mostrando a Lucida Console font.</p>
+
+<h1>---------------------------------------------------------------------------------------------</h1>
+<h1>Estilo de Fonte (font-style)</h1>
+<p>A font-style propriedade é usada principalmente para especificar texto em itálico.</p>
+<p>Esta propriedade tem três valores:</p>
+<p>normal - O texto é mostrado normalmente.</p>
+<p>italic - O texto é mostrado em itálico.</p>
+<p>oblique - O texto está "inclinado" (oblique é muito semelhante ao itálico, mas menos suportado).</p>
+
+<h1>Exemplo:</h1>
+
+<p class="normal1">Este é um parágrafo em estilo normal.</p>
+<p class="italic">Este é um parágrafo em estilo itálico.</p>
+<p class="oblique">Este é um parágrafo em estilo oblíquo.</p>
+
+
+<h1>---------------------------------------------------------------------------------------------</h1>
+<h1>Espessura da fonte (font-weight)</h1>
+<p>A font-weight propriedade especifica o peso de uma fonte.</p>
+
+<h1>A propriedade font-weight</h1>
+
+<p class="normal2">Isto é um parágrafo.</p>
+<p class="light">Isto é um parágrafo.</p>
+<p class="thick">Isto é um parágrafo.</p>
+<p class="thicker">Isto é um parágrafo.</p>
+
+<h1>---------------------------------------------------------------------------------------------</h1>
+<h1>Variante de fonte (font-variant)</h1>
+<p>A font-variantpropriedade especifica se um texto deve ou não ser exibido em uma fonte minúscula.</p>
+<p>Em uma fonte minúscula, todas as letras minúsculas são convertidas em maiúsculas. No entanto, as letras maiúsculas convertidas aparecem em um tamanho de fonte menor do que as letras maiúsculas originais no texto.</p>
+
+<h1>A propriedade font-variant</h1>
+
+<p class="normal3">Meu nome é Hege Refsnes.</p>
+<p class="small">Meu nome é Hege Refsnes.</p>
+
+<h1>---------------------------------------------------------------------------------------------</h1>
+<h1>Tamanho da fonte (font-size)</h1>
+<p>A font-size propriedade define o tamanho do texto.</p>
+<p>Ser capaz de gerenciar o tamanho do texto é importante em web design. No entanto, você não deve usar ajustes de tamanho de fonte para fazer parágrafos parecerem títulos ou títulos parecerem parágrafos.</p>
+<p>Sempre use as tags HTML apropriadas, como  'h1' - 'h6' para títulos e 'p' para parágrafos.</p>
+
+<h3>O valor do tamanho da fonte pode ser um tamanho absoluto ou relativo.</h3>
+<h4>Tamanho absoluto (absolute):</h4>
+<p>Define o texto para um tamanho especificado</p>
+<p>Não permite que um usuário altere o tamanho do texto em todos os navegadores (ruim por motivos de acessibilidade)</p>
+<p>O tamanho absoluto é útil quando o tamanho físico da saída é conhecido</p>
+
+<h4>Tamanho relativo (relative):</h4>
+<p>Define o tamanho relativo aos elementos circundantes</p>
+<p>Permite que um usuário altere o tamanho do texto nos navegadores</p>
+
+<h1 class="one">Este é o título 1</h1>
+<h2 class="two">Este é o título 2</h2>
+<p class="three">Isto é um parágrafo.</p>
+
+<h1>---------------------------------------------------------------------------------------------</h1>
+<h1>Tamanho da fonte em Em (font-size)</h1>
+<p>Para permitir que os usuários redimensionem o texto (no menu do navegador), muitos desenvolvedores usam em em vez de pixels.</p>
+<p>1em é igual ao tamanho da fonte atual. O tamanho de texto padrão nos navegadores é 16px. Portanto, o tamanho padrão de 1em é 16px.</p>
+<p>O tamanho pode ser calculado de pixels para em usando esta fórmula: pixels /16= em</p>
+
+<h1 class="four">Este é o título 1</h1>
+<h2 class="five">Este é o título 2</h2>
+<p class="six">Isto é um parágrafo.</p>
+
+<h1>---------------------------------------------------------------------------------------------</h1>
+<h1>Fontes do google</h1>
+<p>Basta adicionar um link de folha de estilo especial na seção 'head' e, em seguida, consultar a fonte no CSS.</p>
+<p>As fontes do Google são gratuitas e têm mais de 1.000 fontes para escolher.</p>
+
+<h1 class="google1">Sofia Font</h1>
+<p class="google2">Lorem ipsum dolor sit amet.</p>
+<p class="google3">123456790</p>
+
+<h2>Adicione vários efeitos à fonte "Sofia"</h2>
+<h1 class="font-effect-neon">Neon Effect</h1>
+<h1 class="font-effect-outline">Outline Effect</h1>
+<h1 class="font-effect-emboss">Emboss Effect</h1>
+<h1 class="font-effect-shadow-multiple">Multiple Shadow Effect</h1>
+
+<h2>Efeito de fogo </h2>
+<h1 class="font-effect-fire">Sofia on Fire</h1>
+
+<h1>---------------------------------------------------------------------------------------------</h1>
+<h1>Pares de Fonte</h1>
+<p>É sempre seguro encontrar pares de fontes que se complementam.</p>
+<p>Uma ótima combinação de fontes deve harmonizar, sem ser muito parecida ou muito diferente.</p>
+
+<h1 class="ex1">Bela Noruega</h1>
+
+<p class="ex2">A Noruega tem uma área total de 385.252 quilômetros quadrados e uma população de 5.438.657 habitantes (dezembro de 2020). A Noruega faz fronteira com a Suécia, a Finlândia e a Rússia a nordeste, e o Skagerrak a sul, com a Dinamarca do outro lado.</p>
+
+<p class="ex2">A Noruega tem belas montanhas, geleiras e fiordes deslumbrantes. Oslo, a capital, é uma cidade de espaços verdes e museus. Bergen, com casas de madeira coloridas, é o ponto de partida para cruzeiros ao dramático Sognefjord. A Noruega também é conhecida pela pesca, caminhadas e esqui.</p>
+
+<h1>---------------------------------------------------------------------------------------------</h1>
+<h1>Abreviando as propriedades da font</h1>
+
+<h1>A propriedade da fonte</h1>
+
+<p class="a">Isto é um parágrafo. O tamanho da fonte é definido como 20 pixels e a família da fonte é Arial.</p>
+
+<p class="b">Isto é um parágrafo. A fonte é definida como itálico e negrito, o tamanho da fonte é definido como 12 pixels, a altura da linha é definida como 30 pixels e a família da fonte é Georgia.</p>
+
+</body>
+</html>
+
+

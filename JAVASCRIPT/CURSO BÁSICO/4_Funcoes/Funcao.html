@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Testando JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h1>Funções</h1>
+
+    <script>
+        
+        /* ======================================= */
+        // forma clássica
+		function saudacao(nome) {
+			console.log("Olá, " + nome + "!");
+		}
+
+		saudacao("Daniel"); // Olá, Daniel!
+		saudacao("Maria");  // Olá, Maria!
+		
+		
+		/* ======================================= */
+        // função com retorno - Pode retornar um valor que você pode usar depois.
+		
+		function soma(a, b) {
+			return a + b;
+		}
+
+		let resultado = soma(5, 3);
+		console.log(resultado); // 8
+		
+		
+		/* ======================================= */
+        // função anônima - Função sem nome, geralmente atribuída a uma variável.
+		
+		const multiplicar = function(a, b) {
+			return a * b;
+		};
+
+		console.log(multiplicar(4, 5)); // 20
+		
+		
+		/* ======================================= */
+        // Parâmetros com valor padrão (default)
+		// Às vezes, você quer que a função tenha um valor padrão caso o parâmetro não seja informado.
+		
+		
+		function apresentar(nome = "Visitante") {
+		  console.log("Bem-vindo, " + nome);
+		}
+
+		apresentar();        // Saída: Bem-vindo, Visitante
+		apresentar("Daniel"); // Saída: Bem-vindo, Daniel
+		
+		
+		
+		/* ======================================= */
+        // Funções com valor de retorno (return)
+		// Uma função pode retornar um valor usando a palavra-chave return.
+		// O return: (1) Envia um valor de volta para quem chamou a função; (2) Interrompe a execução da função imediatamente.
+		
+		function multiplica(a, b) {
+		  return a * b;
+		}
+
+		const resulta = multiplica(4, 5);
+		console.log(resulta); // Saída: 20
+		
+		
+		
+		// Retornando um boolean
+		
+		function maiorDeIdade(idade) {
+		  return idade >= 18;
+		}
+		console.log(maiorDeIdade(20)); // true
+		
+		
+		// Retornando Objeto
+		
+		function criarPessoa(nome, idade) {
+		  return { nome, idade };
+		}
+
+		console.log(criarPessoa("Daniel", 25));
+		// Saída: { nome: "Daniel", idade: 25 }		
+
+
+		/* ======================================= */
+        // Arrow function (ES6) - Forma mais curta e moderna de escrever funções.
+		
+		const dividir = (a, b) => {
+			return a / b;
+		};
+
+		console.log(dividir(10, 2)); // 5
+		
+		// OBS. Se tiver apenas uma expressão, pode simplificar ainda mais:
+		const quadrado = x => x * x;
+		
+		console.log(quadrado(6)); // 36
+
+
+       /* ======================================= */
+       // Parâmetros padrão - Você pode definir valores padrão para os parâmetros:
+		
+		function saudacao2(nome = "Visitante") {
+			console.log("Olá, " + nome + "!");
+		}
+
+		saudacao2();       // Olá, Visitante!
+		saudacao2("Daniel"); // Olá, Daniel!
+		
+		
+		/* ======================================= */
+        // Funções dentro de funções - Você pode ter funções aninhadas:
+		
+		function operacao(a, b) {
+			function soma(x, y) {
+				return x + y;
+			}
+			return soma(a, b) * 2;
+		}
+
+		console.log(operacao(3, 4)); // 14
+		
+		
+		/* ======================================= */
+        // Funções já definidas 
+		
+		let palavra = "inFORMÁtica";
+		
+		console.log(palavra.toUpperCase());  // letra maiuscula
+		console.log(palavra.toLowerCase());  // letra minuscula
+		console.log(palavra.indexOf("t"));  // retorna a primeira posição (indice) da letra
+		console.log(palavra.lastIndexOf("i"));  // retorna a última posição (indice) da letra
+		
+		let frase = "Aprendendo JavaScript";
+		console.log(frase.slice(10));  // corta 10 posições - imprime JavaScript
+		console.log(frase.slice(10, 15));  // corta entre posições - imprime Java
+		
+		
+		// Funções númericas
+		// https://docs.python.org/pt-br/3.13/library/math.html
+		
+		console.log(Math.min(2, -10, 79, 8, 100, -56, 1));  // obter o menor valor
+		console.log(Math.max(2, -10, 79, 8, 100, -56, 1));  // obter o maior valor
+		console.log(Math.random());  // criar numeros aleatorios
+		
+		let nota = 7.89;
+		console.log(Math.round(nota));  // arredondar a nota
+		console.log(Math.sqrt(nota));   // raiz quadrade
+		console.log(Math.exp(nota));   // elevado a potência
+		
+		let n1 = 10;
+		let n2 = 2;
+		console.log(Math.pow(n1, n2)); // n1 elevado à potência n2
+
+    </script>
+</body>
+</html>

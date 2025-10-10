@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1> Prompt </h1>
+	<p> As respostas estão no console </p>
+
+    <script>
+        // A função prompt() exibe uma caixa de diálogo que solicita ao usuário que insira um valor.
+        // Retorna o valor inserido como uma string. Se o usuário clicar em Cancelar, retorna null.
+        // Sintaxe: prompt(mensagem, valorPadrao);
+
+        // Exemplo 1 - Uso básico do prompt()
+
+        let nome = prompt("Qual é o seu nome?");
+        console.log("Nome inserido:", nome);
+
+        // Retorno:
+        // Se o usuário digitar algo → retorna o texto (string)
+        // Se clicar em Cancelar → retorna null
+
+        //=============================================================================================
+
+        // Exemplo 2 - Usando prompt() com valor padrão
+
+        let idade = prompt("Quantos anos você tem?", "18");
+        console.log("Idade inserida:", idade);
+
+        // Se o usuário apenas clicar em “OK”, o valor padrão "18" será usado.
+
+        //=============================================================================================
+
+        // Exemplo 3 - Validando entrada do usuário
+
+        function perguntarIdade() {
+            let idade;
+            do {
+                idade = prompt("Por favor, insira sua idade (número):");
+            } while (isNaN(idade) || idade === null || idade.trim() === "");
+            return idade;
+        }
+
+        let idadeUsuario = perguntarIdade();
+        console.log("Idade válida inserida:", idadeUsuario);
+
+        // OBS. O prompt() é útil para obter entradas rápidas do usuário, mas deve ser usado com cautela,
+        // pois pode interromper a experiência do usuário se usado excessivamente.
+
+
+        //=============================================================================================
+
+        // Exemplo 4 - Exemplo completo (confirm + prompt)
+
+        const name = prompt("Qual é o seu nome?");
+
+        if (name) {
+        const confirmar = confirm(`Olá, ${name}! Deseja continuar?`);
+            if (confirmar) {
+                alert(`Seja bem-vindo ${name} !`);
+            } else {
+                alert("Até logo!");
+            }
+        } else {
+        alert("Você não informou o nome.");
+        }
+
+        // Cuidados importantes:
+        // Essas caixas são bloqueantes: o navegador pausa a execução até o usuário responder.
+        // O estilo das janelas não pode ser alterado com CSS (dependem do sistema operacional e navegador).
+        // Em interfaces modernas (React, Angular, etc.), geralmente são substituídas por modais personalizados.
+        
+    </script>
+    
+</body>
+</html>

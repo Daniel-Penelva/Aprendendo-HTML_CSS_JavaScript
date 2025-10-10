@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Callback</h1>
+
+    <script>
+      /*
+    O que é um Callback?
+    Um callback é uma função passada como argumento para outra função, que será executada mais tarde, geralmente depois que 
+    uma tarefa termina (como esperar uma resposta do servidor). 
+
+    Em outras palavras:
+    Um callback “chama de volta” o código que deve rodar depois de algo acontecer.
+    */
+
+      // Exemplo 1 — Função com callback simples
+
+      function saudacao(nome, callback) {
+        console.log(`Olá, ${nome}!`);
+        callback(); // chama a função passada como argumento
+      }
+
+      function despedida() {
+        console.log("Até mais!");
+      }
+
+      saudacao("João", despedida); // Passa a função despedida como callback
+
+      // ==================================================================================
+
+      // Exemplo 2 - Callbacks e operações assíncronas
+      // Imagine que você quer simular uma tarefa demorada, como buscar dados de um servidor.
+      // É usado setTimeout() para isso:
+
+      function buscarDados(callback) {
+        console.log("Buscando dados...");
+
+        setTimeout(() => {
+          console.log("Dados recebidos do servidor!");
+          callback();
+        }, 2000); // simula 2 segundos de espera
+      }
+
+      function processarDados() {
+        console.log("Processando dados...");
+      }
+
+      buscarDados(processarDados);
+
+      /*
+        Fluxo de execução: 
+            1. O JS chama buscarDados().
+            2. Ela espera 2 segundos (simulando uma operação demorada).
+            3. Quando termina, executa o callback (processarDados()).
+      */
+
+      // OBS. Problema dos Callbacks — "Callback Hell"
+      // Quando você começa a aninhar várias funções assíncronas, o código fica difícil de entender e manter.
+      // Exemplo de "Callback Hell":
+      
+      function tarefa1(callback) {
+        setTimeout(() => {
+          console.log("Tarefa 1 concluída");
+          callback();
+        }, 1000);
+      }
+      
+      function tarefa2(callback) {
+        setTimeout(() => {
+          console.log("Tarefa 2 concluída");
+          callback();
+        }, 1000);
+      }
+      
+      function tarefa3(callback) {
+        setTimeout(() => {
+          console.log("Tarefa 3 concluída");
+          callback();
+        }, 1000);
+      }
+      
+      tarefa1(() => {
+        tarefa2(() => {
+          tarefa3(() => {
+            console.log("Todas as tarefas concluídas");
+          });
+        });
+      });
+      
+      // Solução moderna: Promises e async/await (abordagens mais limpas para lidar com operações assíncronas).
+    </script>
+  </body>
+</html>

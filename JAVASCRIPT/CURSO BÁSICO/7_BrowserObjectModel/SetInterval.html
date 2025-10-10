@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>setInterval</h1>
+
+    <script>
+      // setInterval() — Executa várias vezes em intervalos fixos
+      // Sintaxe: setInterval(função, tempoEmMilissegundos);
+      // função → o código que será executado repetidamente.
+      // tempoEmMilissegundos → intervalo de tempo entre cada execução (1000 ms = 1 segundo).
+
+      // Exemplo 1 - Simples
+
+      setInterval(() => {
+        console.log("Executando a cada 2 segundos...");
+      }, 2000);
+
+
+      // =======================================================================================
+
+      // Exemplo 2 - Cancelando um setInterval
+      // Use clearInterval() para parar a execução.
+
+      let contador = 0;
+
+      const intervalo = setInterval(() => {
+        contador++;
+        console.log(`Contagem: ${contador}`);
+
+        if (contador === 5) {
+          clearInterval(intervalo);
+          console.log("Intervalo encerrado!");
+        }
+      }, 1000);
+
+
+      // =======================================================================================
+      // Exemplo 3 - Usando função nomeada com setInterval
+      
+      function mostrarHora() {
+        const agora = new Date();
+        console.log(`Hora atual: ${agora.toLocaleTimeString()}`);
+      }
+      
+      setInterval(mostrarHora, 3000); // Chama a função mostrarHora a cada 3 segundos
+
+
+      // =======================================================================================
+      // Exemplo 4 - Passando parâmetros para a função no setInterval
+      
+      function exibirMensagem(mensagem) {
+        console.log(mensagem);
+      }
+      setInterval(
+        exibirMensagem,
+        4000,
+        "Esta mensagem é exibida a cada 4 segundos."
+      );
+
+
+      // =======================================================================================
+      // Exemplo 5 - Usando setInterval dentro de um loop
+      
+      for (let i = 1; i <= 3; i++) {
+        setInterval(() => {
+          console.log(`Loop Contagem: ${i}`);
+        }, i * 2000); // Exibe a contagem a cada 2 segundos
+      }
+      
+    </script>
+  </body>
+</html>

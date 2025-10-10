@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Testando JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+	<body>
+	
+	<h1> Seletor de Conteúdo - getElementsByClassName()</h1>
+	
+	<!-- Exemplo 1 -->
+	
+	<p class="item">Item 1</p>
+	<p class="item">Item 2</p>
+	
+	
+	<hr>
+	
+	<!-- Exemplo 2 -->
+	
+	<button onClick = "acao()"> Selecionar</button>
+	
+	<h2 class = "texto">Subtítulo 2</h2>
+	<h3 class = "texto">Subtítulo 3</h3>
+	<p class = "texto">Parágrafo</p>
+	
+	
+        <script type="text/JavaScript">
+		
+		// Exemplon 1
+		// getElementsByClassName()
+		// Seleciona todos os elementos com uma determinada classe.
+		// Retorna um HTMLCollection, parecido com array, mas não é exatamente array.
+		
+		const itens = document.getElementsByClassName("item");
+		console.log(itens[0].textContent); // Item 1
+		console.log(itens[1].textContent); // Item 2
+		
+		
+		// ====================================================================================
+		
+		// Exemplo 2
+		
+		function acao() {
+			var campo = document.getElementsByClassName("texto")[2];
+			alert(campo.innerHTML);
+		}
+			
+		</script>	
+    </body>
+
+</html>

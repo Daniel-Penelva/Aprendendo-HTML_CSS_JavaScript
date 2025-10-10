@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Testando JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+	<body>
+	
+	<h1> Operadores Lógicos </h1>
+    <script type="text/JavaScript">
+		
+		// Operadores relacionais
+		  
+		var valor1 = 10;
+		var valor2 = 30;
+		  
+		console.log(valor1 > valor2);  // maior - retorna boolean
+		console.log(valor1 < valor2);  // menor
+		console.log(valor1 == valor2); // igual
+		console.log(valor1 != valor2); // diferente
+		console.log(valor1 >= valor2);  // maior ou igual
+		console.log(valor1 <= valor2);  // menor ou igual
+		
+		/* ======================================= */
+		// Operador Lógico E (&&)
+		let idade = 20;
+		let possuiCarteira = true;
+
+		if (idade >= 18 && possuiCarteira) {
+			console.log("Pode dirigir");
+		} else {
+			console.log("Não pode dirigir");
+		}
+		
+		/* ======================================= */
+		// Operador Lógico OU (||)
+		let temIngresso = false;
+		let VIP = true;
+
+		if (temIngresso || VIP) {
+			console.log("Pode entrar");
+		} else {
+			console.log("Não pode entrar");
+		}
+
+		/* ======================================= */
+		// Operador NÃO (!) 
+		let chovendo = false;
+
+		if (!chovendo) {
+			console.log("Pode sair sem guarda-chuva");
+		} else {
+			console.log("Leve um guarda-chuva");
+		}
+		
+		/* ======================================= */
+		// Combinando operadores
+		
+		let age = 22;
+		let carteira = true;
+		let cnh = false;
+
+		if (age >= 18 && carteira && !cnh) {
+			console.log("Maior de idade, tem carteira, mas não tem CNH válida");
+		}
+
+
+    </script>
+    </body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Laço de Repetição</h1>
+        <script type="text/JavaScript">
+			
+			// for
+			
+			for (let i = 0; i < 5; i++) {
+			console.log("Número:", i);
+			}
+			
+			/* ======================================= */
+			// while - O loop verifica a condição antes de cada execução. Repete enquanto uma condição for verdadeira.
+			
+			let contador = 0;
+
+			while (contador < 5) {
+				console.log("Contador:", contador);
+				contador++;
+			}
+			
+			/* ======================================= */
+			// do...while - Semelhante ao while, mas executa o código pelo menos uma vez, mesmo que a condição seja falsa.
+			
+			let contar = 0;
+
+			do {
+				console.log("Contador:", contar);
+				contar++;
+			} while (contar < 5);
+			
+			
+			/* ======================================= */
+			// for...of (ES6) Arrays ou Vetores - Usado para percorrer arrays ou strings.
+			
+			let frutas = ["Maçã", "Banana", "Laranja"];
+
+			for (let fruta of frutas) {
+				console.log(fruta);
+			}
+			
+			
+			/* ======================================= */
+			// Vetor de Multiplos Objects
+			
+			let cursos = [
+				{nome: "HTML", carga: 20, sala: 4},
+				{nome: "JAVA", carga: 100, sala: 3},
+				{nome: "JavaScript", carga: 30, sala: 2},
+				{nome: "CSS", carga: 20, sala: 1}
+			];
+
+			for (let curso of cursos) {
+				console.log(curso);
+			}
+			
+			/* ======================================= */
+			// for...in - Percorre propriedades de um objeto (ou índices de um array).
+			
+			let pessoa = { nome: "Daniel", idade: 25 };
+
+			for (let chave in pessoa) {
+				console.log(chave + ":", pessoa[chave]); // "chave" referencia "nome e idade" e "pessoa[chave]" referência os valores "Daniel e 25".
+			}
+
+		</script>	
+</body>
+</html>

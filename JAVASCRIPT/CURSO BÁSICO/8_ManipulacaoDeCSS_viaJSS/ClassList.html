@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      /* Exemplo 1 */
+
+      .destaque {
+        background-color: yellow;
+        font-weight: bold;
+        padding: 10px;
+      }
+
+      /* Exemplo 3 */
+
+      .ativo {
+        background-color: black;
+        color: white;
+        padding: 10px;
+      }
+
+      .animado {
+        transition: all 0.3s ease;
+        padding: 10px;
+        border: 2px solid black;
+        margin: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>classList</h1>
+
+    <!-- Exemplo 1 -->
+    <h2 id="titulo">Clique no botão para destacar</h2>
+    <button onclick="destacar()">Destacar</button>
+
+    <hr />
+
+    <!-- Exemplo 2 -->
+    <h2 id="titulo" class="destaque">Clique no botão para remover destaque</h2>
+    <button onclick="remover()">Remover Destaque</button>
+
+    <hr />
+
+    <!-- Exemplo 3 -->
+    <h2 id="titulo">Clique no botão para alternar estilo</h2>
+    <button onclick="alternar()">Alternar</button>
+
+    <hr />
+
+    <!-- Exemplo 4 -->
+    <h2 id="titulo">Verificando Vários nomes de classes ao mesmo tempo</h2>
+    <button onclick="varios()">Verificar Classe</button>
+
+    <script>
+      // O que é classList?
+      // Todo elemento HTML tem uma propriedade chamada classList, que representa a lista de classes CSS atribuídas a ele.
+      // Com ela, você pode:
+      //      . Adicionar classes → classList.add()
+      //      . Remover classes → classList.remove()
+      //      . Alternar classes → classList.toggle()
+      //      . Verificar se uma classe existe → classList.contains()
+      // Isso é muito melhor do que usar .style, porque mantém o CSS separado do JavaScript.
+
+      // Exemplo 1 — classList.add()
+      // Adiciona uma ou mais classes ao elemento.
+
+      const titulo = document.getElementById("titulo");
+
+      function destacar() {
+        titulo.classList.add("destaque"); // adiciona a classe CSS
+      }
+
+      // ==============================================================================================
+
+      // Exemplo 2 - Removendo classes — classList.remove()
+      // Remove uma ou mais classes do elemento.
+
+      function remover() {
+        titulo.classList.remove("destaque"); // remove a classe
+      }
+
+      // ==============================================================================================
+
+      // Exemplo 3 - Alternando classes — classList.toggle()
+      // O toggle é muito útil: (1) Se a classe não existe, ele adiciona. (2) Se a classe já existe, ele remove.
+      // Adiciona se não tem, remove se já tem
+
+      function alternar() {
+        titulo.classList.toggle("ativo");
+      }
+
+      // Essa abordagem é perfeita para criar menus que abrem e fecham, botões que ligam/desligam estados, etc.
+
+      // ==============================================================================================
+
+      // Exemplo 4 - Verificando classes — classList.contains()
+      // Verifica se a classe existe no elemento.
+      // Você também pode verificar se uma classe está presente antes de tomar alguma ação.
+
+      if (titulo.classList.contains("ativo")) {
+        // verifica se a classe "ativo" (alternar()) está presente no elemento
+        console.log("A classe está presente");
+      } else {
+        console.log("A classe não está presente");
+      }
+
+      // ==============================================================================================
+
+      // Exemplo 4 - Vários nomes de classes ao mesmo tempo
+      // Os métodos add() e remove() aceitam mais de uma classe.
+      // Isso facilita bastante quando você quer mudar vários estilos de uma só vez.
+
+      function varios() {
+        titulo.classList.add("ativo", "destaque", "animado");
+        titulo.classList.remove("ativo", "destaque");
+      }
+    </script>
+  </body>
+</html>

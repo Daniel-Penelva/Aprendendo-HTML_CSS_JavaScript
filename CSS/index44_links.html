@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+a.ex1 {
+  color: hotpink;
+}
+
+/* Estados de links*/
+
+/* unvisited link */
+a:link {
+  color: red;
+}
+
+/* visited link */
+a:visited {
+  color: green;
+}
+
+/* mouse over link */
+a:hover {
+  color: hotpink;
+}
+
+/* selected link */
+a.decoracao :active {
+  color: blue;
+}
+
+/* Text decoration */
+a.decoracao :link {
+  text-decoration: none;
+}
+
+a.decoracao :visited {
+  text-decoration: none;
+}
+
+a.decoracao :hover {
+  text-decoration: underline;
+}
+
+a.decoracao :active {
+  text-decoration: underline;
+}
+
+</style>
+</head>
+<body>
+
+<h1>Links podem ser estilizados de várias maneiras</h1>
+
+<h2>Links de Estilo </h2>
+<p>Os links podem ser estilizados com qualquer propriedade CSS (por exemplo color, font-family, background, etc.).</p>
+
+
+<h2>Estilo de cor com link</h2>
+
+<p><b><a href="https://www.w3schools.com/" target="_blank" class="ex1">Este é um link</a></b></p>
+
+<h1>--------------------------------------------------------------------------------------------</h1>
+<h2>Além disso, os links podem ter estilos diferentes, dependendo do estado em que estão.</h2>
+<p>Os quatro estados dos links são:</p>
+<p>a:link- um link normal não visitado</p>
+<p>a:visited- um link que o usuário visitou</p>
+<p>a:hover- um link quando o usuário passa o mouse sobre ele</p>
+<p>a:active- um link no momento em que é clicado</p>
+
+<h2>Estilizando um link dependendo do estado</h2>
+
+<p><b><a href="https://www.w3schools.com/" target="_blank">Este é um link</a></b></p>
+<p><b>Nota:</b> a:hover DEVE vir depois de a:link e a:visited na definição CSS para ser eficaz.</p>
+<p><b>Nota:</b> a:active DEVE vir depois de a:hover na definição CSS para ser eficaz.</p>
+
+<h1>--------------------------------------------------------------------------------------------</h1>
+<h2>Decoracao de Texto</h2>
+<p>A text-decorationpropriedade é usada principalmente para remover sublinhados de links.</p>
+
+<h2>Estilizando um link dependendo do estado</h2>
+
+<p><b><a class="decoracao" href="https://www.w3schools.com/" target="_blank">Este é um link</a></b></p>
+<p><b>Nota:</b> a:hover DEVE vir depois de a:link e a:visited na definição CSS para ser eficaz.</p>
+<p><b>Nota:</b> a:active DEVE vir depois de a:hover na definição CSS para ser eficaz.</p>
+
+</body>
+</html>
+
+

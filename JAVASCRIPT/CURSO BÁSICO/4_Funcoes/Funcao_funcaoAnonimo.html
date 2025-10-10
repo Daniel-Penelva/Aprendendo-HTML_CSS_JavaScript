@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Testando JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h1>Funções - Função Anônimo</h1>
+	<p> Respostas no console </p>
+	
+	<hr>
+	
+	<!-- Exemplo 4 -->
+	<button id="botao">Clique aqui</button>
+
+    <script>
+	
+	// O que é uma Função Anônima?
+	// Uma função anônima é uma função sem nome.
+	// Ela é criada principalmente para ser usada no momento da execução, geralmente passada como parâmetro para outra função, ou atribuída a uma variável.
+	
+	// Exemplo 1 - Exemplo básico - Função nomeada
+	
+	function saudacao() {
+	  console.log("Olá, mundo!");
+	}
+	
+	saudacao();
+	
+	//===================================================================================================
+	
+	// Exemplo 2 - Função anônima atribuída a uma variável
+	
+	const texto = function() {
+	  console.log("Olá, mundo!");
+	};
+
+	texto(); // Saída: Olá, mundo!
+	
+	
+	//===================================================================================================
+	
+	// Exemplo 3 - Uso comum: como callback
+	// Funções anônimas são muito usadas quando queremos executar um código dentro de outra função, como em eventos, temporizadores e métodos de arrays.
+	
+	setTimeout(function() {
+	  console.log("Passaram 3 segundos!");
+	}, 3000);
+	
+	
+	//===================================================================================================
+	
+	// Exemplo 4 - Exemplo com evento de clique
+	
+	document.getElementById("botao").onclick = function() {
+	  alert("Botão clicado!");
+	};
+		
+	
+	//===================================================================================================
+	
+	// Exemplo 5 - Exemplo com forEach
+	
+	const numeros = [1, 2, 3];
+
+	numeros.forEach(function(num) {
+	  console.log(num * 2);
+	});
+		
+	
+	//===================================================================================================
+	
+	// Exemplo 6 - Com parâmetro
+	
+	const soma = function(a, b) {
+	  return a + b;
+	};
+
+    </script>
+</body>
+</html>
