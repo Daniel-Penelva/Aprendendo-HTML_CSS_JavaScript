@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tipos de Entrada</title>
+  </head>
+  <body>
+    <!-- Exemplo 1 -->
+
+    <h2>Campo de texto</h2>
+    <p>
+      O <strong>tipo de entrada="texto"</strong> define um campo de entrada de
+      texto de uma linha:
+    </p>
+
+    <form action="/action_page.php">
+      <label for="fname">Nome:</label><br />
+      <input type="texto" id="fname" name="fname" /><br />
+      <label for="lname">Sobrenome:</label><br />
+      <input type="texto" id="lname" name="lname" /><br /><br />
+      <input type="submit" value="Enviar" />
+    </form>
+
+    <p>Observe que o formulário em si não é visível.</p>
+    <p>
+      Observe também que a largura padrão de um campo de texto é de 20
+      caracteres.
+    </p>
+
+    <hr />
+    <!-- Exemplo 2 -->
+
+    <h2>Campo de senha</h2>
+
+    <p>O <strong>input type="password"</strong> define um campo de senha:</p>
+
+    <form action="/action_page.php">
+      <label for="username">Nome de usuário:</label><br />
+      <input type="text" id="username" name="username" /><br />
+      <label for="pwd">Senha:</label><br />
+      <input type="password" id="pwd" name="pwd" /><br /><br />
+      <input type="submit" value="Enviar" />
+    </form>
+
+    <p>
+      Os caracteres em um campo de senha são mascarados (mostrado como
+      asteriscos ou círculos).
+    </p>
+
+    <hr />
+    <!-- Exemplo 3 -->
+
+    <h2>Botão Enviar</h2>
+
+    <p>
+      O <strong>input type="submit"</strong> define um botão para enviar dados
+      do formulário para um manipulador de formulários:
+    </p>
+
+    <form action="/action_page.php">
+      <label for="fname">Nome:</label><br />
+      <input type="text" id="fname" name="fname" value="John" /><br />
+      <label for="lname">Sobrenome:</label><br />
+      <input type="text" id="lname" name="lname" value="Doe" /><br /><br />
+      <input type="submit" value="Enviar" />
+    </form>
+
+    <p>
+      Se você clicar em "Enviar", os dados do formulário serão enviados para uma
+      página chamada "/action_page.php".
+    </p>
+
+    <hr />
+    <!-- Exemplo 4 -->
+
+    <h2>Botão de Redefinição</h2>
+
+    <p>
+      O <strong>input type="reset"</strong> define um botão de redefinição que
+      redefine todos os valores do formulário para seus valores padrão:
+    </p>
+
+    <form action="/action_page.php">
+      <label for="fname">Nome:</label><br />
+      <input type="text" id="fname" name="fname" value="John" /><br />
+      <label for="lname">Sobrenome:</label><br />
+      <input type="text" id="lname" name="lname" value="Doe" /><br /><br />
+      <input type="submit" value="Enviar" />
+      <input type="reset" value="Redefinir" />
+    </form>
+
+    <p>
+      Se você alterar os valores de entrada e clicar no botão "Redefinir", os
+      dados do formulário serão redefinidos para os valores padrão.
+    </p>
+
+    <hr />
+    <!-- Exemplo 5 -->
+
+    <h2>Botões de Rádio</h2>
+
+    <p>O <strong>input type="radio"</strong> define um botão de rádio:</p>
+
+    <p>Escolha sua linguagem Web favorita:</p>
+    <form action="/action_page.php">
+      <input type="radio" id="html" name="fav_language" value="HTML" />
+      <label for="html">HTML</label><br />
+      <input type="radio" id="css" name="fav_language" value="CSS" />
+      <label for="css">CSS</label><br />
+      <input type="radio" id="javascript" name="fav_language" value="JavaScript"/>
+      <label for="javascript">JavaScript</label><br /><br />
+      <input type="submit" value="Enviar" />
+    </form>
+
+    <h2>Caixas de seleção</h2>
+    <p>
+      O <strong>input type="checkbox"</strong> define uma caixa de seleção
+      quadrada:
+    </p>
+
+    <form action="/action_page.php">
+      <input type="checkbox" id="vehicle1" name="vehicle1" value="Bicicleta" />
+      <label for="vehicle1"> Eu tenho uma bicicleta</label><br />
+      <input type="checkbox" id="vehicle2" name="vehicle2" value="Carro" />
+      <label for="vehicle2"> Eu tenho um carro</label><br />
+      <input type="checkbox" id="vehicle3" name="vehicle3" value="Barco" />
+      <label for="vehicle3"> Eu tenho um barco</label><br /><br />
+      <input type="submit" value="Enviar" />
+    </form>
+
+    <hr />
+    <!-- Exemplo 6 -->
+
+    <h2>Input Button</h2>
+
+    <input type="button" onclick="alert('Hello World!')" value="Click Me!" />
+
+    <hr />
+    <!-- Exemplo 7 -->
+
+    <h2>Mostrar um Seletor de Cores</h2>
+
+    <p>
+      O <strong>input type="color"</strong> é usado para campos de entrada que
+      devem conter uma cor.
+    </p>
+
+    <form action="/action_page.php">
+      <label for="favcolor">Selecione sua cor favorita:</label>
+      <input type="color" id="favcolor" name="favcolor" value="#ff0000" />
+      <input type="submit" value="Enviar" />
+    </form>
+
+    <p>
+      <b>Observação:</b> type="color" não é compatível com o Internet Explorer
+      11.
+    </p>
+
+    <hr />
+    <!-- Exemplo 8 -->
+
+    <h2>Campo de Data</h2>
+
+    <p>
+      O <strong>tipo de entrada="data"</strong> é usado para campos de entrada
+      que devem conter uma data.
+    </p>
+
+    <form action="/action_page.php">
+      <label for="birthday">Aniversário:</label>
+      <input type="data" id="aniversário" name="aniversário" />
+      <input type="submit" value="Enviar" />
+    </form>
+
+    <h2>Restrições do Campo de Data</h2>
+
+    <p>Use os atributos min e max para adicionar restrições às datas:</p>
+
+    <form action="/action_page.php">
+      <label for="datemin">Insira uma data posterior a 01/01/2000:</label>
+      <input
+        type="date"
+        id="datemin"
+        name="datemin"
+        min="2000-01-02"
+      /><br /><br />
+
+      <label for="datemax">Insira uma data anterior a 01/01/1980:</label>
+      <input
+        type="date"
+        id="datemax"
+        name="datemax"
+        max="1979-12-31"
+      /><br /><br />
+
+      <input type="submit" value="Enviar" />
+    </form>
+
+    <p>
+      <strong>Observação:</strong> type="date" não é compatível com o Internet
+      Explorer 11.
+    </p>
+
+    <hr />
+    <!-- Exemplo 9 -->
+
+    <h2>Campo de Data Local</h2>
+
+    <p>
+      O <strong>tipo de entrada="datetime-local"</strong> especifica um campo de
+      entrada de data e hora, sem fuso horário.
+    </p>
+
+    <form action="/action_page.php">
+      <label for="birthdaytime">Aniversário (data e hora):</label>
+      <input type="datetime-local" id="birthdaytime" name="birthdaytime" />
+      <input type="submit" value="Enviar" />
+    </form>
+
+    <hr />
+    <!-- Exemplo 10 -->
+
+    <h2>Campo de E-mail</h2>
+
+    <p>
+      O <strong>tipo de entrada="email"</strong> é usado para campos de entrada
+      que devem conter um endereço de e-mail:
+    </p>
+
+    <form action="/action_page.php">
+      <label for="email">Digite seu e-mail:</label>
+      <input type="email" id="email" name="email" />
+      <input type="submit" value="Enviar" />
+    </form>
+
+    <hr />
+    <!-- Exemplo 11 -->
+
+    <h2>Exibir uma imagem como o botão Enviar</h2>
+
+    <form action="/action_page.php">
+      <label for="fname">Nome: </label>
+      <input type="text" id="fname" name="fname" /><br /><br />
+      <label for="lname">Sobrenome: </label>
+      <input type="text" id="lname" name="lname" /><br /><br />
+      <input
+        type="image"
+        src="/HTML/image/img_submit.gif"
+        alt="Enviar"
+        width="48"
+        height="48"
+      />
+    </form>
+
+    <p>
+      <b>Observação:</b> O tipo de entrada="image" envia as coordenadas X e Y do
+      clique que ativou o botão de imagem.
+    </p>
+
+    <hr />
+    <!-- Exemplo 12 -->
+
+    <h1>Upload de arquivo</h1>
+
+    <p>
+      Exibir um campo de seleção de arquivo que permite escolher um arquivo para
+      upload:
+    </p>
+    <form action="/action_page.php">
+      <label for="myfile">Selecionar um arquivo:</label>
+      <input type="file" id="myfile" name="myfile" /><br /><br />
+      <input type="submit" value="Enviar" />
+    </form>
+
+    <hr />
+    <!-- Exemplo 13 -->
+
+    <h1>Um Campo id vai estar oculto (veja no código-fonte)</h1>
+
+    <form action="/action_page.php">
+      <label for="fname">Nome:</label>
+      <input type="text" id="fname" name="fname" /><br /><br />
+      <input type="hidden" id="custId" name="custId" value="3487" />
+      <input type="submit" value="Enviar" />
+    </form>
+
+    <p>
+      <strong>Observação:</strong> O campo oculto não é exibido ao usuário, mas
+      os dados são enviados quando o formulário é enviado.
+    </p>
+
+    <hr />
+    <!-- Exemplo 14 -->
+
+    <h2>Campo Mês</h2>
+
+    <p>
+      O <strong>input type="month"</strong> permite que o usuário selecione um
+      mês e um ano.
+    </p>
+
+    <form action="/action_page.php">
+      <label for="bdaymonth">Aniversário (mês e ano):</label>
+      <input type="month" id="bdaymonth" name="bdaymonth" />
+      <input type="submit" value="Enviar" />
+    </form>
+
+    <p>
+      <strong>Observação:</strong> type="month" não é compatível com Firefox,
+      Safari ou Internet Explorer 11.
+    </p>
+
+    <hr />
+    <!-- Exemplo 15 -->
+    <h2>Campo Numérico</h2>
+
+    <p>
+      O <strong>tipo de entrada="número"</strong> define um campo de entrada
+      numérico.
+    </p>
+
+    <p>
+      Você pode usar os atributos min e max para adicionar restrições numéricas
+      no campo de entrada:
+    </p>
+
+    <form action="/action_page.php">
+      <label for="quantity">Quantidade (entre 1 e 5):</label>
+      <input type="number" id="quantidade" name="quantidade" min="1" max="5" />
+      <input type="submit" value="Enviar" />
+    </form>
+
+    <h2>Etapas Numéricas</h2>
+
+    <p>
+      Dependendo do suporte do navegador: Etapas fixas serão aplicadas no campo
+      de entrada.
+    </p>
+
+    <form action="/action_page.php">
+      <label for="quantity">Quantidade:</label>
+      <input
+        type="number"
+        id="quantity"
+        name="quantity"
+        min="0"
+        max="100"
+        step="10"
+        value="30"
+      />
+      <input type="submit" value="Enviar" />
+    </form>
+
+    <hr />
+    <!-- Exemplo 16 -->
+
+    <h2>Campo de Intervalo</h2>
+
+    <p>
+      Dependendo do suporte do navegador: O tipo de entrada "intervalo" pode ser
+      exibido como um controle deslizante.
+    </p>
+
+    <form action="/action_page.php" method="get">
+      <label for="vol">Volume (entre 0 e 50):</label>
+      <input type="range" id="vol" name="vol" min="0" max="50" />
+      <input type="submit" value="Enviar" />
+    </form>
+
+    <hr />
+    <!-- Exemplo 17 -->
+
+    <h2>Campo de Pesquisa</h2>
+    <p>
+      O <strong>tipo de entrada="search"</strong> é usado para campos de
+      pesquisa (comporta-se como um campo de texto normal):
+    </p>
+
+    <form action="/action_page.php">
+      <label for="gsearch">Pesquisar no Google:</label>
+      <input type="search" id="gsearch" name="gsearch" />
+      <input type="submit" value="Enviar" />
+    </form>
+
+    <hr />
+    <!-- Exemplo 18 -->
+
+    <h2>Campo Telefone</h2>
+
+    <p>
+      O <strong>input type="tel"</strong> é usado para campos de entrada que
+      devem conter um número de telefone:
+    </p>
+
+    <form action="/action_page.php">
+      <label for="phone">Digite um número de telefone:</label><br /><br />
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        placeholder="123-45-678"
+        pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+        required
+      /><br /><br />
+      <small>Formato: 123-45-678</small><br /><br />
+      <input type="submit" value="Enviar" />
+    </form>
+
+    <hr />
+    <!-- Exemplo 19 -->
+
+    <h1>Mostrar um Controle de Entrada de Hora</h1>
+
+    <p>
+      O <strong>input type="time"</strong> permite que o usuário selecione uma
+      hora (sem fuso horário):
+    </p>
+
+    <p>
+      Se o navegador suportar, um seletor de hora será exibido ao inserir o
+      campo de entrada.
+    </p>
+
+    <form action="/action_page.php">
+      <label for="appt">Selecionar uma hora:</label>
+      <input type="time" id="appt" name="appt" />
+      <input type="submit" value="Enviar" />
+    </form>
+
+    <p>
+      <strong>Observação:</strong> type="time" não é compatível com o Internet
+      Explorer 11.
+    </p>
+
+    <hr />
+    <!-- Exemplo 20 -->
+
+    <h1>Exibir um campo de entrada de URL</h1>
+
+    <p>
+      O <strong>tipo de entrada="url"</strong> é usado para campos de entrada
+      que devem conter um endereço de URL:
+    </p>
+
+    <form action="/action_page.php">
+      <label for="homepage">Adicione sua página inicial:</label>
+      <input type="url" id="homepage" name="homepage" />
+      <input type="submit" value="Enviar" />
+    </form>
+
+    <hr />
+    <!-- Exemplo 21 -->
+
+    <h1>Exibir um Controle de Entrada Semanal</h1>
+
+    <p>
+      O <strong>input type="week"</strong> permite que o usuário selecione uma
+      semana e um ano.
+    </p>
+
+    <p>
+      Se o navegador suportar, um seletor de data será exibido ao inserir o
+      campo de entrada.
+    </p>
+
+    <form action="/action_page.php">
+      <label for="week">Selecione uma semana:</label>
+      <input type="week" id="week" name="week" />
+      <input type="submit" value="Enviar" />
+    </form>
+
+    <p>
+      <strong>Observação:</strong> type="week" não é compatível com Firefox,
+      Safari ou Internet Explorer 11.
+    </p>
+
+  </body>
+</html>
+
+<!--
+Este capítulo descreve os diferentes tipos do <input>elemento HTML.
+
+Tipos de entrada HTML
+Aqui estão os diferentes tipos de entrada que você pode usar em HTML:
+
+<input type="button">
+<input type="checkbox">
+<input type="color">
+<input type="date">
+<input type="datetime-local">
+<input type="email">
+<input type="file">
+<input type="hidden">
+<input type="image">
+<input type="month">
+<input type="number">
+<input type="password">
+<input type="radio">
+<input type="range">
+<input type="reset">
+<input type="search">
+<input type="submit">
+<input type="tel">
+<input type="text">
+<input type="time">
+<input type="url">
+<input type="week">
+
+Exemplo 1: Tipo de entrada Texto
+<input type="text"> define um campo de entrada de texto de linha única.
+
+===================================================================================================
+
+Exemplo 2: Tipo de entrada Senha
+<input type="password"> define um campo de senha.
+
+===================================================================================================
+
+Exemplo 3: Tipo de entrada Enviar
+<input type="submit"> define um botão para enviar dados de formulário para um manipulador de formulário .
+
+O manipulador de formulários normalmente é uma página de servidor com um script para processar dados de entrada.
+
+O manipulador de formulário é especificado no atributo do formulário action. 
+
+OBS. Se você omitir o atributo value do botão de envio, o botão receberá um texto padrão.
+
+===================================================================================================
+
+Exemplo 4: Redefinição do tipo de entrada
+<input type="reset">define um botão de reinicialização que redefinirá todos os valores do formulário para seus valores padrão.
+
+===================================================================================================
+
+Exemplo 5: Tipo de entrada Rádio
+<input type="radio">define um botão de opção .
+
+Os botões de opção permitem que o usuário selecione APENAS UMA de um número limitado de opções.
+
+
+Exemplo 5.1: Caixa de seleção Tipo de entrada
+<input type="checkbox"> define uma caixa de seleção .
+
+As caixas de seleção permitem que o usuário selecione ZERO ou MAIS opções de um número limitado de escolhas.
+
+===================================================================================================
+
+Exemplo 6: Botão de tipo de entrada
+<input type="button">define um botão.
+
+
+===================================================================================================
+
+Exemplo 7: Tipo de entrada Cor
+O <input type="color"> é usado para campos de entrada que devem conter uma cor.
+
+Dependendo do suporte do navegador, um seletor de cores pode aparecer no campo de entrada.
+
+===================================================================================================
+
+Exemplo 8: Tipo de entrada Data
+O <input type="date"> é usado para campos de entrada que devem conter uma data.
+
+Dependendo do suporte do navegador, um seletor de data pode aparecer no campo de entrada.
+
+
+Exemplo 8.1: 
+Você também pode usar os atributos mine maxpara adicionar restrições às datas.
+
+===================================================================================================
+
+Exemplo 9: Tipo de entrada Data e hora-local
+Especifica <input type="datetime-local"> um campo de entrada de data e hora, sem fuso horário.
+
+Dependendo do suporte do navegador, um seletor de data pode aparecer no campo de entrada.
+
+
+===================================================================================================
+
+Exemplo 10: Tipo de entrada E-mail
+O <input type="email"> é usado para campos de entrada que devem conter um endereço de e-mail.
+
+Dependendo do suporte do navegador, o endereço de e-mail pode ser validado automaticamente quando enviado.
+
+Alguns smartphones reconhecem o tipo de e-mail e adicionam ".com" ao teclado para corresponder à entrada de e-mail.
+
+
+===================================================================================================
+
+Exemplo 11: Tipo de entrada Imagem
+O <input type="image"> define uma imagem como um botão de envio.
+
+O caminho para a imagem é especificado no src atributo.
+
+===================================================================================================
+
+Exemplo 12: Tipo de entrada Arquivo
+O <input type="file"> define um campo de seleção de arquivo e um botão "Navegar" para uploads de arquivos.
+
+
+===================================================================================================
+
+Exemplo 13: Tipo de entrada oculto
+O <input type="hidden"> define um campo de entrada oculto (não visível para um usuário).
+
+Um campo oculto permite que desenvolvedores web incluam dados que não podem ser vistos ou modificados pelos usuários quando um formulário é enviado.
+
+Um campo oculto geralmente armazena qual registro do banco de dados precisa ser atualizado quando o formulário é enviado.
+
+Observação: embora o valor não seja exibido ao usuário no conteúdo da página, ele fica visível (e pode ser editado) usando as ferramentas de 
+desenvolvedor de qualquer navegador ou a funcionalidade "Exibir código-fonte". Não use entradas ocultas como forma de segurança!
+
+
+===================================================================================================
+
+Exemplo 14: Tipo de entrada Mês
+O <input type="month"> permite que o usuário selecione um mês e um ano.
+
+Dependendo do suporte do navegador, um seletor de data pode aparecer no campo de entrada.
+
+
+===================================================================================================
+
+Exemplo 15: Tipo de entrada Número
+O <input type="number"> define um campo de entrada numérico .
+
+Você também pode definir restrições sobre quais números são aceitos.
+
+O exemplo a seguir exibe um campo de entrada numérica, onde você pode inserir um valor de 1 a 5.
+
+
+Exemplo 15.1: Restrições de entrada
+Aqui está uma lista de algumas restrições de entrada comuns:
+
+Atributo              Descrição
+checked             Especifica que um campo de entrada deve ser pré-selecionado quando a página carrega (para type="checkbox" ou type="radio")
+disabled            Especifica que um campo de entrada deve ser desabilitado
+max                 Especifica o valor máximo para um campo de entrada
+maxlength           Especifica o número máximo de caracteres para um campo de entrada
+min                 Especifica o valor mínimo para um campo de entrada
+pattern             Especifica uma expressão regular para verificar o valor de entrada
+readonly            Especifica que um campo de entrada é somente leitura (não pode ser alterado)
+required            Especifica que um campo de entrada é obrigatório (deve ser preenchido)
+size                Especifica a largura (em caracteres) de um campo de entrada
+step                Especifica os intervalos numéricos legais para um campo de entrada
+value               Especifica o valor padrão para um campo de entrada
+
+
+===================================================================================================
+
+Exemplo 16: Intervalo de tipo de entrada
+O <input type="range"> define um controle para inserir um número cujo valor exato não é importante (como um controle deslizante). 
+O intervalo padrão é de 0 a 100. No entanto, você pode definir restrições sobre quais números são aceitos com os atributos min, maxe :step
+
+
+===================================================================================================
+
+Exemplo 17: Pesquisa de tipo de entrada
+O <input type="search">é usado para campos de pesquisa (um campo de pesquisa se comporta como um campo de texto normal).
+
+
+===================================================================================================
+
+Exemplo 18: Tipo de entrada Tel
+O <input type="tel">é usado para campos de entrada que devem conter um número de telefone.
+
+
+===================================================================================================
+
+Exemplo 19:Tipo de entrada Tempo
+Permite <input type="time"> que o usuário selecione um horário (sem fuso horário).
+
+Dependendo do suporte do navegador, um seletor de tempo pode aparecer no campo de entrada.
+
+===================================================================================================
+
+Exemplo 20:Tipo de entrada URL
+O <input type="url">é usado para campos de entrada que devem conter um endereço de URL.
+
+Dependendo do suporte do navegador, o campo URL pode ser validado automaticamente quando enviado.
+
+Alguns smartphones reconhecem o tipo de URL e adicionam ".com" ao teclado para corresponder à entrada de URL.
+
+
+===================================================================================================
+
+Exemplo 21: Tipo de entrada Semana
+O <input type="week"> permite que o usuário selecione uma semana e um ano.
+
+Dependendo do suporte do navegador, um seletor de data pode aparecer no campo de entrada.
+
+-->

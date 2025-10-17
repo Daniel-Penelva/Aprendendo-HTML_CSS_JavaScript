@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>HTML Forms</h2>
+
+    <h3>Exemplo 1 - Utilizando atributo action</h3>
+    <h4>
+      Especifica para onde enviar os dados do formulário quando um formulário é
+      enviado
+    </h4>
+
+    <form action="/action_page.php">
+      <label for="fname">First name:</label><br />
+      <input type="text" id="fname" name="fname" value="John" /><br />
+      <label for="lname">Last name:</label><br />
+      <input type="text" id="lname" name="lname" value="Doe" /><br /><br />
+      <input type="submit" value="Submit" />
+    </form>
+
+    <p>
+      Se você clicar no botão "Enviar", os dados do formulário serão enviados
+      para uma página chamada "/action_page.php".
+    </p>
+
+    <hr />
+    <h3>Exemplo 2 - Utilizando atributo target</h3>
+
+    <h4>Atributo de destino do formulário</h4>
+
+    <p>
+      Ao enviar este formulário, o resultado será aberto em uma nova aba do
+      navegador:
+    </p>
+
+    <form action="#" target="/action_page.php">
+      <label for="fname">Nome:</label><br />
+      <input type="text" id="fname" name="fname" value="John" /><br />
+      <label for="lname">Sobrenome:</label><br />
+      <input type="text" id="lname" name="lname" value="Doe" /><br /><br />
+      <input type="submit" value="Enviar" />
+    </form>
+
+    <hr />
+    <h3>Exemplo 3 - Utilizando atributo method</h3>
+
+    <h4>Especifica o método HTTP a ser usado ao enviar dados de formulário.</h4>
+
+    <p>Este formulário será enviado usando o método POST:</p>
+
+    <form action="/action_page.php" target="_blank" method="post">
+      <label for="fname">Nome:</label><br />
+      <input type="text" id="fname" name="fname" value="John" /><br />
+      <label for="lname">Sobrenome:</label><br />
+      <input type="text" id="lname" name="lname" value="Doe" /><br /><br />
+      <input type="submit" value="Submit" />
+    </form>
+
+    <p>
+      Após o envio, observe que, diferentemente do método GET, os valores do
+      formulário NÃO ficam visíveis na barra de endereços da nova aba do
+      navegador.
+    </p>
+
+    <hr />
+    <h3>Exemplo 4 - Utilizando atributo autocomplete</h3>
+
+    <p>
+      Preencha e envie o formulário, recarregue a página, comece a preencher o
+      formulário novamente e veja como o preenchimento automático funciona.
+    </p>
+
+    <p>Depois, tente desativar o preenchimento automático.</p>
+
+    <form action="/action_page.php" autocomplete="on">
+      <label for="fname">Nome:</label>
+      <input type="text" id="fname" name="fname" /><br /><br />
+      <label for="email">E-mail:</label>
+      <input type="text" id="email" name="email" /><br /><br />
+      <input type="submit" />
+    </form>
+
+    <hr />
+    <h3>Exemplo 5 - Utilizando atributo novalidate</h3>
+
+    <p>
+      O atributo novalidate indica que a entrada do formulário não deve ser
+      validada no envio:
+    </p>
+
+    <form action="/action_page.php" novalidate>
+      <label for="email">Digite seu e-mail:</label>
+      <input type="email" id="email" name="email" /><br /><br />
+      <input type="submit" />
+    </form>
+
+  </body>
+</html>
+
+<!--
+
+Exemplo 1:
+O Atributo de Ação
+O action atributo define a ação a ser executada quando o formulário é enviado.
+
+Normalmente, os dados do formulário são enviados para um arquivo no servidor quando o usuário clica no botão Enviar.
+
+
+Exemplo 2:
+O Atributo Alvo
+O target atributo especifica onde exibir a resposta recebida após o envio do formulário.
+
+O target atributo pode ter um dos seguintes valores:
+
+_blank     -> A resposta é exibida em uma nova janela ou aba
+_self      -> A resposta é exibida na janela atual
+_parent    -> A resposta é exibida no quadro pai
+_top       -> A resposta é exibida no corpo inteiro da janela
+framename  -> A resposta é exibida em um iframe nomeado
+
+OBS. O valor padrão é , _selfo que significa que a resposta será aberta na janela atual.
+
+
+Exemplo 3:
+O Atributo Method
+O method atributo especifica o método HTTP a ser usado ao enviar os dados do formulário.
+
+Os dados do formulário podem ser enviados como variáveis ​​de URL (com method="get") ou como transação HTTP post (com method="post").
+
+O método HTTP padrão ao enviar dados de formulário é GET. 
+
+Notas sobre GET:
+    . Acrescenta os dados do formulário à URL, em pares nome/valor
+    . NUNCA use GET para enviar dados confidenciais! (os dados do formulário enviado ficam visíveis na URL!)
+    . O comprimento de uma URL é limitado (2048 caracteres)
+    . Útil para envios de formulários onde um usuário deseja marcar o resultado
+    . GET é bom para dados não seguros, como strings de consulta no Google
+
+Notas sobre POST:
+    . Adiciona os dados do formulário dentro do corpo da solicitação HTTP (os dados do formulário enviado não são exibidos na URL)
+    . O POST não tem limitações de tamanho e pode ser usado para enviar grandes quantidades de dados.
+    . Os envios de formulários com POST não podem ser marcados
+
+
+Exemplo 4:
+O atributo Autocomplete
+O autocomplete atributo especifica se um formulário deve ter o preenchimento automático ativado ou desativado.
+
+Quando o preenchimento automático está ativado, o navegador completa automaticamente os valores com base nos valores que o usuário inseriu 
+anteriormente.
+
+
+Exemplo 5:
+O novalidate atributo é um atributo booleano.
+
+Quando presente, especifica que os dados do formulário (entrada) não devem ser validados quando enviados.
+
+-->
